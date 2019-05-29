@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
     else 
       flash.now[:errors] = @user.errors.full_messages
       render :new
+    end
   end
 
   def user_params
