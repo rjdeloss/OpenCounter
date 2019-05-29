@@ -10,6 +10,7 @@ class Api::SessionsController < ApplicationController
         else 
             flash.now[:errors] = [`incorrect username/password`]
             render :new
+        end
     end
 
     def destroy
