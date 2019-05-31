@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_action';
-import Signup from './signup';
+import SessionForm from './session_form';
 
 const msp = state => {
+    const formType = "Create Account"
     return ({
-        // errors: state.errors
+        errors: state.errors.session,
+        formType
     });
 }
 
@@ -13,4 +15,4 @@ const mdp = dispatch => ({
 })
 
 
-export default connect(null, mdp)(Signup);
+export default connect(msp, mdp)(SessionForm);
