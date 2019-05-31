@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_action';
 import SessionForm from './session_form';
+import { closeModal } from '../../actions/modal_action';
 
 const msp = state => {
     const formType = "Create Account"
@@ -11,7 +12,8 @@ const msp = state => {
 }
 
 const mdp = dispatch => ({
-    signup: formUser => dispatch(signup(formUser))
+    signup: formUser => dispatch(signup(formUser)),
+    closeModal: () => dispatch(closeModal())
 })
 
 

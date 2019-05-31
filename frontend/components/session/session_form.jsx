@@ -30,11 +30,10 @@ class Signup extends React.Component {
         // } else {
         //     this.props.signup({ fname, lname, email, password })
         // }
-        this.props.formType === "Create Account" ? this.props.signup(this.state) : this.props.login(this.state)
+    this.props.formType === "Create Account" ?
+        this.props.signup(this.state).then(this.props.closeModal) : this.props.login(this.state).then(this.props.closeModal)
     }
-
     renderErrors() {
-        debugger
         return (
             <ul>
             { this.props.errors.map((error, i) => (
@@ -50,9 +49,8 @@ class Signup extends React.Component {
          if (this.props.formType === "Create Account") {
           return (
             <div className="form-container">
-            <form onSubmit={this.handleSubmit}>
-                <div className="form-holder">
-                <h3 className="form-title">Welcome to OpenCounter!</h3>
+                  <form className="form-holder" onSubmit={this.handleSubmit}>
+                    <h3 className="form-title">Welcome to OpenCounter!</h3>
                 <br/>
                     {this.renderErrors()}
                     <input type="text" value={this.state.fname} onChange={this.handleInput('fname')} placeholder="First Name*" />
@@ -61,21 +59,18 @@ class Signup extends React.Component {
                     <input type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="Enter password*" />
                     <input type="password" value={this.state.confirmPassword} onChange={this.handleInput('confirmPassword')} placeholder="Re-enter password*" />
                     <input type="submit" value={this.props.formType}/>
-                </div>
-            </form>
+                </form>
             </div>
         )} else { 
           return (
               <div className="form-container" >
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-holder">
+                  <form className="form-holder" onSubmit={this.handleSubmit}>
                     <h3 className="form-title">Please sign in</h3>
                     <br/>
                         {this.renderErrors()}
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Enter email*" />
                         <input type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="Enter password*" />
                         <input type="submit" value={this.props.formType} />
-                    </div>
                 </form>
             </div>
         )}
