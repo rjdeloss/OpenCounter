@@ -1,20 +1,20 @@
 class Api::SessionsController < ApplicationController
-    def new
-    end
 
     def create
-        user = User.find_by_credentials(params[:user][:username],params[:user][:password])
-        if user
-            login(user)
-            redirect_to :index
+        @user = User.find_by_credentials(params[:user][:email],params[:user][:password])
+        if @user
+            login(@user)
+            render "api/users/show"
         else 
-            flash.now[:errors] = [`incorrect username/password`]
-            render :new
+            render json: ["Invalid username/password combination"], status: 401
         end
     end
 
     def destroy
-        logout
-        redirect_to new_session_url
+        @user = current_user
+        if @user
+            logout
+            render "api/users/show"
+        end
     end
 end
