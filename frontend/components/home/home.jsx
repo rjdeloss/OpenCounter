@@ -14,7 +14,7 @@ const Home = ({currentUser, logout, openModal}) => {
         
         <ul className="profile-dropdown">
             <li >
-                <a href="#">Hi {currentUser.id}</a>
+                <a href="#">Hi {currentUser.fname}</a>
                 <ul>
                     <li><a href="#">My Profile</a></li>
                     <li><a href="#">My Dining History</a></li>

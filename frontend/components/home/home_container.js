@@ -4,7 +4,7 @@ import { openModal } from '../../actions/modal_action';
 import Home from './home';
 
 const msp = state => ({
-    currentUser: state.session.currentUser
+    currentUser: state.entities.users[state.session.currentUser]
 })
 
 const mdp = dispatch => ({
