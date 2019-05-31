@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = ({currentUser, logout, openModal}) => {
-    debugger
     const sessionButtons = () => (
         <div className="session-container">    
             {/* <button className="signup-button" onClick={ () => openModal('signin')}>Sign In</button> 

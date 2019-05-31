@@ -2,9 +2,7 @@
     background-color: white;
     width: 460px;
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    // align-items: center;
+    align-items: center;
     padding: 30px 16px;
 }
 
@@ -16,12 +14,17 @@
 }
 
 .form-holder {
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     padding: 0 16px;
 }
 
-input {
+.form-holder input {
     font-weight: 600;
-    display:flex; 
+    box-sizing: border-box;
+    display:inline-block; 
     border-style: none;
     outline: none;
     width: 100%;
@@ -31,18 +34,10 @@ input {
     border-radius: 3px;
 }
 
-input:hover {
-    border-color: rgba(0,0,0, 0.2);
-}
-
-input:focus {
-    outline: 2px solid #acacac;
-}
-
-input[type=submit] {
-    font-weight: 400;
+.form-holder input[type=submit] {
     display: inline-block;
-    cursor: poineter;
+    font-weight: 400;
+    cursor: pointer;
     background-color: #da3743;
     border-color: #b8222d;
     color: #ffffff;
@@ -50,7 +45,16 @@ input[type=submit] {
     transition: background-color 300ms ease-out;
 }
 
-input[type=submit]:hover {
+.form-holder input:hover {
+    border-color: rgba(0,0,0, 0.2);
+}
+
+.form-holder input:focus {
+    outline: 2px solid #acacac;
+}
+
+
+.form-holder input[type=submit]:hover {
     background-color: #b8222d;
     color: #ffffff;
 }
