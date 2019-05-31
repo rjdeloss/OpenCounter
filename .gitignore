@@ -34,3 +34,5 @@ bundle.js
 bundle.js*
 
 .DS_Store
+
+open.scss
