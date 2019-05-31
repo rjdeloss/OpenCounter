@@ -5,17 +5,16 @@ import { Link } from 'react-router-dom';
 const Home = ({currentUser, logout, openModal}) => {
     const sessionButtons = () => (
         <div className="session-container">    
-            {/* <button className="signup-button" onClick={ () => openModal('signin')}>Sign In</button> 
-            <button className="signin-button" onClick={ () => openModal('signup')}>Sign Up</button>  */}
             <Link to="" className="signup-button nav-button" onClick={() => openModal('signup')}>Sign Up</Link>
             <Link to="" className="signin-button nav-button" onClick={() => openModal('signin')}>Sign In</Link>
         </div>
     );
 
     const profileDropdown = () => (
+        
         <ul className="profile-dropdown">
             <li >
-                <a href="#">Hi {currentUser.fname}</a>
+                <a href="#">Hi {currentUser.id}</a>
                 <ul>
                     <li><a href="#">My Profile</a></li>
                     <li><a href="#">My Dining History</a></li>
