@@ -14,51 +14,94 @@ class Signup extends React.Component {
         this.renderErrors = this.renderErrors.bind(this)
     }
 
+    componentDidMount(){
+        this.props.clearSessionErrors();
+    }
+
     handleInput(field) {
         return e => {
             this.setState({[field]: e.target.value})
         }
     }
 
-
-
     handleSubmit(e) {
         e.preventDefault();
-        // const { fname, lname, email, password, confirmPassword } = this.state;
-        // if (this.state.password !== this.state.confirmPassword) {
-        //     this.props.errors.push("The passwords doesn't match")
-        // } else {
-        //     this.props.signup({ fname, lname, email, password })
-        // }
-    this.props.formType === "Create Account" ?
-        this.props.signup(this.state).then(this.props.closeModal) : this.props.login(this.state).then(this.props.closeModal)
-    }
+        const { fname, lname, email, password, confirmPassword } = this.state;
+            if (password !== confirmPassword) {
+                return this.props.receiveErrors(["re-password"]);
+            } else {
+                // if (confirmPassword === "") {
+                    return this.props.action({ fname, lname, email, password }).then(this.props.closeModal);
+                }
+            
+        // this.props.formType === "Create Account" ?
+        //     this.props.signup(this.state).then(this.props.closeModal) : 
+        //     this.props.login(this.state).then(this.props.closeModal)
+        }
+
     renderErrors() {
-        return (
-            <ul>
-            { this.props.errors.map((error, i) => (
-                <li key={i}>
-                    {error}
-                </li>
-            ))}
-            </ul>
-        );
+        const errors = Object.values(this.props.errors);
+        const fname = errors.includes("Fname can't be blank") ? <li className="errors">Please enter your first name.</li> : null;
+        const lname = errors.includes("Lname can't be blank") ? <li className="errors">Please enter your last name.</li> : null;
+        const email = errors.includes("Email can't be blank") ? <li className="errors">Please enter your first name.</li> : null;
+        const password = errors.includes("Password is too short (minimum is 6 characters)") ? <li className="errors">Please enter your password.</li> : null;
+        const confirmPassword = errors.includes("re-password") ? <li className="errors">Please re-enter your password.</li> : null;
+        const signinEmail = errors.includes("email") ? <li className="errors">Please enter your password.</li> : null;
+        const signinPassword = errors.includes("password") ? <li className="errors">Please enter your password.</li> : null;
+        // const password = errors.includes("Password is too short (minimum is 6 characters)") ? <li className="errors">Please enter your password.</li> : null;
+        
+        if (this.props.formType === "Create Account") {
+            return (
+                <ul>
+                    {fname}
+                    {lname}
+                    {email}
+                    {password}
+                    {confirmPassword}
+                </ul>
+            )
+        } else if (this.props.formType === "Sign In"){
+            return (  
+                <ul>
+                    {signinEmail}
+                    {signinPassword}
+                </ul>
+            )
+        } else {
+            return null
+        }
     }
 
     render (){
+        const errors = Object.values(this.props.errors);
+        const redFname = errors.includes("Fname can't be blank") ? "red-border" : '';
+        const redLname = errors.includes("Lname can't be blank") ? "red-border" : '';
+        const redEmail = errors.includes("Email can't be blank") ? "red-border" : '';
+        const redPassword = errors.includes("Password is too short (minimum is 6 characters)") ? "red-border" : '';
+        const redConfirmPassword = errors.includes("re-password") ? "red-border" : '';
+        const redSigninEmail = errors.includes("email") ? "red-border" : '';
+        const redSigninPassword = errors.includes("password") ? "red-border" : '';
+
+        const demoUser = ({
+            email: "demo@personalbar.com",
+            password: 111111
+        })
+
          if (this.props.formType === "Create Account") {
+             
           return (
             <div className="form-container">
                   <form className="form-holder" onSubmit={this.handleSubmit}>
                     <h3 className="form-title">Welcome to OpenCounter!</h3>
-                <br/>
                     {this.renderErrors()}
-                    <input type="text" value={this.state.fname} onChange={this.handleInput('fname')} placeholder="First Name*" />
-                    <input type="text" value={this.state.lname} onChange={this.handleInput('lname')} placeholder="Last Name*" />
-                    <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Enter email*" />
-                    <input type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="Enter password*" />
-                    <input type="password" value={this.state.confirmPassword} onChange={this.handleInput('confirmPassword')} placeholder="Re-enter password*" />
+                <br/>
+                    <input type="text" value={this.state.fname} className={redFname} onChange={this.handleInput('fname')} placeholder="First Name*" />
+                    <input type="text" value={this.state.lname} className={redLname} onChange={this.handleInput('lname')} placeholder="Last Name*" />
+                    <input type="text" value={this.state.email} className={redEmail} onChange={this.handleInput('email')} placeholder="Enter email*" />
+                    <input type="password" value={this.state.password} className={redPassword} onChange={this.handleInput('password')} placeholder="Enter password*" />
+                    <input type="password" value={this.state.confirmPassword} className={redConfirmPassword} onChange={this.handleInput('confirmPassword')} placeholder="Re-enter password*" />
                     <input type="submit" value={this.props.formType}/>
+                    <input type="submit" value="Demo User" onClick = { () => this.props.action(demoUser).then(this.props.closeModal())} />
                 </form>
             </div>
         )} else { 
@@ -66,11 +109,12 @@ class Signup extends React.Component {
               <div className="form-container" >
                   <form className="form-holder" onSubmit={this.handleSubmit}>
                     <h3 className="form-title">Please sign in</h3>
-                    <br/>
                         {this.renderErrors()}
-                        <input type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="Enter email*" />
-                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="Enter password*" />
+                    <br/>
+                      <input type="text" value={this.state.email} className={redSigninEmail} onChange={this.handleInput('email')} placeholder="Enter email*" />
+                      <input type="password" value={this.state.password} className={redSigninPassword} onChange={this.handleInput('password')} placeholder="Enter password*" />
                         <input type="submit" value={this.props.formType} />
+                      <input type="submit" value="Demo User" onClick={() => this.props.action(demoUser).then(this.props.closeModal())} />
                 </form>
             </div>
         )}

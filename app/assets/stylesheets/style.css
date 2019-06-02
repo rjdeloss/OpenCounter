@@ -47,3 +47,16 @@ a {
     display: flex;
     align-content: flex-end;
 }
+
+.errors {
+    color: #d30303 ;
+}
+
+.form-holder input.red-border {
+    border: 1px solid #b8222d;
+}
+
+.form-holder input.red-border::placeholder {
+    color: #fea4a4 ;
+
+}
