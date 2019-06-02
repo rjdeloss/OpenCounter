@@ -1,21 +1,21 @@
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_action';
+import { login, receiveErrors, clearSessionErrors } from '../../actions/session_action';
 import SessionForm from './session_form';
 import { closeModal } from '../../actions/modal_action'
 
-const msp = (state, ownProps) => {
+const msp = state => {
     const formType = "Sign In"
     return ({
         errors: state.errors.session,
-        // name: 
         formType
     });
 }
 
 const mdp = dispatch => ({
-
-    login: formUser => dispatch(login(formUser)), 
-    closeModal: () => dispatch(closeModal())
+    action: formUser => dispatch(login(formUser)), 
+    closeModal: () => dispatch(closeModal()),
+    receiveErrors: errors => dispatch(receiveErrors(errors)),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
 })
 
 

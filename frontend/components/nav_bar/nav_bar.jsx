@@ -1,22 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Session from '../nav_bar_session/nav_bar_session_container';
 
 export default ({ currentUser, logout }) => {
-    const display = currentUser ? (
-        <div>
-            <p>Hello, {currentUser.fname} {currentUser.lname}</p>
-            <button onClick={logout}>Logout</button>
-        </div>
-    ) : (
-        <div>
-            <Link to='/signup' >Sign Up</Link>
-            <Link to='/signin' >Sign in</Link>
-        </div>
-    );
 
     return (
         <header className="nav-bar">
-            { display }
+            <ul className="nav-bar-ul">
+                <li>
+                    <ul id="logo">
+                        <li >
+                            <div id="circle"></div>
+                        </li>
+                        <li>
+                            <h3 id="logo-words">openCounter</h3>
+                        </li>
+                    </ul>
+                </li>
+                <li><Session /></li>
+            </ul>
+            
+            
         </header>
     )
 };
