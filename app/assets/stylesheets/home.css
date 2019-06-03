@@ -80,7 +80,7 @@ div.reservation-home-container::after {
     font-weight: 700;
     cursor: pointer;
     background-color: #da3743;
-    border-color: #b8222d;
+    /* border-color: #b8222d; */
     color: #ffffff;
     text-align: center;
     transition: background-color 300ms ease-out;
@@ -98,4 +98,19 @@ div.reservation-home-container::after {
 .reservation-form-splash input[type=submit]:hover {
     background-color: #b8222d;
     color: #ffffff;
+}
+
+.reservation-inputs {
+    align-items: center;
+    display: flex;
+    flex-basis: 33.3333%;
+    padding-left: .5rem;
+}
+
+.reservation-search-input {
+    padding: 8px 0px 8px 40px;
+}
+
+.reservation-submit-input {
+    padding: 8px 0px 8px 40px;
 }

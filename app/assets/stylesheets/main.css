@@ -1,0 +1,64 @@
+.page-main-content {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px 16px;
+    /* outline: 1px solid red; */
+    width: 1280px;
+    margin: 0 auto; 
+    height: auto;
+}
+
+.page-content-column {
+    padding: 0 16px;
+    width: 1240px;
+    /* outline: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.page-main-secition {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page-main-section-item {
+    padding: 70px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* outline: 1px solid blue; */
+}
+
+.page-main-section-item h2{
+    padding: 0 0 16px;
+    margin: 0 0 16px;
+}
+
+.page-main-restaurant-cuisine-list {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cuisine-content {
+    display: flex;
+    padding: 8px 0 0; 
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    box-sizing: border-box;
+    height: 208px;
+    width: 208px;
+    background: teal;
+    text-align: center;
+}
+
+.cuisine-content h3 {
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+

@@ -58,3 +58,15 @@
     background-color: #b8222d;
     color: #ffffff;
 }
+
+.form-selection-item {
+    position: relative;
+    top: -4px;
+    /* padding: 0 0 0 8px; */
+}
+
+.form-selection-item select{
+    padding: 0 0 0 8px;
+    width: 130px;
+    height: 48px;
+}
