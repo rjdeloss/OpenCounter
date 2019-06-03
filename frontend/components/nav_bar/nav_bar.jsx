@@ -13,7 +13,7 @@ export default ({ currentUser, logout }) => {
                             <div id="circle"></div>
                         </li>
                         <li>
-                            <h3 id="logo-words">openCounter</h3>
+                            <h2 id="logo-words">openCounter</h2>
                         </li>
                     </ul>
                 </li>
