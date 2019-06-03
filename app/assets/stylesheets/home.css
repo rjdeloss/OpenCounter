@@ -19,20 +19,20 @@ div.reservation-home-container::after {
     height: 416px;
     position: absolute;
     opacity: 0.7;
-    background: rgba(47, 45, 65);
+    background: rgba(47, 45, 65, 0.7);
     z-index: 1;
 }
 
 .reservation-form-container {
     position: relative;
-    z-index: 2;;
+    z-index: 2;
     flex-direction: column;
     box-sizing: border-box;
     height: 120px;
     width: 962px;
     display: flex;
     justify-content: center;
-    background: rgb(0, 0, 0);
+    /* background: rgb(0, 0, 0); */
 }
 
 .reservation-form-header {
