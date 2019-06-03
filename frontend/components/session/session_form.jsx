@@ -101,7 +101,7 @@ class Signup extends React.Component {
                     <input type="password" value={this.state.password} className={redPassword} onChange={this.handleInput('password')} placeholder="Enter password*" />
                     <input type="password" value={this.state.confirmPassword} className={redConfirmPassword} onChange={this.handleInput('confirmPassword')} placeholder="Re-enter password*" />
                     <input type="submit" value={this.props.formType}/>
-                    <input type="submit" value="Demo User" onClick = { () => this.props.action(demoUser).then(this.props.closeModal())} />
+                    <input type="submit" value="Demo User" onClick = { () => this.props.login(demoUser).then(this.props.closeModal())} />
                 </form>
             </div>
         )} else { 
