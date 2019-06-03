@@ -13,6 +13,7 @@ const msp = state => {
 
 const mdp = dispatch => ({
     action: formUser => dispatch(login(formUser)), 
+    login: formUser => dispatch(login(formUser)), 
     closeModal: () => dispatch(closeModal()),
     receiveErrors: errors => dispatch(receiveErrors(errors)),
     clearSessionErrors: () => dispatch(clearSessionErrors())

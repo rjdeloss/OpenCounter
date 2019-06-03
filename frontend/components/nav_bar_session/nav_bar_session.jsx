@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = ({currentUser, logout, openModal}) => {
+const Session = ({currentUser, logout, openModal}) => {
     const sessionButtons = () => (
         <div className="session-container">    
             <Link to="" className="signup-button nav-button" onClick={() => openModal('signup')}>Sign Up</Link>
@@ -9,26 +9,45 @@ const Home = ({currentUser, logout, openModal}) => {
         </div>
     );
 
+    const toggleDropdown = () => {
+        $("#dropdown-menu").toggleClass('dropdown-active');
+    }
+
     const profileDropdown = () => (
-        
-        <ul className="dropdown">
+        <div className="dropdown">
             <li >
-                <h3>Hi {currentUser.fname}</h3>
-                <ul className="dropdown-content">
+                <h3  onClick={() =>toggleDropdown() }>Hi {currentUser.fname}</h3>
+                <ul id="dropdown-menu" className="dropdown-content">
                     <li><a href="#">My Profile</a></li>
                     <li><a href="#">My Dining History</a></li>
                     <li><a href="#">My Saved Restaurants</a></li>
                     <li><a href="#" onClick={ () => logout() }>Sign Out</a></li>
                 </ul>
             </li>
-        </ul>
+        </div>
     );
+
+    // const reservationContainer =() => 
+    // {   
+    //     let ppl = [];
+    //     for (let i = 2; i < 20; i++) {
+    //         ppl.push(i)
+    //     }
+
+    //     ppl.map(i => {
+    //         {"${i} people"}
+    //     })
+        
+    //     return (
+
+    // )}
     
     return (
         currentUser ? profileDropdown() : sessionButtons()
 
+        
     );
 
 }
 
-export default Home;
+export default Session;
