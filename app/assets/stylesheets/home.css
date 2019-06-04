@@ -108,6 +108,7 @@ div.reservation-home-container::after {
 }
 
 .reservation-search-input {
+    width: 180px;
     padding: 8px 0px 8px 40px;
 }
 
