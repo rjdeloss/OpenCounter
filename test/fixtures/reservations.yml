@@ -1,0 +1,39 @@
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id              :bigint           not null, primary key
+#  user_id         :integer          not null
+#  restaurant_id   :integer          not null
+#  overall_rating  :integer          not null
+#  food_rating     :integer          not null
+#  ambiance_rating :integer          not null
+#  value_rating    :integer          not null
+#  body            :text             not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  restaurant_id: 1
+  overall_rating: 1
+  food_rating: 1
+  ambiance_rating: 1
+  value_rating: MyString
+  integer: MyString
+  body: MyString
+  text: MyString
+
+two:
+  user_id: 1
+  restaurant_id: 1
+  overall_rating: 1
+  food_rating: 1
+  ambiance_rating: 1
+  value_rating: MyString
+  integer: MyString
+  body: MyString
+  text: MyString

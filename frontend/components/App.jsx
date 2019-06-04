@@ -23,7 +23,7 @@ const App = () => (
                             <input className="form-input-item" type="date" name="" id=""/>
                             
                             <div className="form-selection-item">
-                                <select name="" id="">
+                                <select id="form-selection-item-time">
                                     <option value="7:00 PM">7:00 PM</option>
                                 </select>
                             </div>

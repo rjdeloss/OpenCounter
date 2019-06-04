@@ -3,7 +3,6 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
     create_table :restaurants do |t|
       t.string :name, null: false
       t.string :address, null: false
-      t.string :string, null: false
       t.string :city, null: false
       t.integer :zip, null: false
       t.integer :lat, null: false
@@ -11,6 +10,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.integer :phone_number, null: false
       t.string :price_range, null: false
       t.text :description, null: false
+      t.string :cuisine_id
       t.time :open_time, null: false
       t.time :close_time, null: false
       t.integer :capacity, null: false
