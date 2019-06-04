@@ -49,7 +49,7 @@ class Signup extends React.Component {
         const signinEmail = errors.includes("email") ? <li className="errors">Please enter your password.</li> : null;
         const signinPassword = errors.includes("password") ? <li className="errors">Please enter your password.</li> : null;
         // const password = errors.includes("Password is too short (minimum is 6 characters)") ? <li className="errors">Please enter your password.</li> : null;
-        
+
         if (this.props.formType === "Create Account") {
             return (
                 <ul>

@@ -8,9 +8,11 @@
 
 # USER
 require 'faker'
+
 User.destroy_all
 Restaurant.destroy_all
 Review.destroy_all
+Reservation.destroy_all
 
 User.create!(
     email: "demo@personalbar.com", 
