@@ -33,7 +33,9 @@
 
 .page-main-section-item h2{
     padding: 0 0 16px;
-    margin: 0 0 16px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #d8d9db;
+    font-weight: 600;
 }
 
 .page-main-restaurant-cuisine-list {
