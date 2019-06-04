@@ -1,11 +1,17 @@
 * {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Hind Siliguri', Helvetica, sans-serif;
     color: #333333;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400
+}
+
+main {
+    background-color: #f7f7f7;
 }
 
 h1 {
     font-size: 48px;
+    font-weight: 300;
 }
 
 h2 {
@@ -20,12 +26,17 @@ a {
     text-decoration: none;
 }
 
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 .nav-button {
-    margin: 11px 0 0;
+    margin: 4px 0;
     padding: 8px 16px;
     border-radius: 3px;
     text-decoration: none;
-
+    font-size: 14px;
 }
 
 .signup-button {
@@ -42,6 +53,7 @@ a {
 .signin-button {
     text-decoration: none;
     color: #333333;
+    font-size: 16px;
 }
 
 .signin-button:hover {
@@ -49,7 +61,10 @@ a {
 }
 .session-container {
     display: flex;
+    justify-content: space-between;
     align-content: flex-end;
+    width: 160px
+
 }
 
 .errors {
