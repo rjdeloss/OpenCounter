@@ -70,3 +70,7 @@
     width: 130px;
     height: 48px;
 }
+
+#form-selection-item-time {
+    border-radius: 0px;
+}
