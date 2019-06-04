@@ -10,7 +10,7 @@
 
 .page-content-column {
     padding: 0 16px;
-    width: 1240px;
+    /* width: 1240px; */
     /* outline: 1px solid green; */
     display: flex;
     flex-direction: column;
@@ -41,12 +41,13 @@
 .page-main-restaurant-cuisine-list {
     display: flex; 
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .cuisine-content {
     display: flex;
     padding: 8px 0 0; 
+    margin: 0 10px 0;
     flex-direction: column;
     justify-content: center;
     align-items:center;
@@ -55,6 +56,25 @@
     width: 208px;
     background: teal;
     text-align: center;
+}
+
+.page-main-restaurant-item {
+    display: flex; 
+    flex-direction: column; 
+    height: 238px; 
+    width: 236px;
+    margin: 0 15px 0 0;
+    outline: 1px dotted purple;
+}
+
+.page-main-restaurant-item-img-container {
+    height: 236px; 
+    width: 132; 
+    background-color: yellowgreen;
+}
+
+.page-main-restaurant-content-info {
+    padding: 8px;
 }
 
 .cuisine-content h3 {

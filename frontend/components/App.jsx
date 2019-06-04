@@ -10,7 +10,7 @@ import SigninContainer from './session/signin_container';
 
 
 const App = () => (
-    <div>
+    <div className="container">
         <Modal />
         <header> 
             <NavBar />
@@ -49,35 +49,80 @@ const App = () => (
                 <div className="page-content-column">
                     <div className="page-main-section">
                         <div className="page-main-section-item">
+                            <h2>Popular restaurants in Manhattan</h2>
+                            <section className="page-main-restaurant-cuisines">
+                                <div className="page-main-restaurant-cuisine-list">
+                                   <div className="page-main-restaurant-item">
+                                        <div className="page-main-restaurant-item-img-container">
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className="page-main-restaurant-content-info">
+                                            <h3>Restaurant Name</h3>
+                                            <div>rating <span>review count</span></div>
+                                            <div>Cuisine * price_range * Location</div>
+                                            <div>Number of times booked</div>
+                                        </div>
+                                    </div>
+                                   <div className="page-main-restaurant-item">
+                                        <div className="page-main-restaurant-item-img-container">
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className="page-main-restaurant-content-info">
+                                            <h3>Restaurant Name</h3>
+                                            <div>rating <span>review count</span></div>
+                                            <div>Cuisine * price_range * Location</div>
+                                            <div>Number of times booked</div>
+                                        </div>
+                                    </div>
+                                   <div className="page-main-restaurant-item">
+                                        <div className="page-main-restaurant-item-img-container">
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className="page-main-restaurant-content-info">
+                                            <h3>Restaurant Name</h3>
+                                            <div>rating <span>review count</span></div>
+                                            <div>Cuisine * price_range * Location</div>
+                                            <div>Number of times booked</div>
+                                        </div>
+                                    </div>
+                                   <div className="page-main-restaurant-item">
+                                        <div className="page-main-restaurant-item-img-container">
+                                            <img src="" alt=""/>
+                                        </div>
+                                        <div className="page-main-restaurant-content-info">
+                                            <h3>Restaurant Name</h3>
+                                            <div>rating <span>review count</span></div>
+                                            <div>Cuisine * price_range * Location</div>
+                                            <div>Number of times booked</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div className="page-main-section-item">
                             <h2>Top Cuisines Near You</h2>
                             <section className="page-main-restaurant-cuisines">
                                 <div className="page-main-restaurant-cuisine-list">
                                    <div className="cuisine-content">
                                         <h3>Best Cuisine</h3>
-                                            <h3>Restaurants Around </h3>
-                                            <h3>You</h3>
+                                        <h3>Restaurants Around </h3>
+                                        <h3>You</h3>
                                     </div>
                                    <div className="cuisine-content">
                                         <h3>Best Cuisine</h3>
-                                            <h3>Restaurants Around </h3>
-                                            <h3>You</h3>
+                                        <h3>Restaurants Around </h3>
+                                        <h3>You</h3>
                                     </div>
                                    <div className="cuisine-content">
                                         <h3>Best Cuisine</h3>
-                                            <h3>Restaurants Around </h3>
-                                            <h3>You</h3>
+                                        <h3>Restaurants Around </h3>
+                                        <h3>You</h3>
                                     </div>
                                    <div className="cuisine-content">
                                         <h3>Best Cuisine</h3>
-                                            <h3>Restaurants Around </h3>
-                                            <h3>You</h3>
+                                        <h3>Restaurants Around </h3>
+                                        <h3>You</h3>
                                     </div>
-                                   <div className="cuisine-content">
-                                        <h3>Best Cuisine</h3>
-                                            <h3>Restaurants Around </h3>
-                                            <h3>You</h3>
-                                    </div>
-
                                 </div>
                             </section>
                         </div>

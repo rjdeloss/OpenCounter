@@ -4,9 +4,9 @@
     justify-content: space-between;
     text-decoration: none;
     height: 54px; 
-    padding: 5px 36px;
+    padding: 0px 36px;
     margin: 0 auto;
-    box-shadow: #d8d9db 2px 0px 0px 2px;
+    /* box-shadow: #d8d9db 2px 0px 0px 2px; */
 }
 
 .nav-bar li {
@@ -30,7 +30,9 @@
 }
 
 #logo-words {
-    padding: 10px 0 0 15px ;
+    padding: 12px 0 0 12px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 #circle {
@@ -69,6 +71,8 @@
   position: relative;
   display: inline-block;
   z-index: 10;
+  margin: 5px 0 0;
+  font-weight: 500;
 
 }
 
