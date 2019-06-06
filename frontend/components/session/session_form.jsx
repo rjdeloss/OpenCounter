@@ -92,7 +92,7 @@ class Signup extends React.Component {
           return (
             <div className="form-container">
                   <form className="form-holder" onSubmit={this.handleSubmit}>
-                    <h3 className="form-title">Welcome to OpenCounter!</h3>
+                    <h2 className="form-title">Welcome to OpenCounter!</h2>
                     {this.renderErrors()}
                 <br/>
                     <input type="text" value={this.state.fname} className={redFname} onChange={this.handleInput('fname')} placeholder="First Name*" />
@@ -108,7 +108,7 @@ class Signup extends React.Component {
           return (
               <div className="form-container" >
                   <form className="form-holder" onSubmit={this.handleSubmit}>
-                    <h3 className="form-title">Please sign in</h3>
+                    <h2 className="form-title">Please sign in</h2>
                         {this.renderErrors()}
                     <br/>
                       <input type="text" value={this.state.email} className={redSigninEmail} onChange={this.handleInput('email')} placeholder="Enter email*" />

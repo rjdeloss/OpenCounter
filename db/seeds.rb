@@ -36,7 +36,7 @@ PRICE_RANGE = ["$", "$$", "$$$", "$$$$"]
 OPEN_TIME = ["8:00", "9:00", "10:00", "11:00", "12:00"]
 CLOSE_TIME = ["20:00", "21:00", "22:00", "23:00"]
 
-10.times do
+8.times do
     Restaurant.create(
         name: Faker::Restaurant.unique.name, 
         address: Faker::Address.street_address, 
