@@ -8,10 +8,10 @@ export const receiveRestaurants = restaurants => ({
     restaurants
 })
 
-export const receiveRestaurant = ({ restaurant }) => ({
-    type: RECEIVE_RESTAURANT, 
-    restaurant
-})
+export const receiveRestaurant = ({ restaurant }) => {
+   return ( {type: RECEIVE_RESTAURANT, 
+    restaurant});
+}
 
 export const fetchRestaurants = filters => dispatch => (
     RestaurantApiUtil.fetchRestaurants(filters).then(restaurants => dispatch(receiveRestaurants(restaurants)))

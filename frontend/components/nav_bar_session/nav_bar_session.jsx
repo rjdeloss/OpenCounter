@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Session = ({currentUser, logout, openModal}) => {
     const sessionButtons = () => (
         <div className="session-container">    
-            <Link to="" className="signup-button nav-button" onClick={() => openModal('signup')}>Sign up</Link>
-            <Link to="" className="signin-button nav-button" onClick={() => openModal('signin')}>Sign in</Link>
+            <a className="signup-button nav-button" onClick={() => openModal('signup')}>Sign up</a>
+            <a className="signin-button nav-button" onClick={() => openModal('signin')}>Sign in</a>
         </div>
     );
 

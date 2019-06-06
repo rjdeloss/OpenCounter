@@ -15,7 +15,7 @@ const App = () => (
         <Modal />
         <NavBar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/restaurants/:restaurantId" component={Show} />
+        <Route path="/restaurants/:restaurantId" component={Show} />
         {/* <Route exact path="/restaurant/:restaurantId" component={RestaurantShow} */}
         {/* FOOTER WILL ALSO GO INTO IT'S OWN CONTAINER NAMED FOOTER */}
         <footer >

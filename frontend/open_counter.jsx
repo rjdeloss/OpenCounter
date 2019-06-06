@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore(preloadedState);
 
     window.dispatch = store.dispatch;
-    window.getState = store.dispatch;
+    window.getState = store.getState;
     window.fetchRestaurants = fetchRestaurants;
 
     let preloadedState = {};
