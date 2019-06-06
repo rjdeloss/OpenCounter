@@ -25,4 +25,8 @@ class Restaurant < ApplicationRecord
     has_many :reviews
     has_many :favorites
     has_many :restaurant_cuisines
+
+    # has_many :reviewers, through :reviews, source :users
+    # has_many :reservators, through :reservations, source :users
+    # # has_many :favoritors, through :fa
 end

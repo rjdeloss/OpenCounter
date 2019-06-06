@@ -10,6 +10,7 @@
 
 .page-content-column {
     padding: 0 16px;
+    box-sizing: border-box;
     /* width: 1240px; */
     /* outline: 1px solid green; */
     display: flex;
@@ -38,11 +39,13 @@
     font-weight: 600;
 }
 
-.page-main-restaurant-cuisine-list {
+.page-main-restaurant-cuisine-list, .page-main-restaurant-cuisines {
     display: flex; 
-    flex-direction: row;
+    flex-flow: wrap row;
     justify-content: flex-start;
+    margin: 0 0 15px;
 }
+
 
 .cuisine-content {
     display: flex;
@@ -63,7 +66,7 @@
     flex-direction: column; 
     height: 238px; 
     width: 236px;
-    margin: 0 15px 0 0;
+    margin: 0 20px 20px 0;
     outline: 1px dotted purple;
 }
 

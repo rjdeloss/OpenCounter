@@ -1,0 +1,149 @@
+.show-page-container {
+    width: 1600px; 
+    margin: 0 auto; 
+    height: auto; 
+}
+
+.show-page-image-container {
+    width: inherit;
+    height: 288px;
+    /* outline: 1px dotted rebeccapurple;  */
+    background: yellow;
+}
+
+.show-page-content-container {
+    box-sizing: border-box;
+    width: 992px;
+    margin: -48px auto 0; 
+    height: 300px;
+    display: flex; 
+    justify-content: space-between;
+    /* outline: 1px solid green;  */
+}
+
+.show-page-restaurant-info {
+    display: flex; 
+    justify-content: column;
+    width: 320px;
+    height: auto; 
+    background: skyblue;
+
+}
+
+.show-page-restaurant-content {
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    height: 100%;
+    width: 626px;
+    background: white;
+}
+
+.restaurant-profile-nav {
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: flex-start;
+    width: 100%; 
+    height: 48px; 
+    padding: 0 8px;
+
+}
+
+.restaurant-snippet {
+    box-sizing: inherit;
+    position: relative;
+    width: 100%; 
+    padding: 32px 16px 64px;
+    outline: 1px dotted skyblue;
+}
+
+.restaurant-title {
+    margin: 0 0 16px; 
+    padding: 0 0 32px;
+    color: #000000;
+}
+
+
+.restaurant-profile-nav a {
+    padding: 14px 8px;
+    
+}
+
+.restaurant-reservation-form {
+    display: flex; 
+    flex-direction: column;
+    width: inherit;
+    height: 311px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.18);
+    background-color: #ffffff; 
+}
+
+.restaurant-reservation-form form {
+    margin: 0 0 16px;
+    padding: 8px 16px 16px;
+}
+
+.restaurant-reservation-form-title {
+    text-align: center; 
+    font-weight: 600; 
+    padding: 14px 16px 0;
+    font-size: 21px;
+}
+
+.restaurant-reservation-form select{
+    padding-bottom: 0 0 4px;
+    width: 100%;
+    display: block; 
+    margin: 5px 0 20px;
+    border: none; 
+    border-radius: 0px;
+    outline: none;
+    height: 35px;
+    border-bottom: 1px solid #d8d9db;
+    font-size: 14px;
+    app
+
+}
+
+.restaurant-reservation-form select:hover {
+    border-bottom: 1px solid #da3744;
+}
+
+.restaurant-reservation-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 0 0;
+}
+
+.reservation-field-holder {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.reservation-field-holder select + input {
+    width: 45%;
+}
+
+.reservation-field-holder input:hover {
+    border-bottom: 1px solid #da3744;
+}
+
+.reservation-submit {
+    width: 100%;
+    display: inline-block;
+    font-weight: 300;
+    padding: 12px 16px;
+    cursor: pointer;
+    background-color: #da3743;
+    border-color: #eee;
+    border-radius: 2px; 
+    color: #ffffff;
+    text-align: center;
+    transition: background-color 300ms ease-out;
+}
+
+.reservation-submit:hover {
+    background-color: #e15b64;
+}
