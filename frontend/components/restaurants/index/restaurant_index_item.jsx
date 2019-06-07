@@ -22,7 +22,9 @@ class RestaurantIndexItem extends React.Component {
             </div>
             <div className="page-main-restaurant-content-info">
                 <h3>{restaurant.name}</h3>
-                <div>rating <span>review count</span></div>
+                    <div> <div>
+                        <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i>
+                    </div>*<span>review count</span></div>
                 <div>Cuisine * {restaurant.price_range} * {restaurant.city}</div>
                 <div>{restaurant.zip} of times booked</div>
             </div>

@@ -1,7 +1,8 @@
 .reservation-home-container {
+    position: relative;
     box-sizing: border-box;
     height: 416px;
-    width: 1600;
+    width: 1600px;
     margin: 0 auto;
     background-image: url('https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg');
     background-repeat: no-repeat;
@@ -25,6 +26,7 @@ div.reservation-home-container::after {
 }
 
 .reservation-form-container {
+    top: 3%;
     position: relative;
     z-index: 2;
     flex-direction: column;
@@ -39,26 +41,32 @@ div.reservation-home-container::after {
 
 .reservation-form-header {
     box-sizing: inherit;
+    font-size: 47px;
     display: flex;
     color: white;
     line-height: 1.5;
     margin: 0 0 12px;
     text-align: center;
     display: inline-block;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .reservation-form-splash {
     box-sizing: inherit;
     display: flex; 
     justify-content: space-between;
+    box-sizing: border-box;
     
 }
 
 .reservation-inputs {
+    box-sizing: border-box;
+    width: 475px;
     display: flex;
     flex-direction: row;
     align-content: flex-start;
+    border-radius: 3px; 
+    /* overflow: hidden; */
 
 }
 
