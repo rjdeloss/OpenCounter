@@ -1,5 +1,6 @@
 .form-container {
     background-color: white;
+    box-sizing: border-box;
     width: 460px;
     display: flex;
     align-items: center;
@@ -8,13 +9,14 @@
 
 .form-title {
     font-weight: 400;
-    margin: 0 0 3.2px;
-    padding: 16px 0;
+    margin: 0 0 8px;
+    padding: 8px 0 16px;
     border-bottom: 1px solid rgba(0,0,0, 0.12);
 }
 
 .form-holder {
     width: 100%;
+    box-sizing: border-box;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
@@ -23,11 +25,13 @@
 
 .form-holder input {
     font-weight: 600;
+    font-size: 13px;
     box-sizing: border-box;
     display:inline-block; 
     border-style: none;
     outline: none;
     width: 100%;
+    height: 52px;
     margin: 0 0 8px;
     padding: 16px;
     border: 1px solid rgba(0,0,0, 0.12);
@@ -36,8 +40,11 @@
 
 .form-holder input[type=submit] {
     display: inline-block;
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 20px;
     cursor: pointer;
+    padding: 14px 28px 15px;
+    height: 55px;
     background-color: #da3743;
     border-color: #b8222d;
     color: #ffffff;

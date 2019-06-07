@@ -94,7 +94,6 @@ class Signup extends React.Component {
                   <form className="form-holder" onSubmit={this.handleSubmit}>
                     <h2 className="form-title">Welcome to OpenCounter!</h2>
                     {this.renderErrors()}
-                <br/>
                     <input type="text" value={this.state.fname} className={redFname} onChange={this.handleInput('fname')} placeholder="First Name*" />
                     <input type="text" value={this.state.lname} className={redLname} onChange={this.handleInput('lname')} placeholder="Last Name*" />
                     <input type="text" value={this.state.email} className={redEmail} onChange={this.handleInput('email')} placeholder="Enter email*" />
@@ -110,7 +109,6 @@ class Signup extends React.Component {
                   <form className="form-holder" onSubmit={this.handleSubmit}>
                     <h2 className="form-title">Please sign in</h2>
                         {this.renderErrors()}
-                    <br/>
                       <input type="text" value={this.state.email} className={redSigninEmail} onChange={this.handleInput('email')} placeholder="Enter email*" />
                       <input type="password" value={this.state.password} className={redSigninPassword} onChange={this.handleInput('password')} placeholder="Enter password*" />
                         <input type="submit" value={this.props.formType} />

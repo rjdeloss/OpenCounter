@@ -66,7 +66,6 @@ class RestaurantShow extends React.Component {
                             </div>
                             <article className="nav-bar-words">
                                 <div>
-
                                 <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i>
                                 </div>
                                 <i className="material-icons">chat_bubble_outline</i><p>{restaurant.zip} reviews  </p>

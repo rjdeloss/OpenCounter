@@ -23,7 +23,7 @@ const App = () => (
                 <div className="footer-container-items">
                     <a href="">LinkedIn</a>
                     <a href="">GitHub</a>
-                    <a href="">Personal site</a>
+                    {/* <a href="">Personal site</a> */}
                 </div>
             </div>  
         </footer>
