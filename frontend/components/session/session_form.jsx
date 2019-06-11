@@ -25,10 +25,11 @@ class Signup extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         const { fname, lname, email, password, confirmPassword } = this.state;
-            if (password !== confirmPassword) {
-                return this.props.receiveErrors(["re-password"]);
+        if (password !== confirmPassword) {
+                this.props.receiveErrors(["re-password"]);
             } else {
                 // if (confirmPassword === "") {
                     return this.props.action({ fname, lname, email, password }).then(this.props.closeModal);
@@ -49,7 +50,7 @@ class Signup extends React.Component {
         const signinEmail = errors.includes("email") ? <li className="errors">Please enter your password.</li> : null;
         const signinPassword = errors.includes("password") ? <li className="errors">Please enter your password.</li> : null;
         // const password = errors.includes("Password is too short (minimum is 6 characters)") ? <li className="errors">Please enter your password.</li> : null;
-
+        debugger
         if (this.props.formType === "Create Account") {
             return (
                 <ul>

@@ -67,13 +67,15 @@
 }
 
 .form-selection-item {
-    position: relative;
-    top: -4px;
+    /* position: relative;
+    top: -4px; */
     /* padding: 0 0 0 8px; */
 }
 
 .form-selection-item select{
-    padding: 0 0 0 8px;
+    appearance: none;
+    -webkit-appearance: none; 
+   -moz-appearance: none;
     width: 130px;
     height: 48px;
 }
