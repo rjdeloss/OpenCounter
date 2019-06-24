@@ -2,7 +2,7 @@
     position: relative;
     box-sizing: border-box;
     height: 416px;
-    width: 1600px;
+    max-width: 1600px;
     margin: 0 auto;
     background-image: url('https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg');
     background-repeat: no-repeat;
