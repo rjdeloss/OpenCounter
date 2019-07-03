@@ -22,28 +22,48 @@
 
 class Restaurant < ApplicationRecord
 
+    
     validates :name, :address, :city, :zip, :phone_number, 
-        :price_range, :description, :open_time, :close_time, :capacity, 
-        presence: true
-
+    :price_range, :description, :open_time, :close_time, :capacity, 
+    presence: true
+    
     has_many :reservations
     has_many :reviews
     has_many :favorites
     has_many :restaurant_cuisines
-
+    
     has_many :cuisines,
-        through: :restaurant_cuisines
-
+    through: :restaurant_cuisines
+    
     has_many :reservees,
-        through: :reservations, 
-        source: :user
-
+    through: :reservations, 
+    source: :user
+    
     has_many :reviewers, 
-        through: :reviews, 
-        source: :user
-
+    through: :reviews, 
+    source: :user
+    
     has_many :favoritees, 
-        through: :favorites, 
-        source: :user
-        
+    through: :favorites, 
+    source: :user
+    
+    include PgSearch
+    pg_search_scope :search, against: [:name, :city, :zip], 
+        using: {tsearch: {dictionary: "english"}}, 
+        associated_against: {cuisines: :cuisine}
+    
+    # def self.search(params)
+    #     # debugger
+    #     if params.present?
+    #         search(params)
+    #     else
+    #         scoped
+    #     # str = "%#{params}%"
+    #     # @restaurants = Restaurant
+    #     #     .joins("LEFT OUTER JOIN reservations ON reservations.restaurant_id = restaurants.id")
+    #     #     .where("UPPER(restaurants.name) LIKE UPPER(?) OR
+    #     #                 UPPER(restaurants.city) LIKE UPPER(?) OR
+    #     #                 restaurants.zip LIKE ?", str, str, str)
+    #     end
+    # end
 end
