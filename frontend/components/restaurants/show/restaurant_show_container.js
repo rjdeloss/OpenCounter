@@ -7,7 +7,6 @@ import RestaurantShow from './restaurant_show.jsx';
 const msp = ( state, ownProps) => {
     const restaurantId = ownProps.match.params.restaurantId; 
     const restaurant = state.entities.restaurants[restaurantId];
-    // debugger
     return {
         restaurantId,
         restaurant

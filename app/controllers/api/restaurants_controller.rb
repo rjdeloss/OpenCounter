@@ -1,11 +1,12 @@
 class Api::RestaurantsController < ApplicationController
 
   def index
-    @restaurants = Restaurant.all
-    if @restaurants
+    if params[:search]
+      @restaurants = Restaurant.search(params[:search])
       render :index
     else 
-      render json: @restaurants.errors.full_messages, status: 422
+      @restaurants = Restaurant.all
+      render :index
     end
   end
 

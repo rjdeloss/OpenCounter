@@ -41,7 +41,7 @@ CLOSE_TIME = ["20:00", "21:00", "22:00", "23:00"]
         name: Faker::Restaurant.unique.name, 
         address: Faker::Address.street_address, 
         city: Faker::Address.city, 
-        zip: Faker::Address.zip[0..4],
+        zip: Faker::Address.zip[0..4].to_s,
         lat: Faker::Address.latitude,
         lon: Faker::Address.longitude,
         phone_number: Faker::PhoneNumber.cell_phone, 

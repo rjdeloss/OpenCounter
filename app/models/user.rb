@@ -26,17 +26,17 @@ class User < ApplicationRecord
     has_many :favorites
     has_many :reviews
 
-    # has_many :reserved_restaurants,
-    #     through: :reservations, 
-    #     source: :restaurant
+    has_many :reserved_restaurants,
+        through: :reservations, 
+        source: :restaurant
 
-    # has_many :favorite_restaurants, 
-    #     through: :favorites, 
-    #     source: :restaurant
+    has_many :favorite_restaurants, 
+        through: :favorites, 
+        source: :restaurant
 
-    # has_many :reviewed_restaurants. 
-    #     through: :reviews, 
-    #     source: :restaurant
+    has_many :reviewed_restaurants, 
+        through: :reviews, 
+        source: :restaurant
     
 
     def self.find_by_credentials(email, password)

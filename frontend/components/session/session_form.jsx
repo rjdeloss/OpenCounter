@@ -19,8 +19,7 @@ class Signup extends React.Component {
     }
 
     handleInput(field) {
-        return e => {
-            this.setState({[field]: e.target.value})
+        return e => {this.setState({[field]: e.target.value})
         }
     }
 
@@ -33,7 +32,6 @@ class Signup extends React.Component {
                 // if (confirmPassword === "") {
                     return this.props.action({ fname, lname, email, password }).then(this.props.closeModal);
                 } 
-                debugger
         this.props.formType === "Create Account" ?
             this.props.action(this.state).then(this.props.closeModal) : 
             this.props.login(this.state).then(this.props.closeModal)
