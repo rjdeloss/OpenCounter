@@ -18,8 +18,8 @@ const App = () => (
         <NavBar />
         <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/restaurants/search" component={RestaurantIndexContainer} />
             <Route path="/restaurants/:restaurantId" component={Show} />
-            <Route path="/restaurants" component={Search} />
         </Switch>
         <Footer />
     </div>
