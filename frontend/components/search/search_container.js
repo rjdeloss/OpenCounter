@@ -5,10 +5,14 @@ import { searchRestaurants } from '../../actions/restaurant_action';
 import Search from './search';
 
 const msp = (state, ownProps) => {
-
+    const restaurants = Object.values(state.entities.restaurants)
+    return {
+        restaurants
+    }
 }
 
 const mdp = dispatch => {
+    debugger
     return {
         searchRestaurants: search => dispatch(searchRestaurants(search))
     }
