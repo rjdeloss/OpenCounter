@@ -13,13 +13,11 @@ export const fetchRestaurant = id => (
     })
 )
 
-export const searchRestaurants = search => {
-    debugger
-    return(
+export const searchRestaurants = search => (
     $.ajax({
         method: `get`,
         url: `api/restaurants`,
-        data: search
+        data: { search }
     })
-)}
+)
 

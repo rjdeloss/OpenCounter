@@ -1,7 +1,6 @@
 class Api::RestaurantsController < ApplicationController
 
   def index
-    debugger
     if params[:search]
       @restaurants = Restaurant.search(params[:search])
       render :index

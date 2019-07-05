@@ -11,7 +11,6 @@ const Search = (props) => {
     const resetInputField = () => { setSearchValue("") }
 
     const handleSubmit = (e) => {
-        debugger
         e.preventDefault();
         props.searchRestaurants(searchValue); 
         resetInputField();
@@ -23,7 +22,7 @@ const Search = (props) => {
                 <div className="reservation-form-icon-decoration">
                     <i className="material-icons">search</i>
                 </div>
-                <input type="text" value ={ searchValue } onChange={ handleInput } />
+                <input type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
             </div>
             <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Let's go" />
         </form>

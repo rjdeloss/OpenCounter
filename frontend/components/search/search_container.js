@@ -12,7 +12,6 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => {
-    debugger
     return {
         searchRestaurants: search => dispatch(searchRestaurants(search))
     }
