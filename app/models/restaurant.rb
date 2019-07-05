@@ -53,7 +53,6 @@ class Restaurant < ApplicationRecord
         associated_against: {cuisines: :cuisine}
     
     # def self.search(params)
-    #     # debugger
     #     if params.present?
     #         search(params)
     #     else
