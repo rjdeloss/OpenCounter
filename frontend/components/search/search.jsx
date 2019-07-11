@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import RestaurantIndex from '../restaurants/index/restaurant_index';
+import RestaurantsIndex from '../restaurants/index/restaurant_index_container';
 
 const Search = (props) => {
     const [ searchValue, setSearchValue ] = useState("");
+    // debugger
     
     const handleInput = (e) => { 
         setSearchValue(e.target.value); 
@@ -11,22 +12,43 @@ const Search = (props) => {
     const resetInputField = () => { setSearchValue("") }
 
     const handleSubmit = (e) => {
+        // debugger
         e.preventDefault();
-        props.searchRestaurants(searchValue); 
+        props.searchRestaurants(searchValue);
         resetInputField();
+        props.history.push(`/restaurants/search?search=${ searchValue }`)
+        // debugger
     }
-
-    return (
-        <form className="reservation-form" >
-            <div className="reservation-search-input">
-                <div className="reservation-form-icon-decoration">
-                    <i className="material-icons">search</i>
+    if (props.location.pathname === "/") {
+        return (
+            <form className="reservation-form" >
+                <div className="reservation-search-input">
+                    <div className="reservation-form-icon-decoration">
+                        <i className="material-icons">search</i>
+                    </div>
+                    <input type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
                 </div>
-                <input type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
-            </div>
-            <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Let's go" />
-        </form>
-    )
+                <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Let's go" />
+            </form>
+        )
+    } else {
+        return (
+            <>
+                <div className="compact-search-reservation-background">
+                    <form className="compact-search-reservation-form">
+                        <div className="reservation-search-input">
+                            <div className="reservation-form-icon-decoration">
+                                <i className="material-icons">search</i>
+                            </div>
+                            <input type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
+                        </div>
+                        <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Let's go" />
+                    </form>
+                </div>
+                <RestaurantsIndex />
+            </>
+        )
+    }
 }
 
 // class Search extends React.Component {
