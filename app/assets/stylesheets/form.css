@@ -83,3 +83,21 @@
 #form-selection-item-time {
     border-radius: 0px;
 }
+
+.compact-search-reservation-background {
+    width: 100%; 
+    height: auto; 
+    display: flex; 
+    justify-content: center;
+    background: #c6c6c6; 
+    padding: 8px 0;
+}
+
+.compact-search-reservation-form {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    background: white;
+    height: auto;
+    width: 480px;
+}
