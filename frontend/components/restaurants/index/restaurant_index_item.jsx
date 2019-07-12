@@ -38,8 +38,22 @@ const RestaurantIndexItem = props => {
                     <div className="search-restaurant-name" onClick={handleClick}>
                         <span>{props.restaurant.name}</span>
                     </div>
-                    <div>
-                        <i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star_half</i>
+                    <div className="search-restaurant-ratings">
+                        <div>
+                            <i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star_half</i>
+                        </div>
+                        <span>{props.restaurant.price_range}</span>
+                    </div>
+                    <div className="search-restaurant-cuisine-location">
+                        <span>{props.restaurant.cuisine_id}</span>
+                        <span>{props.restaurant.city}</span>
+                    </div>
+                    <div className="search-restaurant-times">
+                        <button>6:00 PM</button>
+                        <button>6:30 PM</button>
+                        <button>7:00 PM</button>
+                        <button>7:45 PM</button>
+                        <button>8:00 PM</button>
                     </div>
                 </div>
             </div>
