@@ -138,13 +138,55 @@ class RestaurantShow extends React.Component {
                         </section>
                         <div className="restaurant-show-map-container">
                             <div className="restaurant-show-map"><h1>MAP GOES HERE</h1></div>
+                                <i className="material-icons">location_on</i>
+                                <span>{restaurant.address}</span>
                         </div>
                         <section className="restaurant-info-container">
                             <div className="restaurant-info-section">
-                                <div className="show-icon-container"></div>
-
+                                <div className="show-icon-container">
+                                    <i className="material-icons">business</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Neighborhood</span>
+                                    <p>{restaurant.city}</p>
+                                </div>
                             </div>
-                            <div className="icon"></div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">access_time</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Hours of operation</span>
+                                    <p>Mon-Sun 6:00 pm-8:00 pm</p>
+                                </div>
+                            </div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">restaurant</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Cuisines</span>
+                                    <p>{restaurant.cuisine_id}</p>
+                                </div>
+                            </div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">local_phone</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Phone number</span>
+                                    <p>{restaurant.phone_number}</p>
+                                </div>
+                            </div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">credit_card</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Payment options</span>
+                                    <p>AMEX, Discover, MasterCard, Visa</p>
+                                </div>
+                            </div>
 
                         </section>
                     </div>

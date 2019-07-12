@@ -15,4 +15,32 @@ class Cuisine < ApplicationRecord
     has_many :restaurants,
         through: :restaurant_cuisines, 
         source: :restaurant
+
+    CUISINES = [
+        "American", 
+        "Indian", 
+        "Soul", 
+        "Japanese", 
+        "Korean", 
+        "French", 
+        "Mexican", 
+        "Thai", 
+        "Vietnamese", 
+        "Mediterranean", 
+        "Chinese", 
+        "Morrocan", 
+        "Italian", 
+        "Lebanese", 
+        "Seafood",
+        "Indonesian", 
+        "Peruvian", 
+        "Bulgarian", 
+        "African", 
+        "Polish", 
+        "Russian", 
+        "Iranian", 
+        "Portuguese", 
+        "Tapas", 
+        "Brazilian"
+    ]
 end
