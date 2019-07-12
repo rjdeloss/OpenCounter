@@ -86,18 +86,25 @@
 
 .compact-search-reservation-background {
     width: 100%; 
-    height: auto; 
+    height: 80px; 
     display: flex; 
     justify-content: center;
-    background: #c6c6c6; 
-    padding: 8px 0;
+    background: repeating-linear-gradient(
+    -55deg,
+    #393e4a,
+    #393e4a 10px,
+    #2d333f 10px,
+    #2d333f 20px
+  );
 }
 
 .compact-search-reservation-form {
     display: flex;
     flex-direction: row; 
     justify-content: space-between; 
-    background: white;
-    height: auto;
+    background: rgba(0,0,0, 0.12);
+    height: 46px;
     width: 480px;
+    padding: 16px 0;
+    margin: 0 104px; 
 }
