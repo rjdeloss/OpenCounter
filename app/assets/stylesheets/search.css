@@ -1,0 +1,35 @@
+.search-result-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-restaurant-item {
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: row; 
+    width: 768px;
+    padding: 14px 0;
+    border-bottom: 1px solid #d8d9db;
+}
+
+.search-restaurant-img-container {
+    height: 206px; 
+    width: 206px; 
+    background: #538c2b; 
+    border-radius: 4px; 
+}
+
+.search-restaurant-info {
+    display: flex; 
+    flex-direction: column; 
+    width: 560px; 
+    padding: 4px 0 0 16px;
+}
+
+.search-restaurant-name span{
+    font-size: 16px;
+    font-weight: 600;
+    color: #237f9e;
+}
+

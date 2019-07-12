@@ -45,7 +45,9 @@ const Search = (props) => {
                         <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Let's go" />
                     </form>
                 </div>
-                <RestaurantsIndex />
+                <div className="search-result-container">
+                    <RestaurantsIndex />
+                </div>
             </>
         )
     }
