@@ -77,7 +77,9 @@ div.reservation-home-container::after {
 }
 
 .reservation-input-container {
+  padding: 0 0 0 8px;
   box-sizing: border-box;
+  border-right: 1px solid #ebebeb;
   display: flex;
   align-items: center;
   width: 33.3333%;
@@ -91,14 +93,8 @@ div.reservation-home-container::after {
 .reservation-form-input-field {
   background-color: #ffffff;
   height: 100%;
-/*   display: none; */
   border: none;
   -webkit-appearance: none;
-}
-
-.reservation-form-input-field:after {
-  content: "┛";
-  transform: rotate(45deg);
 }
 
 .reservation-form-input-field:hover {
@@ -108,13 +104,13 @@ div.reservation-home-container::after {
 .reservation-search-input {
   display: flex;
   flex-direction: row;
-/*   justify-content: flex-start; */
   align-items: center;
   width: 290px;
   height: 48px;
   background: #ffffff;
   border-radius: 4px;
   box-sizing: border-box; 
+
   /* padding: 0 5px; */
 }
 
@@ -122,6 +118,7 @@ div.reservation-home-container::after {
   height: 90%;
   max-width: 100%;
   border: none;
+  outline: none;
   /* border: 1px solid rgba(0,0,0,0.08); */
 }
 
