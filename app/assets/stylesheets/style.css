@@ -1,6 +1,6 @@
 * {
     font-family: 'Hind Siliguri', Helvetica, sans-serif;
-    color: #333333;
+    color: #2d333f;
     font-size: 16px;
     font-weight: 400
 }
@@ -96,4 +96,8 @@ p {
 
 .material-icons.gold {
     color: #fdaf07;
+}
+
+.material-icons.grey {
+    color: #999999;
 }

@@ -55,7 +55,11 @@
     background-color: white;
     border-bottom: 1px solid #d8d9db;
     z-index: 2;
+}
 
+.restaurant-section-hover:hover{
+    color: #da3742;
+    cursor: pointer;
 }
 
 .restaurant-snippet {
@@ -73,7 +77,11 @@
 .restaurant-title {
     margin: 0 0 16px; 
     padding: 0 0 32px;
-    color: #000000;
+}
+
+.restaurant-title h1{
+    color: #2d333f;
+    font-weight: 600;
 }
 
 
@@ -116,11 +124,9 @@
     height: 35px;
     border-bottom: 1px solid #d8d9db;
     font-size: 14px;
-    app
-
 }
 
-.restaurant-reservation-form select:hover {
+.restaurant-reservation-form select:hover{
     border-bottom: 1px solid #da3744;
 }
 
@@ -259,8 +265,3 @@
 .nav-bar-words > * {
     margin-right: 10px;
 }
-/* .show-page-container {
-    box-sizing: border-box; 
-    width: 24px;
-    height: inherit;
-} */

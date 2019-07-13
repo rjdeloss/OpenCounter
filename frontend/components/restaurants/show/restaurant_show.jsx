@@ -21,23 +21,23 @@ class RestaurantShow extends React.Component {
     //     this.props.fetchRestaurant(this.props.match.params.restaurantId)
     // }
     pageJumpTitle(e) {
-        window.scrollTo(0, this.titleRef.current.offsetTop)
+        window.scrollTo(0, this.titleRef.current.offsetTop -40)
     }
 
     pageJumpPhoto(e) {
-        window.scrollTo(0, this.photoRef.current.offsetTop)
+        window.scrollTo(0, this.photoRef.current.offsetTop - 40)
     }
     
     pageJumpMenu(e) {
-        window.scrollTo(0, this.menuRef.current.offsetTop)
+        window.scrollTo(0, this.menuRef.current.offsetTop - 40)
     }
     
     pageJumpSpecials(e) {
-        window.scrollTo(0, this.specialsRef.current.offsetTop)
+        window.scrollTo(0, this.specialsRef.current.offsetTop - 40)
     }
 
     pageJumpReviews(e) {
-        window.scrollTo(0, this.reviewsRef.current.offsetTop)
+        window.scrollTo(0, this.reviewsRef.current.offsetTop - 40)
     }
     render() {
 
@@ -54,15 +54,15 @@ class RestaurantShow extends React.Component {
                 <div className="show-page-content-container">
                     <div className="show-page-restaurant-content">
                         <nav className="restaurant-profile-nav">
-                                <p onClick={this.pageJumpTitle}>Overview</p>
-                                <p onClick={this.pageJumpPhoto}>Photos</p>
-                                <p onClick={this.pageJumpMenu}>Menu</p>
-                                <p onClick={this.pageJumpSpecials}>Specials</p>
-                                <p onClick={this.pageJumpReviews}>Reviews</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpTitle}>Overview</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpPhoto}>Photos</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpMenu}>Menu</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpSpecials}>Specials</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpReviews}>Reviews</p>
                         </nav>
                         <div className="restaurant-snippet">
                             <div className="restaurant-title">
-                                    <h1 ref={this.titleRef} className="restaurant-name-location">{restaurant.name} - {restaurant.city}</h1>
+                                    <h1 ref={this.titleRef} className="restaurant-name-location">{restaurant.name}</h1>
                             </div>
                             <article className="nav-bar-words">
                                 <div>
