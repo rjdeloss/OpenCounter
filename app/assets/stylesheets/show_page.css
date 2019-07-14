@@ -1,7 +1,8 @@
 .show-page-container {
-    width: 1600px; 
+    width: 100%; 
     margin: 0 auto; 
     height: auto; 
+    background-color: white;
 }
 
 .show-page-image-container {
@@ -54,7 +55,11 @@
     background-color: white;
     border-bottom: 1px solid #d8d9db;
     z-index: 2;
+}
 
+.restaurant-section-hover:hover{
+    color: #da3742;
+    cursor: pointer;
 }
 
 .restaurant-snippet {
@@ -72,7 +77,11 @@
 .restaurant-title {
     margin: 0 0 16px; 
     padding: 0 0 32px;
-    color: #000000;
+}
+
+.restaurant-title h1{
+    color: #2d333f;
+    font-weight: 600;
 }
 
 
@@ -117,7 +126,7 @@
     font-size: 14px;
 }
 
-.restaurant-reservation-form select:hover {
+.restaurant-reservation-form select:hover{
     border-bottom: 1px solid #da3744;
 }
 
@@ -177,16 +186,20 @@
 
 .restaurant-show-map-container {
     box-sizing: inherit;
-    display: block;
+    /* display: block; */
     width: inherit;
-    height: 210px;
+    height: 280px;
     margin: 30px 0 16px; 
     padding: 4px 4px 8px;
     border: 1px solid #d8d9db;
+    border-radius: 4px;
 }
 
+.restaurant-show-map-container span{
+    color: #da3742;
+}
 .restaurant-show-map {
-    height: 100%;
+    height: 92%;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -207,11 +220,17 @@
 }
 
 .restaurant-info-container {
+    background-color: white; 
     box-sizing: inherit;
     display: flex; 
     justify-content: flex-start; 
     flex-direction: column;
+    /* outline: 1px dotted purple; */
+    height: 400px;
+    padding: 0 6px;
+    margin: 6px 0;
 }
+
 
 .restaurant-info-section {
     box-sizing: inherit;
@@ -219,6 +238,22 @@
     justify-content: flex-start; 
     flex-direction: row;
     height: auto;
+    margin: 0 0 16px;
+    /* outline: 1px dotted skyblue; */
+}
+
+.show-icon-container {
+    padding: 0 6px 0 0;
+}
+
+.restaurant-info-text {
+    padding: 6px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.restaurant-info-text span{
+    font-weight: 600;
 }
 
 .nav-bar-words {
@@ -230,8 +265,3 @@
 .nav-bar-words > * {
     margin-right: 10px;
 }
-/* .show-page-container {
-    box-sizing: border-box; 
-    width: 24px;
-    height: inherit;
-} */

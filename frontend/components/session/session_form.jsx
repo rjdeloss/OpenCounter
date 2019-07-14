@@ -19,24 +19,22 @@ class Signup extends React.Component {
     }
 
     handleInput(field) {
-        return e => {
-            this.setState({[field]: e.target.value})
+        return e => {this.setState({[field]: e.target.value})
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const { fname, lname, email, password, confirmPassword } = this.state;
-            if (password !== confirmPassword) {
-                return this.props.receiveErrors(["re-password"]);
+        if (confirmPassword === "" || password !== confirmPassword) {
+                this.props.receiveErrors(["re-password"]);
             } else {
                 // if (confirmPassword === "") {
                     return this.props.action({ fname, lname, email, password }).then(this.props.closeModal);
-                }
-            
-        // this.props.formType === "Create Account" ?
-        //     this.props.signup(this.state).then(this.props.closeModal) : 
-        //     this.props.login(this.state).then(this.props.closeModal)
+                } 
+        this.props.formType === "Create Account" ?
+            this.props.action(this.state).then(this.props.closeModal) : 
+            this.props.login(this.state).then(this.props.closeModal)
         }
 
     renderErrors() {
@@ -47,9 +45,7 @@ class Signup extends React.Component {
         const password = errors.includes("Password is too short (minimum is 6 characters)") ? <li className="errors">Please enter your password.</li> : null;
         const confirmPassword = errors.includes("re-password") ? <li className="errors">Please re-enter your password.</li> : null;
         const signinEmail = errors.includes("email") ? <li className="errors">Please enter your password.</li> : null;
-        const signinPassword = errors.includes("password") ? <li className="errors">Please enter your password.</li> : null;
-        // const password = errors.includes("Password is too short (minimum is 6 characters)") ? <li className="errors">Please enter your password.</li> : null;
-
+        const signinPassword = errors.includes("password") || errors.includes("Invalid username/password combination")  ? <li className="errors">Please enter your password.</li> : null;
         if (this.props.formType === "Create Account") {
             return (
                 <ul>

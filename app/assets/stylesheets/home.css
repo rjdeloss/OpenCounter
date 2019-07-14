@@ -2,7 +2,7 @@
     position: relative;
     box-sizing: border-box;
     height: 416px;
-    width: 1600px;
+    max-width: 1600px;
     margin: 0 auto;
     background-image: url('https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg');
     background-repeat: no-repeat;
@@ -26,17 +26,15 @@ div.reservation-home-container::after {
 }
 
 .reservation-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     top: 3%;
     position: relative;
-    z-index: 2;
-    flex-direction: column;
     box-sizing: border-box;
     height: 120px;
     width: 962px;
-    display: flex;
-    justify-content: center;
-
-    /* background: rgb(0, 0, 0); */
+    z-index: 2;
 }
 
 .reservation-form-header {
@@ -51,78 +49,92 @@ div.reservation-home-container::after {
     font-weight: 500;
 }
 
-.reservation-form-splash {
-    box-sizing: inherit;
-    display: flex; 
-    justify-content: space-between;
-    box-sizing: border-box;
-    
+.reservation-form-holder {
+  display: flex;
+  
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .reservation-inputs {
-    box-sizing: border-box;
-    width: 475px;
-    display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    border-radius: 3px; 
-    /* overflow: hidden; */
-
+  border: 1px solid rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  width: 480px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: center;
+  border-radius: 3px; 
+  overflow: hidden;
+  background: #ffffff;
 }
 
-.reservation-form-splash input{
-    font-weight: 600;
-    box-sizing: border-box;
-    display:inline-block; 
-    border-style: none;
-    height: 48px;
-    outline: none;
-    width: 100%;
-    margin: 0 0 8px;
-    padding: 0 8px;
-    border: 1px solid rgba(0,0,0, 0.12);
-    border-radius: 3px;
+.reservation-input-container {
+  padding: 0 0 0 8px;
+  box-sizing: border-box;
+  border-right: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  width: 33.3333%;
+  height: 100%; 
 }
 
-.reservation-form-splash input[type=submit] {
-    display: inline-block;
-    width: 144px;
-    border-radius: 4px;
-    font-weight: 500;
-    cursor: pointer;
-    background-color: #da3743;
-    /* border-color: #b8222d; */
-    color: #ffffff;
-    text-align: center;
-    transition: background-color 300ms ease-out;
+.reservation-form-icon-decoration {
+  padding: 0 2px 0 8px;
 }
 
-.reservation-form-splash input:hover {
-    border-color: rgba(0,0,0, 0.2);
+.reservation-form-input-field {
+  background-color: #ffffff;
+  height: 100%;
+  border: none;
+  -webkit-appearance: none;
 }
 
-.reservation-form-splash input:focus {
-    outline: 2px solid #acacac;
-}
-
-
-.reservation-form-splash input[type=submit]:hover {
-    background-color: #b8222d;
-    color: #ffffff;
-}
-
-.reservation-inputs {
-    align-items: center;
-    display: flex;
-    flex-basis: 33.3333%;
-    padding-left: .5rem;
+.reservation-form-input-field:hover {
+  -webkit-appearance: none;
 }
 
 .reservation-search-input {
-    width: 280px;
-    padding: 8px 0px 8px 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 290px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box; 
+
+  /* padding: 0 5px; */
+}
+
+.reservation-search-input-field {
+  height: 90%;
+  max-width: 100%;
+  border: none;
+  outline: none;
+  /* border: 1px solid rgba(0,0,0,0.08); */
 }
 
 .reservation-submit-input {
-    padding: 8px 0px 8px 40px;
+  display: inline-block;
+  border-radius: 4px;
+  width: 140px; 
+  height: 45px;
+  background-color: #da3743;
+  border-color: #b8222d;
+  color: #ffffff;
+  text-align: center;
+  transition: background-color 300ms ease-out;
+}
+
+.reservation-submit-input:hover {
+  background-color: #b8222d;
+   color: #ffffff;
 }

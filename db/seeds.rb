@@ -10,6 +10,8 @@
 require 'faker'
 
 User.destroy_all
+RestaurantCuisine.destroy_all
+Cuisine.destroy_all
 Restaurant.destroy_all
 Review.destroy_all
 Reservation.destroy_all
@@ -20,6 +22,8 @@ User.create!(
     lname: "Jack", 
     password: "111111"
 )
+
+Cuisine::CUISINES.each { |category| Cuisine.create!(cuisine: category)}
 
 5.times do 
     User.create!(
@@ -41,22 +45,30 @@ CLOSE_TIME = ["20:00", "21:00", "22:00", "23:00"]
         name: Faker::Restaurant.unique.name, 
         address: Faker::Address.street_address, 
         city: Faker::Address.city, 
-        zip: Faker::Address.zip[0..4],
+        zip: Faker::Address.zip[0..4].to_s,
         lat: Faker::Address.latitude,
         lon: Faker::Address.longitude,
         phone_number: Faker::PhoneNumber.cell_phone, 
         price_range: PRICE_RANGE.sample, 
         description: Faker::Restaurant.description,
+        cuisine_id: (0..25).to_a.sample,
         open_time: OPEN_TIME.sample,
         close_time: CLOSE_TIME.sample,
         capacity: rand(80..120)
     )
 end
 
-
-# REVIEWS
 RESTAURANT_IDS = Restaurant.all.map { |restaurant| restaurant.id }
 USER_IDS = User.all.map {|user| user.id}
+
+Restaurant.all.each do |restaurant|
+    RestaurantCuisine.create(
+        restaurant_id: restaurant.id, 
+        cuisine_id: restaurant.cuisine_id
+    )
+end
+
+# REVIEWS
 User.all.each do |user|
     20.times do 
         Review.create(
