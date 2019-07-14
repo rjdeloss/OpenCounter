@@ -7,7 +7,6 @@ const Home = () => {
     return (
         <>
     <header>
-        {/* THIS WILL GO INTO IT'S OWN CONTAINER NAMED HOME */}
         <div className="reservation-home-container">
             <div className="reservation-form-container">
                 <h1 className="reservation-form-header">Find your table for any occasion</h1>

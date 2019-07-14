@@ -51,15 +51,18 @@
     top: 0px;
     width: 100%; 
     height: 48px; 
-    padding: 0 8px;
+    margin: 0 16px;
     background-color: white;
     border-bottom: 1px solid #d8d9db;
     z-index: 2;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .restaurant-section-hover:hover{
     color: #da3742;
     cursor: pointer;
+    border-bottom: 2px solid #da3742;
 }
 
 .restaurant-snippet {
@@ -77,6 +80,7 @@
 .restaurant-title {
     margin: 0 0 16px; 
     padding: 0 0 32px;
+    border-bottom: 1px solid #d8d9db;
 }
 
 .restaurant-title h1{
@@ -86,8 +90,8 @@
 
 
 .restaurant-profile-nav > p {
-    padding: 14px 8px;
-    
+    padding: 14px 0;
+    margin: 0 32px 0 0;
 }
 
 .restaurant-reservation-form {
