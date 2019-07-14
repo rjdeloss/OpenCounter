@@ -16,7 +16,7 @@
 
 class Review < ApplicationRecord
     validates :user_id, :restaurant_id, :overall_rating, :food_rating,
-    :ambience_rating, :value_rating, :body, presence: true
+    :ambiance_rating, :value_rating, :body, presence: true
 
     belongs_to :user
     belongs_to :restaurant 
