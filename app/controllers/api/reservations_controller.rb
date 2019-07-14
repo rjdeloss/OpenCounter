@@ -21,7 +21,10 @@ class Api::ReservationsController < ApplicationController
         render :show
     end
     
+    private
+
     def reservation_params
-        params.require(:reservation).permit(:start_datetime, :party_size)
+        params.require(:reservation).permit(:start_datetime, :party_size, :restaurant_id)
     end
+
 end
