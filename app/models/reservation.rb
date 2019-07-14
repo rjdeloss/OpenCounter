@@ -12,7 +12,7 @@
 #
 
 class Reservation < ApplicationRecord
-    vaildates :user_id, :restaurant_id, :start_datetime, :party_size, presence: true
+    validates :user_id, :restaurant_id, :start_datetime, :party_size, presence: true
     belongs_to :user
     belongs_to :restaurant
 end
