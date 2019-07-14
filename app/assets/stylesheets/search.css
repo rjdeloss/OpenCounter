@@ -1,0 +1,69 @@
+.search-result-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-restaurant-item {
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: row; 
+    width: 768px;
+    padding: 14px 0;
+    border-bottom: 1px solid #d8d9db;
+}
+
+.search-restaurant-img-container {
+    height: 206px; 
+    width: 206px; 
+    background: url('http://www.domkucafe.com/wp-content/uploads/2018/01/restaurants-in-Miami-1024x683-1024x585.jpg'); 
+    border-radius: 4px; 
+}
+
+.search-restaurant-info {
+    display: flex; 
+    flex-direction: column; 
+    width: 560px; 
+    padding: 16px 0 0 16px;
+}
+
+.search-restaurant-name span{
+    font-size: 18px;
+    font-weight: 600;
+    color: #237f9e;
+}
+
+.search-restaurant-cuisine-location {
+    box-sizing: border-box;
+    display: flex; 
+    justify-content: space-between;
+}
+
+
+.search-restaurant-ratings {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.search-restaurant-times {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    padding: 32px 0 0 0; 
+}
+
+.search-restaurant-times button{
+    background-color: #da3743;
+    border-color: #bb232e;
+    border-radius: 4px; 
+    color: #ffffff; 
+    font-weight: 400;
+    width: 100px; 
+    height: 30px;
+}
+
+.search-restaurant-times button:hover{
+    background-color: #bb232e;
+    color: #ffffff;
+}

@@ -20,3 +20,7 @@ export const fetchRestaurants = filters => dispatch => (
 export const fetchRestaurant = id => dispatch => (
     RestaurantApiUtil.fetchRestaurant(id).then(restaurant => dispatch(receiveRestaurant(restaurant)))
 )
+
+export const searchRestaurants = search => dispatch => (
+    RestaurantApiUtil.searchRestaurants(search).then(restaurants => dispatch(receiveRestaurants(restaurants)))
+)

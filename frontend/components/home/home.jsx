@@ -1,37 +1,19 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import RestaurantIndexContainer from '../restaurants/index/restaurant_index_container';
+import Search from '../search/search_container';
 
 const Home = () => {
     return (
         <>
     <header>
-        
         {/* THIS WILL GO INTO IT'S OWN CONTAINER NAMED HOME */}
         <div className="reservation-home-container">
             <div className="reservation-form-container">
                 <h1 className="reservation-form-header">Find your table for any occasion</h1>
-                <form className="reservation-form-splash">
-                    <div className="reservation-inputs">
-                        <input className="form-input-item" type="date" name="" id="" />
-                        <div className="form-selection-item">
-                            <select id="form-selection-item-time">
-                                <option value="7:00 PM">7:00 PM</option>
-                            </select>
-                        </div>
-                        <div className="form-selection-item">
-                            <select name="" id="">
-                                <option value="2 people">2 people</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="reservation-search-input">
-                        <input className="form-input-item" type="search" name="" placeholder="Manhattan" />
-                    </div>
-                    <div className="reservation-submit-input" >
-                        <input className="form-input-item" type="submit" value="Let's go" />
-                    </div>
-                </form>
+                <div className="reservation-form-holder">
+                    <Search />
+                </div>
             </div>
         </div>
     </header>

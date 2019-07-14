@@ -10,7 +10,9 @@
 #
 
 class RestaurantCuisine < ApplicationRecord
-
+    validates :restaurant_id, :cuisine_id, presence: true
+    validates :restaurant_id, uniqueness: { scope: :cuisine_id }
+    
     belongs_to :cuisine
     belongs_to :restaurant
 end

@@ -21,23 +21,23 @@ class RestaurantShow extends React.Component {
     //     this.props.fetchRestaurant(this.props.match.params.restaurantId)
     // }
     pageJumpTitle(e) {
-        window.scrollTo(0, this.titleRef.current.offsetTop)
+        window.scrollTo(0, this.titleRef.current.offsetTop -40)
     }
 
     pageJumpPhoto(e) {
-        window.scrollTo(0, this.photoRef.current.offsetTop)
+        window.scrollTo(0, this.photoRef.current.offsetTop - 40)
     }
     
     pageJumpMenu(e) {
-        window.scrollTo(0, this.menuRef.current.offsetTop)
+        window.scrollTo(0, this.menuRef.current.offsetTop - 40)
     }
     
     pageJumpSpecials(e) {
-        window.scrollTo(0, this.specialsRef.current.offsetTop)
+        window.scrollTo(0, this.specialsRef.current.offsetTop - 40)
     }
 
     pageJumpReviews(e) {
-        window.scrollTo(0, this.reviewsRef.current.offsetTop)
+        window.scrollTo(0, this.reviewsRef.current.offsetTop - 40)
     }
     render() {
 
@@ -54,15 +54,15 @@ class RestaurantShow extends React.Component {
                 <div className="show-page-content-container">
                     <div className="show-page-restaurant-content">
                         <nav className="restaurant-profile-nav">
-                                <p onClick={this.pageJumpTitle}>Overview</p>
-                                <p onClick={this.pageJumpPhoto}>Photos</p>
-                                <p onClick={this.pageJumpMenu}>Menu</p>
-                                <p onClick={this.pageJumpSpecials}>Specials</p>
-                                <p onClick={this.pageJumpReviews}>Reviews</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpTitle}>Overview</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpPhoto}>Photos</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpMenu}>Menu</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpSpecials}>Specials</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpReviews}>Reviews</p>
                         </nav>
                         <div className="restaurant-snippet">
                             <div className="restaurant-title">
-                                    <h1 ref={this.titleRef} className="restaurant-name-location">{restaurant.name} - {restaurant.city}</h1>
+                                    <h1 ref={this.titleRef} className="restaurant-name-location">{restaurant.name}</h1>
                             </div>
                             <article className="nav-bar-words">
                                 <div>
@@ -138,13 +138,55 @@ class RestaurantShow extends React.Component {
                         </section>
                         <div className="restaurant-show-map-container">
                             <div className="restaurant-show-map"><h1>MAP GOES HERE</h1></div>
+                                <i className="material-icons">location_on</i>
+                                <span>{restaurant.address}</span>
                         </div>
                         <section className="restaurant-info-container">
                             <div className="restaurant-info-section">
-                                <div className="show-icon-container"></div>
-
+                                <div className="show-icon-container">
+                                    <i className="material-icons">business</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Neighborhood</span>
+                                    <p>{restaurant.city}</p>
+                                </div>
                             </div>
-                            <div className="icon"></div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">access_time</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Hours of operation</span>
+                                    <p>Mon-Sun 6:00 pm-8:00 pm</p>
+                                </div>
+                            </div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">restaurant</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Cuisines</span>
+                                    <p>{restaurant.cuisine_id}</p>
+                                </div>
+                            </div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">local_phone</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Phone number</span>
+                                    <p>{restaurant.phone_number}</p>
+                                </div>
+                            </div>
+                            <div className="restaurant-info-section">
+                                <div className="show-icon-container">
+                                    <i className="material-icons">credit_card</i>
+                                </div>
+                                <div className="restaurant-info-text">
+                                    <span>Payment options</span>
+                                    <p>AMEX, Discover, MasterCard, Visa</p>
+                                </div>
+                            </div>
 
                         </section>
                     </div>
