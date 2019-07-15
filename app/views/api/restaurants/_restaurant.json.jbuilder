@@ -9,7 +9,7 @@ json.extract! restaurant,
  :phone_number,
  :price_range,
  :description,
- :cuisine_id,
+#  :cuisine_id,
  :open_time,
  :close_time,
  :capacity
