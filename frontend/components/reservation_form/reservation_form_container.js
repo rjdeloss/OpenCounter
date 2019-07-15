@@ -4,7 +4,11 @@ import ReservationForm from './reservation_form';
 import { createReservation, deleteReservation } from '../../actions/reservation_action';
 
 const msp = (state, ownProps) => {
-
+    const restaurants = Object.values(state.entities.restaurants)
+    return ({
+        restaurants,
+        errors: errors.reservation, 
+    })
 }
 
 const mdp = dispatch => ({

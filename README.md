@@ -3,36 +3,29 @@
 openCounter is a clone of OpenTable, developed to showcase my knowledge as a fullstack developer. It's purpose is to facilitate the process of reserving tables at restaurants. This app is able to search for restaurants, give users information regarding the restaurant such as times available for reservations, available seating depending on party size, and provide the users the ability to make a reservation.  
 
 
-![openCounter](https://open-counter.herokuapp.com)
+![openCounter Live](https://open-counter.herokuapp.com)
 
-## Technoloigies
-### Backend
+## Technoloigies Used
 
-### Frontend
+openCounter was developed with a PostgreSQL database, Ruby on Rails backend, and hosted by Heroku. When communicating with the backend, the application uses RESTful API's and responds with JSON data. The frontend was designed with React, Redux, and styled using CSS.
 
-### Features
-
+Other tools used in this application are JBuilder, NodeJS, JQuery to make Ajax requests, PGSearch Gem, Node Package Manager (npm), Webpack, React DOM, React Router, and React History for browser manipulation.
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
+Users can navigate openCounter's selection of restaurants by using the search tool. Based on thier desire, the user can search either by name, city, or category. This allows them to condense the list of restaurants available to make a selection. 
 
-Things you may want to cover:
+<!-- [!Search] -->
 
-* Ruby version
+The Restaurant show page includes information to propt the user towards reserving a table such as, ratings, reviews, type of cuisine, estimate cost of dining at the restaurant, and contact information. This page also includes a reservation form that stays with the user while scrolling through the restaurant show page which keeps the incentive of reserving a table once the user has gathered enough enformation. 
 
-* System dependencies
+## Code Snippets
 
-* Configuration
+When retrieving all the restaurants for search, openCounters uses ```fetchRestaurants``` RESTful call to populate the initial restauranants. Upon clicking "Let's Go" (on the home page) or "Find a table" (on the search page), the application then uses ```searchRestaurants``` Restful call to retrieve the restaurants matching the search criteria.
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Future Implementations
+* Users being able to search 
+* Users making reservations at restaurants
+* Users being able to see Their reservation history and reviews
+* Game-ify reservation process for perks and discounts
