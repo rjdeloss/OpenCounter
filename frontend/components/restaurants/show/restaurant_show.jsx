@@ -70,7 +70,7 @@ class RestaurantShow extends React.Component {
                                 </div>
                                 <i className="material-icons">chat_bubble_outline</i><p>{restaurant.zip} reviews  </p>
                                 <i className="material-icons">local_atm</i><p>{restaurant.price_range}  </p>
-                                <i className="material-icons">restaurant</i><p>cuisine</p>
+                                <i className="material-icons">restaurant</i><p>{restaurant.cuisine}</p>
                                 <br/>
                             </article>
                             <p>{restaurant.description}</p>
