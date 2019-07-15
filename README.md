@@ -15,13 +15,40 @@ Other tools used in this application are JBuilder, NodeJS, JQuery to make Ajax r
 ## Features
 Users can navigate openCounter's selection of restaurants by using the search tool. Based on thier desire, the user can search either by name, city, or category. This allows them to condense the list of restaurants available to make a selection. 
 
-<!-- [!Search] -->
+![Search](https://github.com/Droool/OpenCounter/blob/master/app/assets/images/search_component.png?raw=true)
 
 The Restaurant show page includes information to propt the user towards reserving a table such as, ratings, reviews, type of cuisine, estimate cost of dining at the restaurant, and contact information. This page also includes a reservation form that stays with the user while scrolling through the restaurant show page which keeps the incentive of reserving a table once the user has gathered enough enformation. 
 
+![RestaurantShowPage](https://github.com/Droool/OpenCounter/blob/master/app/assets/images/restaurant_show.png?raw=true)
 ## Code Snippets
 
-When retrieving all the restaurants for search, openCounters uses ```fetchRestaurants``` RESTful call to populate the initial restauranants. Upon clicking "Let's Go" (on the home page) or "Find a table" (on the search page), the application then uses ```searchRestaurants``` Restful call to retrieve the restaurants matching the search criteria.
+When retrieving all the restaurants for search, openCounters uses ```fetchRestaurants``` RESTful call to populate the initial restauranants. Upon clicking "Let's Go" (on the home page) or "Find a table" (on the search page), the application then uses ```searchRestaurants``` Restful call to retrieve the restaurants matching the search criteria. Once the user clicks on the restaurant, another call is made using ```fetchRestaurant``` to retreive the information that populates the show page. 
+
+
+```
+export const fetchRestaurants = data => (
+    $.ajax({
+        method: `get`, 
+        url: `api/restaurants`, 
+        data
+    })
+)
+
+export const fetchRestaurant = id => (
+    $.ajax({
+        method: `get`, 
+        url: `api/restaurants/${id}`, 
+    })
+)
+
+export const searchRestaurants = search => (
+    $.ajax({
+        method: `get`,
+        url: `api/restaurants`,
+        data: { search }
+    })
+)
+```
 
 
 ## Future Implementations
