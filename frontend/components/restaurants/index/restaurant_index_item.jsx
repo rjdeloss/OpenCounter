@@ -22,7 +22,7 @@ const RestaurantIndexItem = props => {
                     <div> <div>
                         <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i>
                     </div>*<span>review count</span></div>
-                    <div>Cuisine * {props.restaurant.price_range} * {props.restaurant.city}</div>
+                    <div>{props.restaurant.cuisine} * {props.restaurant.price_range} * {props.restaurant.city}</div>
                     <div>{props.restaurant.zip} of times booked</div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ const RestaurantIndexItem = props => {
                         <span>{props.restaurant.price_range}</span>
                     </div>
                     <div className="search-restaurant-cuisine-location">
-                        <span>{props.restaurant.cuisine_id}</span>
+                        <span>{props.restaurant.cuisine}</span>
                         <span>{props.restaurant.city}</span>
                     </div>
                     <div className="search-restaurant-times">

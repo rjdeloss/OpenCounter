@@ -16,9 +16,9 @@ const App = () => (
     <div className="container">
         <Modal />
         <NavBar />
-            <Route path="/restaurants/search" component={Search} />
         <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/restaurants/search" component={Search} />
             <Route path="/restaurants/:restaurantId" component={Show} />
         </Switch>
         <Footer />
