@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_133730) do
     t.integer "user_id", null: false
     t.integer "restaurant_id", null: false
     t.datetime "start_datetime", null: false
+    t.datetime "end_datetime"
     t.integer "party_size", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
