@@ -16,4 +16,9 @@ class Reservation < ApplicationRecord
     
     belongs_to :user
     belongs_to :restaurant
+
+    def parsed_start_datetime 
+        start_datetime.strftime("%a, %b %-d at %-l:%M %P")
+    end
+
 end
