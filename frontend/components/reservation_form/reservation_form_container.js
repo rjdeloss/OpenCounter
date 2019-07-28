@@ -4,10 +4,12 @@ import ReservationForm from './reservation_form';
 import { createReservation, deleteReservation } from '../../actions/reservation_action';
 
 const msp = (state, ownProps) => {
-    const restaurants = Object.values(state.entities.restaurants)
+    debugger
     return ({
-        restaurants,
-        errors: errors.reservation, 
+        restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
+        userId: state.session.id,
+        errors: state.errors.reservation, 
+        reservation: state.entities.reservation, 
     })
 }
 

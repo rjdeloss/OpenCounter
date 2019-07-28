@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
+import ReservationForm from '../../reservation_form/reservation_form_container';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -98,44 +99,7 @@ class RestaurantShow extends React.Component {
                     </div>
                     {/* PAGE INFO SECTION */}
                     <div className="show-page-restaurant-info">
-                        <section className="restaurant-reservation-form">
-                                <h3 className="restaurant-reservation-form-title" ><span>Make a reservation</span></h3>
-                            <form className="">
-                                <label>Party Size
-                                    <select className="restaurant-reservation-form-field" name="party-size" id="">
-                                        <option value="1">1 person</option>
-                                        <option value="2">2 people</option>
-                                        <option value="3">3 people</option>
-                                        <option value="4">4 people</option>
-                                        <option value="5">5 people</option>
-                                        <option value="6">6 people</option>
-                                        <option value="7">7 people</option>
-                                        <option value="8">8 people</option>
-                                        <option value="9">9 people</option>
-                                        <option value="10">10 people</option>
-                                    </select>
-                                </label>
-                                <section className="reservation-field-holder">
-                                    <label >Time
-                                        <select className="restaurant-reservation-form-field" name="date" id="">
-                                            <option value="7:00 PM">7:00 PM</option>
-                                            <option value="7:15 PM">7:15 PM</option>
-                                            <option value="7:30 PM">7:30 PM</option>
-                                            <option value="7:45 PM">7:45 PM</option>
-                                            <option value="8:00 PM">8:00 PM</option>
-                                            <option value="8:15 PM">8:15 PM</option>
-                                            <option value="8:30 PM">8:30 PM</option>
-                                            <option value="8:45 PM">8:45 PM</option>
-                                            <option value="9:00 PM">9:00 PM</option>
-                                        </select>
-                                    </label>
-                                    <label >Date
-                                        <input type="date" name="" id=""/>
-                                    </label>
-                                </section>
-                                <input className="reservation-submit" type="submit" value="Find a Table"/>    
-                            </form>
-                        </section>
+                        <ReservationForm />
                         <div className="restaurant-show-map-container">
                             <div className="restaurant-show-map"><h1>MAP GOES HERE</h1></div>
                                 <i className="material-icons">location_on</i>

@@ -19,9 +19,11 @@ export const receiveReservationErrors = errors =>  ({
     errors
 })
 
-export const createReservation = reservation => dispatch => (
+export const createReservation = reservation => dispatch => {
+    debugger
+    return (
     ReservationApiUtil.createReservation(reservation).then(reservation => dispatch(createReservation(reservation)))
-)
+)}
 
 export const deleteReservation = id => dispatch => (
     ReservationApiUtil.deleteReservation(id).then(reservation => dispatch(removeReservation(reservation)))
