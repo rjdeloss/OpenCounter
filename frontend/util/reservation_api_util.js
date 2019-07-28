@@ -5,13 +5,15 @@ export const fetchReservation = id => (
     })
 )
 
-export const createReservation = reservation => (
+export const createReservation = reservation => { 
+    debugger
+    return(
     $.ajax({
         method: `post`, 
-        url: `api/reservations`, 
+        url: `api/restaurants/${reservation.restaurant_id}/reservations`, 
         data: { reservation }
     })
-)
+)}
 
 export const deleteReservation = id => (
     $.ajax({
