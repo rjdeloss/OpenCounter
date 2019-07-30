@@ -1,5 +1,5 @@
 class Api::ReservationsController < ApplicationController
-    before_action :ensure_logged_in
+    before_action :require_logged_in
 
     def show
         @reservation = Reservation.find(params[:id])
@@ -8,9 +8,10 @@ class Api::ReservationsController < ApplicationController
     def create
         @reservation = Reservation.new(reservation_params)
         @reservation.user_id = current_user.id
-        if @reservation.save!
+        if @reservation.save
             render :show
         else
+            # debugger
             render json: @reservation.errors.full_messages, status: 422
         end
     end

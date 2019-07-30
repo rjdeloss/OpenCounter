@@ -13,6 +13,7 @@
 
 class Reservation < ApplicationRecord
     validates :user_id, :restaurant_id, :start_datetime, :party_size, presence: true
+    validate :operating_hours, :booking_reservations, :no_customer_overlap
     
     belongs_to :user
     belongs_to :restaurant
@@ -42,13 +43,13 @@ class Reservation < ApplicationRecord
                     month: start_datetime.month, 
                     year: start_datetime.year, 
                     ))
-                    errors[:reservation] << "Restaurant must be open to make reservation"
+                    errors[:reservation] << "Restaurant must be open to make reservation."
                 end
             end
 
     def booking_reservations 
         if start_datetime < DateTime.now.change(offset: "+0000")
-            errors[:reservation] << "Cannot make reservations before current time"
+            errors[:reservation] << "Cannot make reservations before current time."
         end
     end
     
@@ -57,8 +58,8 @@ class Reservation < ApplicationRecord
         end_time = self.end_datetime + 1.hour
 
         if Reservation.where("start_datetime > ? AND end_datetime < ?", start_time, end_time)
-            .where("user_id = ?", user_id).exsists?
-            errors[:reservation] << "We're sorry. Reservation has been taken"
+            .where("user_id = ?", user_id).exists?
+            errors[:reservation] << "We're sorry. Reservation has been taken."
         end
     end
 
