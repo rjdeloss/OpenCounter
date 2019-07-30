@@ -6,22 +6,29 @@ class ReservationForm extends React.Component {
         super(props);
             this.state = {
                 party_size: 2, 
-                time: moment(this.props.restaurant.open_time).format('LT'),
-                date: moment().format('lll')
+                time: moment(this.props.restaurant.open_time).utc().format('LT'),
+                date: moment().format().substr(0, 10)
             }
             this.handleSubmit = this.handleSubmit.bind(this);
         }
     
     handleSubmit(e) {
-        const reservation = {
-            restaurant_id: restaurant.id,
-            table_size,
-            start_datetime: date + " " + time
-        };
+        const { restaurant, userId, openLogin } = this.props;
+        const { party_size, time, date } = this.state;
+        debugger
+        if (!userId) {
+            debugger
+            openLogin();
+        } else {
+            const reservation = {
+                restaurant_id: restaurant.id,
+                party_size,
+                start_datetime: date + " " + time
+            };
 
-    
-        e.preventDefault();
-        this.props.createReservation(reservation);
+            e.preventDefault();
+            this.props.createReservation(reservation);
+        }
     } 
     // const [inputs, setInputs] = useState({})
 
@@ -30,15 +37,19 @@ class ReservationForm extends React.Component {
     }
 
     renderErrors() {
-        const errors = props.errors; 
+        const errors = Object.values(this.props.errors); 
+        debugger
         if (errors.length === 0) {
             return null 
         } else {
-            const errorList = errors.map( (error, i) => (
-                <li className="reservation-error" key={i} >{error}</li>
-            ));
+            const errorList = errors.map((error, i) => {
+                const cleanedError = error.split(' ').splice(1).join(' ');
+                return (
+                    <li className="errors" key={i} >{cleanedError}</li>
+                )
+            });
             return (
-                <ul className="reservation-error-container">
+                <ul className="restaurant-reservation-error-container">
                     { errorList }
                 </ul>
             )
@@ -58,14 +69,15 @@ class ReservationForm extends React.Component {
 
     timeSelect() {
         const {open_time, close_time} = this.props.restaurant; 
-        const openHour = new Date(open_time).getHours();
-        const closeHour = new Date(close_time).getHours();
-
+        const open = new Date(open_time); 
+        const close = new Date(close_time);
+        const openHour = new Date(open.getTime() + open.getTimezoneOffset() * 60000).getHours();
+        const closeHour = new Date(close.getTime() + close.getTimezoneOffset() * 60000).getHours();
         let timeArr = [];
         for (let i = openHour; i < closeHour; i++) {
             let hr = i > 12 ? (i -12).toString() : i.toString();
             
-            for (let j = 0; j <= 45; j += 15) {
+            for (let j = 0; j <= 30; j += 30) {
                 let timeStr = hr + ":";
                 timeStr += j=== 0 ? "00" : j.toString();
                 timeStr += i >= 12 ? " PM" : " AM";
@@ -82,10 +94,12 @@ class ReservationForm extends React.Component {
 
     }
     render() {
-        debugger
+        
+
         return (
             <section className="restaurant-reservation-form">
                 <h3 className="restaurant-reservation-form-title" ><span>Make a reservation</span></h3>
+                { this.renderErrors() }
                 <form className="" onSubmit={ this.handleSubmit }>
                     <label>Party Size
                         <select className="restaurant-reservation-form-field" name="party_size" value={this.state.party_size} onChange={this.handleInput("party_size")}>
@@ -99,7 +113,7 @@ class ReservationForm extends React.Component {
                             </select>
                         </label>
                         <label >Date
-                            <input type="date" name="date"  value={this.state.date} onChange={ this.handleInput("date") } />
+                            <input id ="today" className="restaurant-reservation-form-date-field" type="date" name="date"  value={this.state.date} onChange={ this.handleInput("date") } />
                         </label>
                     </section>
                     <input className="reservation-submit" type="submit" value="Find a Table" />
