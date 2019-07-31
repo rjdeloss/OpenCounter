@@ -6,4 +6,7 @@ json.extract! reviews,
  :food_rating,
  :ambiance_rating,
  :value_rating,
+ :service_rating, 
+ :noise_level, 
+ :recommended,
  :body

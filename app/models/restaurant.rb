@@ -96,4 +96,10 @@ class Restaurant < ApplicationRecord
         (ratings.sum * 1.00 / ratings.length)
     end
 
+    def recommended_percentage
+        recomendations = self.reviews.pluck(:recommended)
+        recommended = recomendations.select { |i| i == 1}
+        (recommended.sum * 1.0 / recomendations.length) * 100
+    end
+
 end
