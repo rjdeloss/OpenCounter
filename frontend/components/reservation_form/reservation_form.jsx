@@ -35,7 +35,12 @@ class ReservationForm extends React.Component {
     }
 
     renderConfirmation() {
-        
+        if (!this.props.confirmation) return null; 
+        return (
+            <div className="restaurant-reservation-error-container">
+                <p className="restaurant-reservation-confirmation" >Table has been reserved!</p>
+            </div>
+        )
     }
 
     renderErrors() {
@@ -118,6 +123,7 @@ class ReservationForm extends React.Component {
                         </label>
                     </section>
                     { this.renderErrors() }
+                    { this.renderConfirmation() }
                     <input className="reservation-submit" type="submit" value="Find a Table" />
                 </form>
             </section>
