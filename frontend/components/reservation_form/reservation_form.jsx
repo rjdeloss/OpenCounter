@@ -34,6 +34,10 @@ class ReservationForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value})
     }
 
+    renderConfirmation() {
+        
+    }
+
     renderErrors() {
         const errors = Object.values(this.props.errors); 
 

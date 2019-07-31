@@ -1,5 +1,9 @@
 import { merge } from 'lodash'; 
-import { RECEIVE_RESERVATION, REMOVE_RESERVATION } from '../actions/reservation_action';
+import { RECEIVE_RESERVATION, REMOVE_RESERVATION, RECEIVE_RESERVATION_CONFIRMATION, CLEAR_RESERVATION_CONFIRMATION } from '../actions/reservation_action';
+
+const _noConfirmation = Object.freeze({
+    confirmation: false
+});
 
 const reservationsReducer = ( state ={}, action ) => {
     Object.freeze(state);
@@ -11,6 +15,10 @@ const reservationsReducer = ( state ={}, action ) => {
             let newState = merge({}, state); 
             delete newState[action.reservation.id]; 
             return newState;
+        case RECEIVE_RESERVATION_CONFIRMATION: 
+            return { confirmation: true }; 
+        case CLEAR_RESERVATION_CONFIRMATION: 
+            return _noConfirmation;
         default:
             return state;
     }
