@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 const RestaurantIndexItem = props => {
     
     const handleClick = () => {
-        // debugger
         props.history.push(`/restaurants/${props.restaurant.id}`)
     }
 
@@ -28,7 +27,6 @@ const RestaurantIndexItem = props => {
             </div>
         )
     } else if (props.location.pathname.includes("/restaurants/search")) {
-        // debugger
         return (
             <div className="search-restaurant-item" >
                 <div className="search-restaurant-img-container" onClick={handleClick}>

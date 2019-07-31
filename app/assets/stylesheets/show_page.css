@@ -108,7 +108,7 @@
 .restaurant-reservation-error-container {
     box-sizing: border-box;
     width: 100%; 
-    margin: 15px 15px 0;
+    margin: 0 0 15px;
     font-size: 14px;
 }
 
@@ -163,7 +163,7 @@
 
 .restaurant-reservation-form-date-field {
     margin: 7px 0 0;
-    padding: 0 0 3px;
+    padding: 0 0 5px;
 }
 
 .reservation-field-holder {
@@ -226,17 +226,19 @@
     color: #da3742;
 }
 .restaurant-show-map {
+    background-image: url("open_counter/app/assets/images/mock_map.jpg");
     height: 92%;
+    width: 100%;
     display: flex; 
     justify-content: center;
     align-items: center;
-    background: repeating-linear-gradient(
+    /* background: repeating-linear-gradient(
     -55deg,
     #5d9634,
     #5d9634 10px,
     #538c2b 10px,
     #538c2b 20px
-  );
+  ); */
   background-size: 100% 20px;
 }
 
@@ -291,4 +293,8 @@
 
 .nav-bar-words > * {
     margin-right: 10px;
+}
+
+#today {
+    font-size: 14px;
 }

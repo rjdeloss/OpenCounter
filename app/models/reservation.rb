@@ -43,13 +43,13 @@ class Reservation < ApplicationRecord
                     month: start_datetime.month, 
                     year: start_datetime.year, 
                     ))
-                    errors[:reservation] << "Restaurant must be open to make reservation."
+                    errors[:reservation] << "We're sorry, restaurant must be open to make reservation."
                 end
             end
 
     def booking_reservations 
         if start_datetime < DateTime.now.change(offset: "+0000")
-            errors[:reservation] << "Cannot make reservations before current time."
+            errors[:reservation] << "We're sorry, reservations cannot be made before today's date."
         end
     end
     

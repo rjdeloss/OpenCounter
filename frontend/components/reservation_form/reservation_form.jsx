@@ -15,9 +15,8 @@ class ReservationForm extends React.Component {
     handleSubmit(e) {
         const { restaurant, userId, openLogin } = this.props;
         const { party_size, time, date } = this.state;
-        debugger
+
         if (!userId) {
-            debugger
             openLogin();
         } else {
             const reservation = {
@@ -30,7 +29,6 @@ class ReservationForm extends React.Component {
             this.props.createReservation(reservation);
         }
     } 
-    // const [inputs, setInputs] = useState({})
 
     handleInput(field) {
         return e => this.setState({ [field]: e.currentTarget.value})
@@ -38,7 +36,7 @@ class ReservationForm extends React.Component {
 
     renderErrors() {
         const errors = Object.values(this.props.errors); 
-        debugger
+
         if (errors.length === 0) {
             return null 
         } else {
@@ -99,7 +97,6 @@ class ReservationForm extends React.Component {
         return (
             <section className="restaurant-reservation-form">
                 <h3 className="restaurant-reservation-form-title" ><span>Make a reservation</span></h3>
-                { this.renderErrors() }
                 <form className="" onSubmit={ this.handleSubmit }>
                     <label>Party Size
                         <select className="restaurant-reservation-form-field" name="party_size" value={this.state.party_size} onChange={this.handleInput("party_size")}>
@@ -116,6 +113,7 @@ class ReservationForm extends React.Component {
                             <input id ="today" className="restaurant-reservation-form-date-field" type="date" name="date"  value={this.state.date} onChange={ this.handleInput("date") } />
                         </label>
                     </section>
+                    { this.renderErrors() }
                     <input className="reservation-submit" type="submit" value="Find a Table" />
                 </form>
             </section>
