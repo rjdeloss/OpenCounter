@@ -70,7 +70,7 @@ end
 
 # REVIEWS
 User.all.each do |user|
-    20.times do 
+    60.times do 
         Review.create(
         user_id: user.id,
         restaurant_id: RESTAURANT_IDS.sample,
@@ -78,6 +78,9 @@ User.all.each do |user|
         food_rating: (1..5).to_a.sample,
         ambiance_rating: (1..5).to_a.sample,
         value_rating: (1..5).to_a.sample,
+        service_rating: (1..5).to_a.sample, 
+        noise_level: (1..3).to_a.sample,
+        recommended: (0..1).to_a.sample,
         body: Faker::Restaurant.review
         )
     end

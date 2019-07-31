@@ -65,4 +65,35 @@ class Restaurant < ApplicationRecord
     #     #                 restaurants.zip LIKE ?", str, str, str)
     #     end
     # end
+
+    def overall_rating
+        ratings = self.reviews.pluck(:overall_rating)
+        (ratings.sum * 1.00 / ratings.length)
+    end
+
+    def food_rating
+        ratings = self.reviews.pluck(:food_rating)
+        (ratings.sum * 1.00 / ratings.length)
+    end
+
+    def ambience_rating
+        ratings = self.reviews.pluck(:ambience_rating)
+        (ratings.sum * 1.00 / ratings.length)
+    end
+
+    def service_rating
+        ratings = self.reviews.pluck(:service_rating)
+        (ratings.sum * 1.00 / ratings.length)
+    end
+
+    def value_rating
+        ratings = self.reviews.pluck(:value_rating)
+        (ratings.sum * 1.00 / ratings.length)
+    end
+
+    def noise_level
+        ratings = self.reviews.pluck(:noise_level)
+        (ratings.sum * 1.00 / ratings.length)
+    end
+
 end
