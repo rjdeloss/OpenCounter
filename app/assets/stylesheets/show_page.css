@@ -112,6 +112,13 @@
     font-size: 14px;
 }
 
+.restaurant-reservation-confirmation {
+    font-size: 16px;
+    font-weight: 500;
+    color: teal;
+    text-align: center;
+}
+
 
 .restaurant-reservation-form form {
     margin: 0 0 16px;

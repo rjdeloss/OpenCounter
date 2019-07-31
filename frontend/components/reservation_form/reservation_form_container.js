@@ -5,7 +5,6 @@ import { openModal } from '../../actions/modal_action';
 import { createReservation, deleteReservation, clearReservationConfirmation } from '../../actions/reservation_action';
 
 const msp = (state, ownProps) => {
-    debugger
     return ({
         restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
         userId: state.session.currentUser,
