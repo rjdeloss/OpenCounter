@@ -1,4 +1,4 @@
-import { RECEIVE_RESERVATION, REMOVE_RESERVATION, RECEIVE_RESERVATION_ERRORS } from '../actions/reservation_action';
+import { RECEIVE_RESERVATION, REMOVE_RESERVATION, RECEIVE_RESERVATION_ERRORS, CLEAR_RESERVATION_ERRORS } from '../actions/reservation_action';
 
 const reservationErrorsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -7,6 +7,7 @@ const reservationErrorsReducer = (state = {}, action) => {
             return action.errors
         case RECEIVE_RESERVATION:
         case REMOVE_RESERVATION:
+        case CLEAR_RESERVATION_ERRORS:
             return [];
         default:
             return state;
