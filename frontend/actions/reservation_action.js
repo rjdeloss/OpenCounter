@@ -3,6 +3,7 @@ import * as ReservationApiUtil from '../util/reservation_api_util';
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
 export const RECEIVE_RESERVATION_ERRORS = 'RECEIVE_RESERVATION_ERRORS';
+export const CLEAR_RESERVATION_ERRORS = 'CLEAR_RESERVATION_ERRORS';
 export const RECEIVE_RESERVATION_CONFIRMATION = 'RECEIVE_RESERVATION_CONFIRMATION';
 export const CLEAR_RESERVATION_CONFIRMATION = 'CLEAR_RESERVATION_CONFIRMATION';
 
@@ -19,6 +20,10 @@ export const removeReservation = id => ({
 export const receiveReservationErrors = errors =>  ({
     type: RECEIVE_RESERVATION_ERRORS, 
     errors
+})
+
+export const clearReservationErrors = () => ({
+    type: CLEAR_RESERVATION_ERRORS
 })
 
 export const receiveReservationConfirmation = () => ({
