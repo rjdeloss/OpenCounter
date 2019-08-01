@@ -7,24 +7,27 @@ import { searchRestaurants } from './util/restaurant_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    const store = configureStore(preloadedState);
-
-    window.searchRestaurants = searchRestaurants; 
-    window.dispatch = store.dispatch;
-    window.getState = store.getState;
-    window.fetchRestaurants = fetchRestaurants;
-
+        
     let preloadedState = {};
     if (window.currentUser) {
         preloadedState = {
             entities: {users: {
                 [currentUser.id]: currentUser
-                }
-            },
-            session: {
-                currentUser: window.currentUser.id
             }
-        };
-    }
+        },
+        session: {
+            currentUser: window.currentUser.id
+        }
+    };
+    delete window.currentUser;
+}
+
+const store = configureStore(preloadedState);
+
+    // window.searchRestaurants = searchRestaurants; 
+    // window.dispatch = store.dispatch;
+    // window.getState = store.getState;
+    // window.fetchRestaurants = fetchRestaurants;
+
     ReactDOM.render( <Root store={store} />, root);
 });
