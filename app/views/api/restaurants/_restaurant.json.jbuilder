@@ -13,3 +13,7 @@ json.extract! restaurant,
  :open_time,
  :close_time,
  :capacity
+
+ json.cuisine restaurant.cuisines.pluck(:cuisine)
+ json.reviews restaurant.reviews
+ 

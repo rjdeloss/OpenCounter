@@ -130,7 +130,7 @@ class RestaurantShow extends React.Component {
                                 </div>
                                 <div className="restaurant-info-text">
                                     <span>Cuisines</span>
-                                    <p>{restaurant.cuisine_id}</p>
+                                        <p>{restaurant.cuisine}</p>
                                 </div>
                             </div>
                             <div className="restaurant-info-section">
