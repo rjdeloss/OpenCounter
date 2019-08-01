@@ -14,36 +14,20 @@ const Session = ({currentUser, logout, openModal}) => {
     }
 
     const profileDropdown = () => (
-        <div className="dropdown">
-            <h3  onClick={() =>toggleDropdown() }>Hi {currentUser.fname}</h3>
-            <ul id="dropdown-menu" className="dropdown-content">
-                <li><a href="#">My Profile</a></li>
-                <li><a href="#">My Dining History</a></li>
-                <li><a href="#">My Saved Restaurants</a></li>
-                <li><a href="#" onClick={ () => logout() }>Sign Out</a></li>
-            </ul>
-        </div>
+                <div className="dropdown">
+                    <h3  onClick={() =>toggleDropdown() }>Hi {currentUser.fname}</h3>
+                    <ul id="dropdown-menu" className="dropdown-content">
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">My Dining History</a></li>
+                        <li><a href="#">My Saved Restaurants</a></li>
+                        <li><a href="#" onClick={ () => logout() }>Sign Out</a></li>
+                    </ul>
+                </div>
     );
-
-    // const reservationContainer =() => 
-    // {   
-    //     let ppl = [];
-    //     for (let i = 2; i < 20; i++) {
-    //         ppl.push(i)
-    //     }
-
-    //     ppl.map(i => {
-    //         {"${i} people"}
-    //     })
-        
-    //     return (
-
-    // )}
-    
+    debugger
     return (
-        currentUser ? profileDropdown() : sessionButtons()
+        !currentUser ? sessionButtons() : profileDropdown()
 
-        
     );
 
 }
