@@ -5,13 +5,13 @@ class Api::RestaurantsController < ApplicationController
       @restaurants = Restaurant.search(params[:search])
       render :index
     else 
-      @restaurants = Restaurant.all
+      @restaurants = Restaurant.all.includes(:reviews)
       render :index
     end
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.includes(:reviews).find(params[:id])
     render :show
   end
 end

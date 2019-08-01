@@ -1,9 +1,9 @@
 json.review do
-    json.partial! "api/reviews/review", review: @review
+    json.partial! "api/reviews/review", review: @reviews
 end
 
 json.restaurant do 
-    restaurant_rating = Restaurant.find_by(id: @review.restaurant_id)
+    restaurant_rating = Restaurant.find_by(id: @reviews.restaurant_id)
     json.partial! "api/restaurants/restaurant", restaurant: restaurant_rating
     json.overall_rating restaurant_rating.overall_rating
     json.food_rating restaurant_rating.food_rating
