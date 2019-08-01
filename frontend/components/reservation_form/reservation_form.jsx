@@ -11,8 +11,15 @@ class ReservationForm extends React.Component {
             }
             this.handleSubmit = this.handleSubmit.bind(this);
         }
+
+    componentWillUnmount(){
+        this.props.clearReservationErrors();
+        this.props.clearReservationConfirmation();
+    }
     
     handleSubmit(e) {
+        e.preventDefault();
+        
         const { restaurant, userId, openLogin } = this.props;
         const { party_size, time, date } = this.state;
 
@@ -25,7 +32,6 @@ class ReservationForm extends React.Component {
                 start_datetime: date + " " + time
             };
 
-            e.preventDefault();
             this.props.createReservation(reservation);
         }
     } 
@@ -80,12 +86,15 @@ class ReservationForm extends React.Component {
         const close = new Date(close_time);
         const openHour = new Date(open.getTime() + open.getTimezoneOffset() * 60000).getHours();
         const closeHour = new Date(close.getTime() + close.getTimezoneOffset() * 60000).getHours();
+
         let timeArr = [];
+
         for (let i = openHour; i < closeHour; i++) {
             let hr = i > 12 ? (i -12).toString() : i.toString();
             
             for (let j = 0; j <= 30; j += 30) {
                 let timeStr = hr + ":";
+                
                 timeStr += j=== 0 ? "00" : j.toString();
                 timeStr += i >= 12 ? " PM" : " AM";
                 timeArr.push(timeStr);
@@ -97,12 +106,10 @@ class ReservationForm extends React.Component {
         return timeArr.map(time =>(
             <option value={time} key={time}>{time}</option>
         ));
-
-
     }
+
     render() {
         
-
         return (
             <section className="restaurant-reservation-form">
                 <h3 className="restaurant-reservation-form-title" ><span>Make a reservation</span></h3>
