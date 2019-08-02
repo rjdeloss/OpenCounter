@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import ReservationForm from '../../reservation_form/reservation_form_container';
+import ReviewsIndex from '../../reviews/reviews_index';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -18,9 +19,10 @@ class RestaurantShow extends React.Component {
         this.reviewsRef = React.createRef()
     }
 
-    // componentDidMount() {
-    //     this.props.fetchRestaurant(this.props.match.params.restaurantId)
-    // }
+    componentDidMount() {
+        this.props.fetchRestaurant(this.props.match.params.restaurantId)
+    }
+
     pageJumpTitle(e) {
         window.scrollTo(0, this.titleRef.current.offsetTop -40)
     }
@@ -47,6 +49,7 @@ class RestaurantShow extends React.Component {
         if (typeof restaurant === "undefined") {
             return (<></>)
         } else {
+            debugger
         return(
             <>
             <main className="show-page-container">
@@ -91,7 +94,7 @@ class RestaurantShow extends React.Component {
                         </section>
                         <section ref={this.reviewsRef} id="reviews" className="section-container">
                             <h2>What {restaurant.zip} People Are Saying</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quo rerum numquam alias? Maxime odio at, vero adipisci ratione corrupti. Eum dicta consequuntur officiis iusto dolorem tempore reiciendis, nihil reprehenderit.</p>
+                            <ReviewsIndex reviews={restaurant.reviews}/>
                         </section>
                         <div className="restaurant-reviews-section">
                         </div>
