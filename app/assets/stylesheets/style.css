@@ -143,3 +143,7 @@ p {
 .xsmall {
     font-size: 13px;
 }
+
+.grey {
+    color: #6f737b;
+}

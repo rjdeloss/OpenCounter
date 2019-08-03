@@ -111,6 +111,11 @@
     padding: 0 8px;
 }
 
+.reviews-recommended {
+    display: flex; 
+    flex-direction: row; 
+}
+
 .reviews-stats-header{
     padding: 8px 0;
 }

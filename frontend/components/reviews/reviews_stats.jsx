@@ -55,11 +55,11 @@ const ReviewsStats = props => {
                             <p className="reviews-stats-overall-description small">Value</p>
                         </div>
                     </div>
-                    <div className="reviews-noise-level xsmall">
-                        <span><i className="material-icons">equalizer</i></span>Noise&nbsp;·&nbsp;<span>Moderate</span>
+                    <div className="reviews-recommended xsmall">
+                        <span><i className="material-icons">equalizer</i></span><p className="grey">&nbsp;&nbsp;Noise&nbsp;·&nbsp;Moderate</p>
                     </div>
-                    <div className="reviews-recommened xsmall">
-                        <span><i className="material-icons-outlined">thumb_up</i></span><span>86% of people would recommend it to a friend</span>
+                    <div className="reviews-recommended xsmall">
+                        <span><i className="material-icons-outlined">thumb_up</i></span><p className="grey">&nbsp;&nbsp;86% of people would recommend it to a friend</p>
                     </div>
                 </div>
                 <div className="review-stats-graph">
