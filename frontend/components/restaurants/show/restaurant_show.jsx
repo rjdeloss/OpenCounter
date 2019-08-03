@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReservationForm from '../../reservation_form/reservation_form_container';
 import ReviewsIndex from '../../reviews/reviews_index';
+import ReviewsStats from '../../reviews/reviews_stats';
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -59,9 +60,9 @@ class RestaurantShow extends React.Component {
                     <div className="show-page-restaurant-content">
                         <nav className="restaurant-profile-nav">
                                 <p className="restaurant-section-hover" onClick={this.pageJumpTitle}>Overview</p>
-                                <p className="restaurant-section-hover" onClick={this.pageJumpPhoto}>Photos</p>
-                                <p className="restaurant-section-hover" onClick={this.pageJumpMenu}>Menu</p>
-                                <p className="restaurant-section-hover" onClick={this.pageJumpSpecials}>Specials</p>
+                                {/* <p className="restaurant-section-hover" onClick={this.pageJumpPhoto}>Photos</p> */}
+                                {/* <p className="restaurant-section-hover" onClick={this.pageJumpMenu}>Menu</p>
+                                <p className="restaurant-section-hover" onClick={this.pageJumpSpecials}>Specials</p> */}
                                 <p className="restaurant-section-hover" onClick={this.pageJumpReviews}>Reviews</p>
                         </nav>
                         <div className="restaurant-snippet">
@@ -80,20 +81,20 @@ class RestaurantShow extends React.Component {
                             <p>{restaurant.description}</p>
                         </div>
 
-                        <section ref={this.photoRef} id="photos" className="section-container">
+                        {/* <section ref={this.photoRef} id="photos" className="section-container">
                                <h2>Photos</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem placeat molestias, ut sapiente, totam a quod fugit vero earum minus et quasi, velit rem! Accusantium saepe sequi labore rerum ad?</p>
-                        </section>
-                        <section ref={this.menuRef} id="menu" className="section-container">
+                        </section> */}
+                        {/* <section ref={this.menuRef} id="menu" className="section-container">
                             <h2>Menu</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur perferendis magnam optio esse ducimus asperiores commodi debitis excepturi cum blanditiis deleniti vel, accusamus perspiciatis necessitatibus sint, alias pariatur eligendi!</p>
                         </section>
                         <section ref={this.specialsRef} id="specials" className="section-container">
                             <h2>Specials</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam odio atque, a corporis amet, eum magni minus, soluta excepturi consectetur voluptas non. Id quas quam asperiores praesentium. Explicabo, dolores?</p>
-                        </section>
+                        </section> */}
                         <section ref={this.reviewsRef} id="reviews" className="section-container">
-                            <h2>What {restaurant.zip} People Are Saying</h2>
+                            <ReviewsStats reviews={restaurant.reviews}/>  
                             <ReviewsIndex reviews={restaurant.reviews}/>
                         </section>
                         <div className="restaurant-reviews-section">
@@ -102,7 +103,7 @@ class RestaurantShow extends React.Component {
                     </div>
                     {/* PAGE INFO SECTION */}
                     <div className="show-page-restaurant-info">
-                        <ReservationForm />
+                        <ReservationForm restaurant={restaurant}/>
                         <div className="restaurant-show-map-container">
                             <div className="restaurant-show-map"><h1>MAP GOES HERE</h1></div>
                                 <i className="material-icons">location_on</i>

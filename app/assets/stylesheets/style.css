@@ -90,6 +90,20 @@ p {
 
 }
 
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
 .material-icons.red {
     color: #da3742;
 }
@@ -104,4 +118,28 @@ p {
 
 .material-icons.star-grey {
     color: #e1e1e1;
+}
+
+.light-text {
+    font-weight: 300;
+}
+
+.bold-text {
+    font-weight: 500;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.border-right {
+    border-right: 1px solid #d8d9db;
+}
+
+.small {
+    font-size: 14px;
+}
+
+.xsmall {
+    font-size: 13px;
 }

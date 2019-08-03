@@ -10,3 +10,5 @@ json.extract! review,
  :noise_level, 
  :recommended,
  :body
+
+ json.author review.user.full_name
