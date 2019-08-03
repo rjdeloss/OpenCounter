@@ -6,11 +6,8 @@ const RestaurantsIndex = (props) => {
     const restaurants = props.restaurants.map(restaurant => (
         <RestaurantIndexItem key={restaurant.id} restaurant={restaurant} />
     ));
-    useEffect(()=> {
-        if( props.restaurants.length === 0){
-            props.fetchRestaurants();
-        }
-    })
+    useEffect(()=> { props.fetchRestaurants(); }, []);
+
     return (
         <section className="page-main-restaurant-cuisines">
             {restaurants}
