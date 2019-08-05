@@ -6,7 +6,6 @@ import { createReservation, deleteReservation, clearReservationConfirmation, cle
 
 const msp = (state, ownProps) => {
     return ({
-        restaurant: state.entities.restaurants[ownProps.match.params.restaurantId],
         userId: state.session.currentUser,
         errors: state.errors.reservation, 
         reservation: state.entities.reservation, 
