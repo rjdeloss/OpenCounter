@@ -4,7 +4,7 @@ const ReviewsStats = props => {
     let reviews = Object.values(props.restaurant.reviews);
     let ratings = props.restaurant.overall_ratings;
     let restaurant = props.restaurant
-    
+    // debugger
     let noise = () =>{
         switch(ratings.noise_level){
         case 1:
@@ -24,21 +24,32 @@ const ReviewsStats = props => {
         return (<i key={i} className="material-icons star-grey">star</i>)
     });
 
-    let meterStyle5 = {
-        width: '80%'
+    const review_numbers = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
     }
-    let meterStyle4 = {
-        width: '60%'
+  
+    for (let i = 0; i < reviews.length; i++) {
+        if (Object.keys(review_numbers).includes(reviews[i].overall_rating.toString())) {
+            review_numbers[reviews[i].overall_rating] += 1;
+        }
     }
-    let meterStyle3 = {
-        width: '40%'
-    }
-    let meterStyle2 = {
-        width: '10%'
-    }
-    let meterStyle1 = {
-        width: '5%'
-    }
+    
+    let reviews_percentage = Object.values(review_numbers).map((n, i) => {
+        let p = (n/ reviews.length) * 100
+        return (
+            <div className="reviews-count-container">
+                <span >{i + 1}</span>
+                <div className="reviews-count-meter">
+                    <span style={{width: `${p}%`}}></span>
+                </div>
+            </div>
+        )
+    })
+    
 
     return (
         <div className="reviews-stats">
@@ -76,36 +87,7 @@ const ReviewsStats = props => {
                     </div>
                 </div>
                 <div className="review-stats-graph">
-                    <div className="reviews-count-container">
-                        <span >5</span>
-                        <div className="reviews-count-meter">
-                            <span style={meterStyle5}></span>
-                        </div>
-                    </div>
-                    <div className="reviews-count-container">
-                        <span>4</span>
-                        <div className="reviews-count-meter">
-                            <span style={meterStyle4}></span>
-                        </div>
-                    </div>
-                    <div className="reviews-count-container">
-                        <span>3</span>
-                        <div className="reviews-count-meter">
-                            <span style={meterStyle3}></span>
-                        </div>
-                    </div>
-                    <div className="reviews-count-container">
-                        <span>2</span>
-                        <div className="reviews-count-meter">
-                            <span style={meterStyle2}></span>
-                        </div>
-                    </div>
-                    <div className="reviews-count-container">
-                        <span>1</span>
-                        <div className="reviews-count-meter">
-                            <span style={meterStyle1}></span>
-                        </div>
-                    </div>
+                    { reviews_percentage}
                 </div>
             </div>
         </div>
