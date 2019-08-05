@@ -47,10 +47,14 @@ class RestaurantShow extends React.Component {
 
 
         const restaurant = this.props.restaurant;
+
+
+        
         if (typeof restaurant === "undefined") {
             return (<></>)
         } else {
-        return(
+
+            return(
             <>
             <main className="show-page-container">
                 <div className="show-page-image-container">
@@ -73,7 +77,7 @@ class RestaurantShow extends React.Component {
                                 <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i>
                                 </div>
                                     <i className="material-icons">chat_bubble_outline</i><p>{Object.values(restaurant.reviews).length} reviews  </p>
-                                <i className="material-icons">local_atm</i><p>{restaurant.price_range}  </p>
+                                    <i className="material-icons">local_atm</i><p>{restaurant.price_range}  </p>
                                 <i className="material-icons">restaurant</i><p>{restaurant.cuisine}</p>
                                 <br/>
                             </article>
