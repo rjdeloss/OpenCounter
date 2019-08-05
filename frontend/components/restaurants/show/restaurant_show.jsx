@@ -50,7 +50,6 @@ class RestaurantShow extends React.Component {
         if (typeof restaurant === "undefined") {
             return (<></>)
         } else {
-            debugger
         return(
             <>
             <main className="show-page-container">
