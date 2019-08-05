@@ -53,7 +53,6 @@ class RestaurantShow extends React.Component {
         if (typeof restaurant === "undefined") {
             return (<></>)
         } else {
-
             return(
             <>
             <main className="show-page-container">
@@ -97,7 +96,7 @@ class RestaurantShow extends React.Component {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam odio atque, a corporis amet, eum magni minus, soluta excepturi consectetur voluptas non. Id quas quam asperiores praesentium. Explicabo, dolores?</p>
                         </section> */}
                         <section ref={this.reviewsRef} id="reviews" className="section-container">
-                            <ReviewsStats reviews={restaurant.reviews}/>  
+                                    <ReviewsStats restaurant={restaurant}/>  
                             <ReviewsIndex reviews={restaurant.reviews}/>
                         </section>
                         <div className="restaurant-reviews-section">
