@@ -76,8 +76,11 @@ ActiveRecord::Schema.define(version: 2019_06_04_133730) do
     t.integer "restaurant_id"
     t.integer "overall_rating"
     t.integer "food_rating"
+    t.integer "service_rating"
     t.integer "ambiance_rating"
     t.integer "value_rating"
+    t.integer "noise_level"
+    t.integer "recommended", default: 0
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -24,7 +24,6 @@ const Session = ({currentUser, logout, openModal}) => {
                     </ul>
                 </div>
     );
-    debugger
     return (
         !currentUser ? sessionButtons() : profileDropdown()
 

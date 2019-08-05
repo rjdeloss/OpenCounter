@@ -8,9 +8,9 @@ export const receiveRestaurants = restaurants => ({
     restaurants
 })
 
-export const receiveRestaurant = ({ restaurant }) => {
+export const receiveRestaurant = ({ restaurant, reviews }) => {
    return ( {type: RECEIVE_RESTAURANT, 
-    restaurant});
+    restaurant, reviews});
 }
 
 export const fetchRestaurants = filters => dispatch => (
