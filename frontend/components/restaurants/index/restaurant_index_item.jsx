@@ -9,7 +9,7 @@ const RestaurantIndexItem = props => {
     }
 
     let greyPriceRange = _.times(4 - restaurant.price_range.length, (i) => {
-        return (<span className="grey-price-range">$</span>)
+        return (<span key={i} className="grey-price-range">$</span>)
     });
     
     // const restaturant = props.restaurant; 

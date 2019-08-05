@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import SigninContainer from '../session/signin_container';
 import SingupContainer from '../session/signup_container';
+import ReviewContainer from '../reviews/reviews_container';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) null;
@@ -15,6 +16,8 @@ const Modal = ({ modal, closeModal }) => {
         case 'signup':
             component = <SingupContainer />
             break;
+        case 'newReview':
+            component = <ReviewContainer />
         default: 
             return null;   
     }

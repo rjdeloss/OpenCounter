@@ -9,13 +9,13 @@ json.extract! restaurant,
  :phone_number,
  :price_range,
  :description,
-#  :cuisine_id,
  :open_time,
  :close_time,
  :capacity
 
  json.cuisine restaurant.cuisines.pluck(:cuisine)
-#  json.reviews restaurant.reviews
+ json.overall_ratings restaurant.get_all_ratings
+ json.recommended restaurant.recommended_percentage
  
 
 json.reviews do 

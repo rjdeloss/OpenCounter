@@ -66,40 +66,31 @@ class Restaurant < ApplicationRecord
     #     end
     # end
 
-    def overall_rating
-        ratings = self.reviews.pluck(:overall_rating)
-        (ratings.sum * 1.00 / ratings.length)
-    end
-
-    def food_rating
-        ratings = self.reviews.pluck(:food_rating)
-        (ratings.sum * 1.00 / ratings.length)
-    end
-
-    def ambience_rating
-        ratings = self.reviews.pluck(:ambience_rating)
-        (ratings.sum * 1.00 / ratings.length)
-    end
-
-    def service_rating
-        ratings = self.reviews.pluck(:service_rating)
-        (ratings.sum * 1.00 / ratings.length)
-    end
-
-    def value_rating
-        ratings = self.reviews.pluck(:value_rating)
-        (ratings.sum * 1.00 / ratings.length)
-    end
-
-    def noise_level
-        ratings = self.reviews.pluck(:noise_level)
-        (ratings.sum * 1.00 / ratings.length)
+    def get_all_ratings
+        ratings = Hash.new(0)
+        count = 0 
+        self.reviews.each do |review|
+            count += 1
+            ratings[:overall_rating] += review.overall_rating
+            ratings[:food_rating] += review.food_rating
+            ratings[:ambiance_rating] += review.ambiance_rating
+            ratings[:service_rating] += review.service_rating
+            ratings[:value_rating] += review.value_rating
+            ratings[:noise_level] += review.noise_level
+        end
+            ratings[:overall_rating] = (ratings[:overall_rating] / (count * 1.0)).round(1)
+            ratings[:food_rating] = (ratings[:food_rating] / (count * 1.0)).round(1)
+            ratings[:ambiance_rating] = (ratings[:ambiance_rating] / (count * 1.0)).round(1)
+            ratings[:service_rating] = (ratings[:service_rating] / (count * 1.0)).round(1)
+            ratings[:value_rating] = (ratings[:value_rating] / (count * 1.0)).round(1)
+            ratings[:noise_level] = (ratings[:noise_level] / (count * 1.0)).round(1)
+        return ratings
     end
 
     def recommended_percentage
         recomendations = self.reviews.pluck(:recommended)
         recommended = recomendations.select { |i| i == 1}
-        (recommended.sum * 1.0 / recomendations.length) * 100
+        ((recommended.sum * 1.0 / recomendations.length) * 100).round(0)
     end
 
 end
