@@ -18,6 +18,7 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'newReview':
             component = <ReviewContainer />
+            break;
         default: 
             return null;   
     }

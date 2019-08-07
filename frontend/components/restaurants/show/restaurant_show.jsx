@@ -47,6 +47,7 @@ class RestaurantShow extends React.Component {
 
 
         const restaurant = this.props.restaurant;
+        const newReview = this.props.newReview;
 
 
         
@@ -96,7 +97,7 @@ class RestaurantShow extends React.Component {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam odio atque, a corporis amet, eum magni minus, soluta excepturi consectetur voluptas non. Id quas quam asperiores praesentium. Explicabo, dolores?</p>
                         </section> */}
                         <section ref={this.reviewsRef} id="reviews" className="section-container">
-                                    <ReviewsStats restaurant={restaurant}/>  
+                            <ReviewsStats restaurant={restaurant} newReview={newReview} />  
                             <ReviewsIndex reviews={restaurant.reviews}/>
                         </section>
                         <div className="restaurant-reviews-section">

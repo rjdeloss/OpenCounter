@@ -1,16 +1,18 @@
 import React from 'react';
 
 const ReviewsStats = props => {
+    debugger
     let reviews = Object.values(props.restaurant.reviews);
     let ratings = props.restaurant.overall_ratings;
-    let restaurant = props.restaurant
-    // debugger
+    let restaurant = props.restaurant;
+    let newReview = props.newReview;
+    
     let noise = () =>{
         switch(ratings.noise_level){
         case 1:
             return "Quiet"
         case 3: 
-            return "Loud"
+            return "Energetic"
         case 2:
         default:
             return "Moderate"
@@ -41,7 +43,7 @@ const ReviewsStats = props => {
     let reviews_percentage = Object.values(review_numbers).map((n, i) => {
         let p = (n/ reviews.length) * 100
         return (
-            <div className="reviews-count-container">
+            <div key={i + 1} className="reviews-count-container">
                 <span >{i + 1}</span>
                 <div className="reviews-count-meter">
                     <span style={{width: `${p}%`}}></span>
@@ -50,7 +52,6 @@ const ReviewsStats = props => {
         )
     })
     
-
     return (
         <div className="reviews-stats">
             <h2>What {reviews.length} People Are Saying</h2>
@@ -86,8 +87,11 @@ const ReviewsStats = props => {
                         <span><i className="material-icons-outlined">thumb_up</i></span><p className="grey">&nbsp;&nbsp;{restaurant.recommended}% of people would recommend it to a friend</p>
                     </div>
                 </div>
-                <div className="review-stats-graph">
-                    { reviews_percentage}
+                <div className="review-stats-graph-container">
+                    <div className="review-stats-graph">
+                        { reviews_percentage}
+                    </div>
+                    <a className="reviews-add-button" onClick={() => newReview()}>+ Create Review </a>
                 </div>
             </div>
         </div>

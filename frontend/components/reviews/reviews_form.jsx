@@ -7,7 +7,7 @@ class ReviewsForm extends React.Component {
     }    
     
     componentWillUnmount(){
-        this.props.clearReviewsErrors()
+        this.props.clearReviewsErrors;
     }
 
     handleSubmit(e) {
