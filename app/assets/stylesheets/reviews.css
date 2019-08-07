@@ -94,10 +94,17 @@
     width: 50%;
 }
 
-.review-stats-graph {
+.review-stats-graph-container {
     width: 45%;
     display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-stats-graph {
+    display: flex; 
     flex-direction: column-reverse;
+    justify-content: flex-end;
 }
 
 .reviews-stats-overall-container {
@@ -114,6 +121,7 @@
 .reviews-recommended {
     display: flex; 
     flex-direction: row; 
+    margin: 15px 0 0;
 }
 
 .reviews-stats-header{
@@ -144,4 +152,21 @@
   background-color: #da3743;
   position: relative; 
   overflow: hidden;
+}
+
+.reviews-add-button {
+    border: 1px solid #da3743;
+    width: 45%;
+    padding: 12px;
+    color: #da3743;
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+.reviews-add-button:hover {
+    background: #da3743;
+    color: #fff; 
+    border: 1px solid #da3743;
+    border-radius: 3px;
+    /* transition: all .3s; */
 }
