@@ -170,3 +170,33 @@
     border-radius: 3px;
     /* transition: all .3s; */
 }
+
+.reviews-form-container {
+    background: #ffffff; 
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    height: 600px;
+    max-height: 600px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+.reviews-form {
+    width: 325px; 
+    display: flex; 
+    flex-direction: column;
+    margin: 6px 0;
+}
+
+.reviews-form-input-container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    padding: 4px 0;
+
+}
