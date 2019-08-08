@@ -113,11 +113,16 @@ p {
 }
 
 .material-icons.grey {
-    color: #999999;
+    color: #a3a3a3;
 }
 
 .material-icons.star-grey {
     color: #e1e1e1;
+}
+
+.material-icons.star-rating{
+    margin: 0 -25px 0 0;
+    /* font-size: */
 }
 
 .light-text {
