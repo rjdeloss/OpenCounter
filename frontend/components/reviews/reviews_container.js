@@ -8,10 +8,11 @@ import { fetchRestaurant } from '../../actions/restaurant_action';
 
 const msp = (state, ownProps) => {
     const formType = "Create Review"
+    debugger
     return ({
         userId: state.session.currentUser,
         errors: state.errors.reviews, 
-        restaurant: state.entities.restaurants[ownProps.match.params.id],
+        restaurant: state.entities.restaurants[ownProps.location.pathname.slice(13)],
         formType
     })
 

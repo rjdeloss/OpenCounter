@@ -137,6 +137,10 @@ p {
     text-align: center;
 }
 
+.pad-text {
+    padding: 0 0 8px;
+}
+
 .border-right {
     border-right: 1px solid #d8d9db;
 }
@@ -155,4 +159,19 @@ p {
 
 .grey-price-range {
     color: #e1e1e1;
+}
+
+.textarea {
+    border: 1px solid #e1e1e1;
+    height: 200px;
+    width: 720px;
+    resize: none;
+    transition: none;
+    overflow-y: scroll;
+    padding: 1em;
+    margin: 12px;
+}
+
+.textarea:focus {
+    border: 1px solid #e1e1e1;
 }
