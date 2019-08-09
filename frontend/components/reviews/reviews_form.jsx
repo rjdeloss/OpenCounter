@@ -12,7 +12,10 @@ class ReviewsForm extends React.Component {
             ambiance_rating: 0, 
             value_rating: 0,
             noise_level: 0,
+            recommended: 0,
+            body: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }    
     
     componentWillUnmount(){
@@ -21,10 +24,20 @@ class ReviewsForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        const { food_rating, service_rating, ambiance_rating, value_rating, noise_level, body } = this.state;
+        const review = {
+            food_rating, 
+            service_rating, 
+            ambiance_rating, 
+            value_rating, 
+            noise_level, 
+            body
+        }
+        this.props.createReview(review).then(this.props.closeModal);
     }
 
     handleInput(field) {
-        return e => this.setState({ [field]: e.currentTarget.value })
+         return value => this.setState({ [field]: value })
     }
 
     renderErrors() {
@@ -51,58 +64,75 @@ class ReviewsForm extends React.Component {
         
         return (
             <div className="reviews-form-container">
-                <h2>Name, how was your experience at The Cecil Steakhouse? </h2>
-                <span>Dining Date</span>
-                <form className="reviews-form" action="">
-                    <h3 className="bold-text center-text">Rate your dining experience (required)</h3>
-                    <label htmlFor="" className="reviews-form-input-container">Food
-                        <div className="reviews-radio-collection">
-                            <Rating
-                                emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
-                                fullSymbol={<i className="material-icons red">star</i>}
-                            />
-                        </div>
-                    </label>
-                    <label htmlFor="" className="reviews-form-input-container">Service
-                        <div className="reviews-radio-collection">
-                            <Rating
-                                emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
-                                fullSymbol={<i className="material-icons red">star</i>}
-                            />
-                        </div>
-                    </label>
-                    <label htmlFor="" className="reviews-form-input-container">Ambience
-                        <div className="reviews-radio-collection">
-                            <Rating
-                                emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
-                                fullSymbol={<i className="material-icons red">star</i>}
-                            />
-                        </div>
-                    </label>
-                    <label htmlFor="" className="reviews-form-input-container">Value
-                        <div className="reviews-radio-collection">
-                            <Rating
-                                emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
-                                fullSymbol={<i className="material-icons red">star</i>}
-                            />
-                        </div>
-                    </label>
-                    <label htmlFor="" className="reviews-form-input-container">Noise Level
-                        <div className="reviews-radio-collection">
-                            <input type="radio" name="noise" id="" value="1" />
-                            <input type="radio" name="noise" id="" value="2" />
-                            <input type="radio" name="noise" id="" value="3" />
-                        </div>
-                    </label>
-                    <h3 className="bold-text center-text">Would you recommend (The Cecil Steakhouse) to a friend?</h3>
-                        <div className="reviews-form-input-container">
-                            <input type="radio" name="noise" id="" value="1" />Yes
-                            <input type="radio" name="noise" id="" value="1" />No
-                        </div>
-                    <h3 className="bold-text center-text">Write a review</h3>
-                        <input type="textarea" name="" id=""/>
+                <h2 className="bold-text">Name, how was your experience at {this.props.restaurant.name}? </h2>
+                <span>Dined on {moment(this.props.restaurant.open_time).format('l')}</span>
+                <form className="reviews-form" onSubmit={this.handleSubmit}>
+                    <div className="reviews-form-radio-input">
+                        <h3 className="bold-text center-text pad-text">Rate your dining experience (required)</h3>
+                        <label className="reviews-form-input-container">Food
+                            <div className="reviews-radio-collection">
+                                <Rating
+                                    onClick={this.handleInput("food_rating")}
+                                    initialRating={this.state.food_rating}
+                                    emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
+                                    fullSymbol={<i className="material-icons red">star</i>}
+                                />
+                            </div>
+                        </label>
+                        <label className="reviews-form-input-container">Service
+                            <div className="reviews-radio-collection">
+                                <Rating
+                                    onClick={this.handleInput("service_rating")}
+                                    initialRating={this.state.service_rating}
+                                    emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
+                                    fullSymbol={<i className="material-icons red">star</i>}
+                                />
+                            </div>
+                        </label>
+                        <label className="reviews-form-input-container">Ambience
+                            <div className="reviews-radio-collection">
+                                <Rating
+                                    onClick={this.handleInput("ambiance_rating")}
+                                    initialRating={this.state.ambiance_rating}
+                                    emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
+                                    fullSymbol={<i className="material-icons red">star</i>}
+                                />
+                            </div>
+                        </label>
+                        <label className="reviews-form-input-container">Value
+                            <div className="reviews-radio-collection">
+                                <Rating
+                                    onClick={this.handleInput("value_rating")}
+                                    initialRating={this.state.value_rating}
+                                    emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
+                                    fullSymbol={<i className="material-icons red">star</i>}
+                                />
+                            </div>
+                        </label>
+                        <label className="reviews-form-input-container">Noise Level
+                            <div className="reviews-radio-collection">
+                                <Rating 
+                                    stop={3}
+                                    onClick={this.handleInput("noise_level")}
+                                    initialRating={this.state.noise_level}
+                                    emptySymbol={<i className="material-icons grey">star</i>}
+                                    fullSymbol={<i className="material-icons red">star</i>}
+                                />
+                                {/* <input type="radio" name="noise" id="" value="1" />
+                                <input type="radio" name="noise" id="" value="2" />
+                                <input type="radio" name="noise" id="" value="3" /> */}
+                            </div>
+                        </label>
+                    </div>
+                    <h3 className="bold-text center-text pad-text">Would you recommend {this.props.restaurant.name} to a friend?</h3>
+                            <div className="reviews-form-noise-input">
+                                <input type="radio" name="noise" id="" value="1" onClick={this.handleInput("recommended")}/>Yes
+                                <input type="radio" name="noise" id="" value="0" onClick={this.handleInput("recommended")}/>No
+                            </div>
+                    <h3 className="bold-text center-text pad-text">Write a review</h3>
+                    <textarea type="textarea" wrap="soft" rows="10" cols="50" className="textarea" onChange={this.handleInput("body")}/>
 
-                    <input type="submit" value="Submit your Review" name="" id=""/>
+                    <input className="reviews-form-submit" type="submit" value="Submit your Review" name="" id=""/>
                 </form>
             </div>
         )
