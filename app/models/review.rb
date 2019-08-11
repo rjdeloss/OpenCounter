@@ -28,14 +28,14 @@ class Review < ApplicationRecord
     belongs_to :user
     belongs_to :restaurant 
 
-    after_initialize :calculate_overall_rating
+    # after_initialize :calculate_overall_rating
 
-    def calculate_overall_rating 
-        self.overall_rating = (
-            self.food_rating + 
-            self.ambiance_rating + 
-            self.value_rating +
-            self.service_rating
-        ) / 4.0
-    end
+    # def calculate_overall_rating 
+    #     self.overall_rating = (
+    #         self.food_rating + 
+    #         self.ambiance_rating + 
+    #         self.value_rating +
+    #         self.service_rating
+    #     ) / 4.0
+    # end
 end

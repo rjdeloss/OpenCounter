@@ -9,6 +9,7 @@ json.extract! review,
  :service_rating, 
  :noise_level, 
  :recommended,
- :body
+ :body, 
+ :created_at
 
  json.author review.user.full_name

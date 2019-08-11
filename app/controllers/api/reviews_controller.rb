@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-    before_action :ensure_logged_in
+    before_action :require_logged_in
     def index 
         @reviews = Review.all
     end
@@ -29,6 +29,6 @@ class Api::ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:overall_rating, :food_rating, :ambiance_rating, :value_rating, :body)
+        params.require(:review).permit(:restaurant_id, :overall_rating, :food_rating, :ambiance_rating, :service_rating, :value_rating, :noise_level, :body)
     end
 end
