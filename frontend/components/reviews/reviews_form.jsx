@@ -41,6 +41,7 @@ class ReviewsForm extends React.Component {
             body
         }
         this.props.createReview(review).then(this.props.closeModal);
+        this.props.fetchRestaurant(restaurant.id);
     }
 
     handleRadioInput(field) {
