@@ -4,6 +4,7 @@ import moment from 'moment';
 const ReviewItem = props => {
     
     const review = props.review;
+    debugger
     let noStars = _.times(5 - review.overall_rating, (i) => {
         return (<i key={i + 1 + review.overall_rating} className="material-icons star-grey">star</i>)
     });

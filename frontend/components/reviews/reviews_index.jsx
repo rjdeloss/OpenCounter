@@ -13,7 +13,7 @@ const ReviewsIndex = (props) => {
                 )
             });
             return (
-                <section>
+                <section className="reviews-index-container">
                     { reviews }
                 </section>
             )

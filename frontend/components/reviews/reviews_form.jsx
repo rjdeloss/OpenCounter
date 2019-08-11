@@ -24,8 +24,15 @@ class ReviewsForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        const { restaurant, userId } = this.props;
         const { food_rating, service_rating, ambiance_rating, value_rating, noise_level, body } = this.state;
+
+        let overall_rating = Math.round((food_rating + service_rating + ambiance_rating + value_rating) / 4);
+
         const review = {
+            userId,
+            restaurant_id: restaurant.id,
+            overall_rating,
             food_rating, 
             service_rating, 
             ambiance_rating, 
@@ -36,8 +43,12 @@ class ReviewsForm extends React.Component {
         this.props.createReview(review).then(this.props.closeModal);
     }
 
-    handleInput(field) {
+    handleRadioInput(field) {
          return value => this.setState({ [field]: value })
+    }
+
+    handleInput(field) {
+        return e => this.setState({ [field]: e.currentTarget.value })
     }
 
     renderErrors() {
@@ -72,7 +83,7 @@ class ReviewsForm extends React.Component {
                         <label className="reviews-form-input-container">Food
                             <div className="reviews-radio-collection">
                                 <Rating
-                                    onClick={this.handleInput("food_rating")}
+                                    onClick={this.handleRadioInput("food_rating")}
                                     initialRating={this.state.food_rating}
                                     emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
                                     fullSymbol={<i className="material-icons red">star</i>}
@@ -82,7 +93,7 @@ class ReviewsForm extends React.Component {
                         <label className="reviews-form-input-container">Service
                             <div className="reviews-radio-collection">
                                 <Rating
-                                    onClick={this.handleInput("service_rating")}
+                                    onClick={this.handleRadioInput("service_rating")}
                                     initialRating={this.state.service_rating}
                                     emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
                                     fullSymbol={<i className="material-icons red">star</i>}
@@ -92,7 +103,7 @@ class ReviewsForm extends React.Component {
                         <label className="reviews-form-input-container">Ambience
                             <div className="reviews-radio-collection">
                                 <Rating
-                                    onClick={this.handleInput("ambiance_rating")}
+                                    onClick={this.handleRadioInput("ambiance_rating")}
                                     initialRating={this.state.ambiance_rating}
                                     emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
                                     fullSymbol={<i className="material-icons red">star</i>}
@@ -102,7 +113,7 @@ class ReviewsForm extends React.Component {
                         <label className="reviews-form-input-container">Value
                             <div className="reviews-radio-collection">
                                 <Rating
-                                    onClick={this.handleInput("value_rating")}
+                                    onClick={this.handleRadioInput("value_rating")}
                                     initialRating={this.state.value_rating}
                                     emptySymbol={<i className="material-icons grey star-rating">star_outlined</i>}
                                     fullSymbol={<i className="material-icons red">star</i>}
@@ -113,7 +124,7 @@ class ReviewsForm extends React.Component {
                             <div className="reviews-radio-collection">
                                 <Rating 
                                     stop={3}
-                                    onClick={this.handleInput("noise_level")}
+                                    onClick={this.handleRadioInput("noise_level")}
                                     initialRating={this.state.noise_level}
                                     emptySymbol={<i className="material-icons grey">star</i>}
                                     fullSymbol={<i className="material-icons red">star</i>}
@@ -126,11 +137,11 @@ class ReviewsForm extends React.Component {
                     </div>
                     <h3 className="bold-text center-text pad-text">Would you recommend {this.props.restaurant.name} to a friend?</h3>
                             <div className="reviews-form-noise-input">
-                                <input type="radio" name="noise" id="" value="1" onClick={this.handleInput("recommended")}/>Yes
-                                <input type="radio" name="noise" id="" value="0" onClick={this.handleInput("recommended")}/>No
+                                <input type="radio" name="noise" id="" value="1" onClick={this.handleRadioInput("recommended")}/>Yes
+                                <input type="radio" name="noise" id="" value="0" onClick={this.handleRadioInput("recommended")}/>No
                             </div>
                     <h3 className="bold-text center-text pad-text">Write a review</h3>
-                    <textarea type="textarea" wrap="soft" rows="10" cols="50" className="textarea" onChange={this.handleInput("body")}/>
+                    <textarea type="textarea" wrap="soft" rows="10" cols="50" className="textarea" name="body" value={this.state.body} onChange={ this.handleInput("body")}/>
 
                     <input className="reviews-form-submit" type="submit" value="Submit your Review" name="" id=""/>
                 </form>

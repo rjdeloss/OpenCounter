@@ -49,6 +49,11 @@
     /* overflow: hidden; */
 }
 
+.reviews-index-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .reviews-rating-container {
     margin: 0 0 16px;
 }
