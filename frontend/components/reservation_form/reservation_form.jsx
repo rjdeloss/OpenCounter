@@ -4,7 +4,6 @@ import moment from 'moment';
 class ReservationForm extends React.Component {
     constructor(props){
         super(props);
-        debugger
             this.state = {
                 party_size: 2, 
                 time: moment(this.props.restaurant.open_time).utc().format('LT'),

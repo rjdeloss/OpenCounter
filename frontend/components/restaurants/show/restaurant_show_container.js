@@ -8,9 +8,12 @@ import { openModal } from '../../../actions/modal_action';
 const msp = ( state, ownProps) => {
     const restaurantId = ownProps.match.params.restaurantId; 
     const restaurant = Object.keys(state.entities.restaurants).length ? state.entities.restaurants[restaurantId]: { overall_ratings: [], reviews: [] };
+    const loggedIn = Boolean(state.session.currentUser);
+    
     return {
         restaurantId,
-        restaurant
+        restaurant, 
+        loggedIn
     }
 }
 

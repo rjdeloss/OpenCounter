@@ -25,6 +25,9 @@ const ReviewsStats = props => {
         return (<i key={i} className="material-icons star-grey">star</i>)
     });
 
+    let renderReview = 
+        props.loggedIn ? <a className="reviews-add-button" onClick={() => newReview()}>+ Create Review </a> : null;
+
     const review_numbers = {
         1: 0,
         2: 0,
@@ -90,7 +93,8 @@ const ReviewsStats = props => {
                     <div className="review-stats-graph">
                         { reviews_percentage}
                     </div>
-                    <a className="reviews-add-button" onClick={() => newReview()}>+ Create Review </a>
+                        { renderReview }
+                    {/* <a className="reviews-add-button" onClick={() => newReview()}>+ Create Review </a> */}
                 </div>
             </div>
         </div>
