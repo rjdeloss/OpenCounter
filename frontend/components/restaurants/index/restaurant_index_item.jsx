@@ -20,11 +20,11 @@ const RestaurantIndexItem = props => {
                     <img src="" alt="" />
                 </div>
                 <div className="page-main-restaurant-content-info">
-                    <h3>{restaurant.name}</h3>
+                    <h3 className="bold-text">{restaurant.name}</h3>
                     <div> <div>
                         <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i>
                     </div>*<span>review count</span></div>
-                    <div>{restaurant.cuisine} * {restaurant.price_range}{greyPriceRange} * {restaurant.city}</div>
+                    <div>{restaurant.cuisine} * {restaurant.price_range} * {restaurant.city}</div>
                     <div>{restaurant.zip} of times booked</div>
                 </div>
             </div>

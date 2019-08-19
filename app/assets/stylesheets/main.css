@@ -1,9 +1,7 @@
 .page-main-content {
     display: flex;
-    justify-content: center;
     padding: 0 20px 16px;
     box-sizing: border-box;
-    /* outline: 1px solid red; */
     width: 1280px;
     margin: 0 auto; 
     height: auto;
@@ -11,17 +9,17 @@
 
 .page-content-column {
     padding: 0 16px;
-    box-sizing: border-box;
-    width: auto;
-    /* outline: 1px solid green; */
+    margin: 0 auto;
+    max-width: 920px;
+    /* outline: 1px dotted green; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     box-sizing: inherit;
 }
 
-.page-main-secition {
-    box-sizing: inherit;
+.page-main-section {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,12 +27,13 @@
 
 .page-main-section-item {
     box-sizing: border-box;
-    width: 85%;
-    padding: 70px 0 0;
+    width: auto;
+    padding: 40px 0 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* outline: 1px solid blue; */
+    justify-content: flex-start;
+    overflow: hidden;
+    /* outline: 1px dotted blue; */
 }
 
 .page-main-section-item h2{
@@ -44,12 +43,18 @@
     font-weight: 600;
 }
 
-.page-main-restaurant-cuisine-list, .page-main-restaurant-cuisines {
+.page-main-restaurant-carousel {
     display: flex; 
-    flex-flow: wrap row;
-    justify-content: center;
-    box-sizing: inherit;
-    margin: 0 0 15px;
+    overflow-x: auto;
+}
+
+.page-main-restaurant-cuisines {
+    display: flex; 
+    /* flex-flow: nowrap row; */
+    justify-content: flex-start;
+    width: auto;
+    /* box-sizing: inherit; */
+    /* margin: 0 0 15px; */
 }
 
 
@@ -86,8 +91,9 @@
 
 .page-main-restaurant-item-img-container {
     height: 236px; 
-    width: 132; 
+    width: auto; 
     background: url('http://www.domkucafe.com/wp-content/uploads/2018/01/restaurants-in-Miami-1024x683-1024x585.jpg');
+    transform: scale(1.05);
 }
 
 .page-main-restaurant-content-info {

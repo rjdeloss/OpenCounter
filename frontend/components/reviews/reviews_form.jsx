@@ -5,7 +5,6 @@ import moment from 'moment';
 class ReviewsForm extends React.Component {
     constructor(props){
         super(props); 
-        debugger
         this.state = {
             food_rating: 0,
             service_rating: 0,
