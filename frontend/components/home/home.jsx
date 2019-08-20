@@ -24,7 +24,9 @@ const Home = () => {
                             <h2>Popular restaurants in Manhattan</h2>
                             <section className="page-main-restaurant-carousel">
                                 {/* <div className="page-main-restaurant-cuisine-list"> */}
-                                <Route exact path="/" component={RestaurantIndexContainer} />
+                                <section className="page-main-restaurant-cuisines">
+                                    <Route exact path="/" component={RestaurantIndexContainer} />
+                                </section>
                             </section>
                         </div>
                         <div className="page-main-section-item">

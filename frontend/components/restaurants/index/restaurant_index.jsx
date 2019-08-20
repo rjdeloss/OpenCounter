@@ -9,9 +9,9 @@ const RestaurantsIndex = (props) => {
     useEffect(()=> { props.fetchRestaurants(); }, []);
 
     return (
-        <section className="page-main-restaurant-cuisines">
+        <>
             {restaurants}
-        </section>
+        </>
     )
     
 }
