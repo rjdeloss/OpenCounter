@@ -3,7 +3,18 @@ import { withRouter } from 'react-router-dom';
 
 
 const RestaurantIndexItem = props => {
+    debugger
     const restaurant = props.restaurant;
+    const reviewsCount = Object.keys(props.restaurant.reviews).length;
+    const overallRating = props.restaurant.overall_ratings.overall_rating;
+
+    let noStars = _.times(6 - overallRating, (i) => {
+        return (<i key={i + 1 + overallRating} className="material-icons star-grey">star</i>)
+    });
+    let stars = _.times(overallRating, (i) => {
+        return (<i key={i} className="material-icons red">star</i>)
+    });
+
     const handleClick = () => {
         props.history.push(`/restaurants/${restaurant.id}`)
     }
@@ -21,10 +32,10 @@ const RestaurantIndexItem = props => {
                 </div>
                 <div className="page-main-restaurant-content-info">
                     <h3 className="bold-text">{restaurant.name}</h3>
-                    <div> <div>
-                        <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i>
-                    </div>*<span>review count</span></div>
-                    <div>{restaurant.cuisine} * {restaurant.price_range} * {restaurant.city}</div>
+                    <div className="reviews-rating-header"> 
+                        {stars}{noStars} 
+                        <p>&nbsp;&nbsp;&nbsp;{reviewsCount} reviews</p></div>
+                    <div>{restaurant.cuisine} &nbsp;·&nbsp; {restaurant.price_range} &nbsp;·&nbsp; {restaurant.city}</div>
                     <div>{restaurant.zip} of times booked</div>
                 </div>
             </div>
@@ -41,7 +52,7 @@ const RestaurantIndexItem = props => {
                     </div>
                     <div className="search-restaurant-ratings">
                         <div>
-                            <i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star_half</i>
+                            {stars}{noStars}{/* <i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star_half</i> */}
                         </div>
                         <span>{restaurant.price_range}{greyPriceRange}</span>
                     </div>

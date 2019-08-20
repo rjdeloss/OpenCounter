@@ -87,17 +87,23 @@
 .page-main-restaurant-item:hover {
     box-shadow: 0 2px 4px rgba(45,51,63,.2);
     transform: translate(0,-6px);
+    /* transform: scale(1.05); */
 }
+
+/* .page-main-restaurant-item-img-container:hover {
+    transform: scale(1.05);
+    overflow: hidden; 
+} */
 
 .page-main-restaurant-item-img-container {
     height: 236px; 
     width: auto; 
     background: url('http://www.domkucafe.com/wp-content/uploads/2018/01/restaurants-in-Miami-1024x683-1024x585.jpg');
-    transform: scale(1.05);
 }
 
 .page-main-restaurant-content-info {
     padding: 8px;
+    line-height: 1.5;
 }
 
 .cuisine-content h3 {
