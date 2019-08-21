@@ -32,7 +32,7 @@ const ReviewsStats = props => {
         return (<i key={i} className="material-icons star-grey">star</i>)
     });
 
-    let renderReview = 
+    let renderReview =  
         props.loggedIn && !reviewees.includes(currentUser) ? <a className="reviews-add-button" onClick={() => newReview()}>+ Create Review </a> : null;
 
     const review_numbers = {
