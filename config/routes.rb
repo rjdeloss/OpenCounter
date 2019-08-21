@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
 
     resources :cuisines, only: [:index]
+    resources :favorites, only: [:index, :create, :destroy]
    
   end
    
