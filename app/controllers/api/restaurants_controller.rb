@@ -1,12 +1,13 @@
 class Api::RestaurantsController < ApplicationController
 
   def index
-    if params[:search].length > 0
+    @restaurants = Restaurant.all
+    if params[:search]
       @restaurants = Restaurant.search(params[:search])
-      render :index
-    else 
+    end
+
+    unless @restaurants.length > 0
       @restaurants = Restaurant.all.includes(:reviews)
-      render :index
     end
   end
 

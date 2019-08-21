@@ -1,8 +1,9 @@
 import React from 'react'; 
 import moment from 'moment';
 
+
 const ReviewItem = props => {
-    
+    const deleteReview = props.deleteReview;
     const review = props.review;
     let noStars = _.times(5 - review.overall_rating, (i) => {
         return (<i key={i + 1 + review.overall_rating} className="material-icons star-grey">star</i>)
@@ -17,8 +18,10 @@ const ReviewItem = props => {
     let userName = review.author.split(' '); 
         userName = userName[0]+userName[1][0];
 
-
     const color = props.color;
+
+    let renderDeleteButton = 
+        props.loggedIn && props.currentUser === review.user_id ? <a className="reviews-delete-button" onClick={() => deleteReview(review.id)}>Delete Review</a> : null;
 
     return (
         <div className="reviews-item">
@@ -31,21 +34,25 @@ const ReviewItem = props => {
                </div>
             </div>
             <div className="reviews-content">
-                <div className="reviews-rating-header">
-                    <span>{stars}{noStars}</span><p className="reviews-creation-date">·&nbsp;&nbsp;&nbsp;Dined on {moment(review.created_at).format('LL')}</p>
-                </div>
-                <div className="reviews-rating-container">
-                    <span className="rating-name">Overall</span>
-                    <span className="rating-number">{review.overall_rating}</span>
-                    <span className="rating-name">· Food</span>
-                    <span className="rating-number">{review.food_rating}</span>
-                    <span className="rating-name"> · Service</span>
-                    <span className="rating-number">{review.service_rating}</span>
-                    <span className="rating-name">· Ambience</span>
-                    <span className="rating-number">{review.ambiance_rating}</span>
+                <div className="reviews-header">
+                    <section className="reviews-stats-header">
+                        <div className="reviews-rating-header">
+                            <span>{stars}{noStars}</span><p className="reviews-creation-date">·&nbsp;&nbsp;&nbsp;Dined on {moment(review.created_at).format('LL')}</p>
+                        </div>
+                        <div className="reviews-rating-container">
+                            <span className="rating-name">Overall</span>
+                            <span className="rating-number">{review.overall_rating}</span>
+                            <span className="rating-name">· Food</span>
+                            <span className="rating-number">{review.food_rating}</span>
+                            <span className="rating-name"> · Service</span>
+                            <span className="rating-number">{review.service_rating}</span>
+                            <span className="rating-name">· Ambience</span>
+                            <span className="rating-number">{review.ambiance_rating}</span>
+                        </div>
+                    </section>
+                    {renderDeleteButton}
                 </div>
                 <p>{review.body}</p>
-
             </div>
 
         </div>

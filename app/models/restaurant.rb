@@ -51,14 +51,15 @@ class Restaurant < ApplicationRecord
     pg_search_scope :search, against: [:name, :city, :zip], 
         using: {tsearch: {dictionary: "english"}}, 
         associated_against: {cuisines: :cuisine}
-    
-    # def self.search(params)
-    #     if params == ""
-    #         search(params)
+
+    # def self.search(query)
+    #     if query.present?
+    #         search_text(query)
     #     else
-    #         scoped
+    #         order("created_at DESC")
     #     end
     # end
+
     # def self.search(params)
     #     if params.present?
     #         search(params)
