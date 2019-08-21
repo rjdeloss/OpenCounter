@@ -1,7 +1,7 @@
 class Api::RestaurantsController < ApplicationController
 
   def index
-    if params[:search]
+    if params[:search].length > 0
       @restaurants = Restaurant.search(params[:search])
       render :index
     else 

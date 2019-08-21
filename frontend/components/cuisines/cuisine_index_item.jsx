@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 
 const CuisineIndexItem = props => {
     const cuisine = props.cuisine.cuisine; 
-    debugger
 
     const handleClick = () => {
         props.history.push(`/restaurants/search?search=${cuisine.toLowerCase()}`);
