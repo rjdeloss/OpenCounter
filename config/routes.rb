@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resources :reservations, only: [ :show, :create, :destroy]
       resources :reviews, only: [:index, :show, :create, :destroy]
     end
+
+    resources :cuisines, only: [:index]
    
   end
    
