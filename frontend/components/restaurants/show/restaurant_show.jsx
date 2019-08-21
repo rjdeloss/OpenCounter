@@ -43,15 +43,24 @@ class RestaurantShow extends React.Component {
     pageJumpReviews(e) {
         window.scrollTo(0, this.reviewsRef.current.offsetTop - 40)
     }
+
+    
     render() {
 
-
+        debugger
         const restaurant = this.props.restaurant;
         const newReview = this.props.newReview;
         const loggedIn = this.props.loggedIn;
         const currentUser = this.props.currentUser;
-        const deleteReview = this.props.deleteReview
+        const deleteReview = this.props.deleteReview;
+        const overallRating = this.props.restaurant.overall_ratings.overall_rating;
 
+        let noStars = _.times(5 - Math.round(overallRating), (i) => {
+            return (<i key={i + 1 + overallRating} className="material-icons star-grey">star</i>)
+        });
+        let stars = _.times(Math.round(overallRating), (i) => {
+            return (<i key={i} className="material-icons red">star</i>)
+        });
 
         
         if (typeof restaurant === "undefined") {
@@ -77,7 +86,7 @@ class RestaurantShow extends React.Component {
                             </div>
                             <article className="nav-bar-words">
                                 <div>
-                                <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i>
+                                {stars}{noStars} {/* <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i> */}
                                 </div>
                                     <i className="material-icons">chat_bubble_outline</i><p>{Object.values(restaurant.reviews).length} reviews  </p>
                                     <i className="material-icons">local_atm</i><p>{restaurant.price_range}  </p>
