@@ -14,10 +14,8 @@ const restaurantsReducer = (state ={}, action ) => {
             let newState = merge({}, state);
             let review = action.review.review;
             newState[review.restaurant_id].reviews[review.id] = review
-            // const newReview = { [action.restaurant.reviews.id]: action.restaurant.review}
             return newState;
         case REMOVE_REVIEW:
-            debugger
             newState = merge({}, state);
             review = action.id.review;
             delete newState[review.restaurant_id].reviews[review.id];
