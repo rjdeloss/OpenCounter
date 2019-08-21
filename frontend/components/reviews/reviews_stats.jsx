@@ -1,6 +1,8 @@
 import React from 'react';
 
 const ReviewsStats = props => {
+    debugger
+    const currentUser =  props.currentUser;
     let reviews = Object.values(props.restaurant.reviews);
     let ratings = props.restaurant.overall_ratings;
     let restaurant = props.restaurant;
@@ -17,6 +19,12 @@ const ReviewsStats = props => {
             return "Moderate"
     }}
 
+    let reviewees = reviews.map( review =>{
+        return (
+            review.user_id
+        )
+    } )
+
     let stars = _.times(Math.round(ratings.overall_rating), (i) => {
         return (<i key={i} className="material-icons red">star</i>)
     });
@@ -26,7 +34,7 @@ const ReviewsStats = props => {
     });
 
     let renderReview = 
-        props.loggedIn ? <a className="reviews-add-button" onClick={() => newReview()}>+ Create Review </a> : null;
+        props.loggedIn && !reviewees.includes(currentUser) ? <a className="reviews-add-button" onClick={() => newReview()}>+ Create Review </a> : null;
 
     const review_numbers = {
         1: 0,
