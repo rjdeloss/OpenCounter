@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const RestaurantIndexItem = props => {
-    debugger
     const restaurant = props.restaurant;
     const reviewsCount = Object.keys(props.restaurant.reviews).length;
     const overallRating = props.restaurant.overall_ratings.overall_rating;
