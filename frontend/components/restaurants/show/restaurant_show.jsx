@@ -49,6 +49,8 @@ class RestaurantShow extends React.Component {
         const restaurant = this.props.restaurant;
         const newReview = this.props.newReview;
         const loggedIn = this.props.loggedIn;
+        const currentUser = this.props.currentUser;
+        const deleteReview = this.props.deleteReview
 
 
         
@@ -99,7 +101,7 @@ class RestaurantShow extends React.Component {
                         </section> */}
                         <section ref={this.reviewsRef} id="reviews" className="section-container">
                             <ReviewsStats restaurant={restaurant} newReview={newReview} loggedIn={loggedIn} />  
-                            <ReviewsIndex reviews={restaurant.reviews}/>
+                            <ReviewsIndex reviews={restaurant.reviews} currentUser={currentUser} loggedIn={loggedIn} deleteReview={deleteReview} />
                         </section>
                         <div className="restaurant-reviews-section">
                         </div>
