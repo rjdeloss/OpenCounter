@@ -59,18 +59,33 @@
 
 
 .cuisine-content {
-    display: flex;
+    /* display: flex; */
+    position: relative;
     padding: 8px 0 0; 
     margin: 0 10px 0;
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     height: 208px;
     width: 208px;
     background: url('https://www.bonappetour.com/blog/wp-content/uploads/2016/12/what-to-eat-in-barcelona-compressor-1030x610.jpg');
     text-align: center;
     border-radius: 4px;
+}
+
+.cuisine-content::after {
+    display: block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    content: "";
+    height: 216px;
+    width: 208px;
+    position: absolute;
+    top: 0;
+    opacity: 0.7;
+    background: rgba(47, 45, 65, 0.7);
+    z-index: 1;
 }
 
 .page-main-restaurant-item {
@@ -107,9 +122,12 @@
 }
 
 .cuisine-content h3 {
+    position: relative;
+    top: 25%;
     color: #ffffff;
     font-weight: 700;
     line-height: 1.5;
+    z-index: 3;
 }
 
 
