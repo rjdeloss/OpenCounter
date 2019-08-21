@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ReviewsStats = props => {
-    debugger
     const currentUser =  props.currentUser;
     let reviews = Object.values(props.restaurant.reviews);
     let ratings = props.restaurant.overall_ratings;
