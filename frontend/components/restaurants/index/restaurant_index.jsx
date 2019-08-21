@@ -3,10 +3,13 @@ import React, { useEffect } from 'react';
 import RestaurantIndexItem from './restaurant_index_item';
 
 const RestaurantsIndex = (props) => {
+    debugger
     const restaurants = props.restaurants.map(restaurant => (
         <RestaurantIndexItem key={restaurant.id} restaurant={restaurant} />
     ));
-    useEffect(()=> { props.fetchRestaurants(); }, []);
+    location.href.includes('restaurants/search') ? 
+        useEffect(()=> { props.searchRestaurants(location.href.split("=")[1]);}, []) :
+        useEffect(()=> { props.fetchRestaurants(); }, []);
 
     return (
         <>

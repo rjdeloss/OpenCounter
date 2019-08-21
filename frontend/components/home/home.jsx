@@ -24,7 +24,6 @@ const Home = () => {
                         <div className="page-main-section-item">
                             <h2>Popular restaurants in Manhattan</h2>
                             <section className="page-main-restaurant-carousel">
-                                {/* <div className="page-main-restaurant-cuisine-list"> */}
                                 <section className="page-main-restaurant-cuisines">
                                     <Route exact path="/" component={RestaurantIndexContainer} />
                                 </section>
@@ -35,26 +34,6 @@ const Home = () => {
                                 <section className="page-main-restaurant-carousel">
                                 <div className="page-main-restaurant-cuisines">
                                     <Route exact path="/" component={CuisineIndexContainer} />
-                                    {/* <div className="cuisine-content">
-                                        <h3>Best Cuisine</h3>
-                                        <h3>Restaurants Around </h3>
-                                        <h3>You</h3>
-                                    </div>
-                                    <div className="cuisine-content">
-                                        <h3>Best Cuisine</h3>
-                                        <h3>Restaurants Around </h3>
-                                        <h3>You</h3>
-                                    </div>
-                                    <div className="cuisine-content">
-                                        <h3>Best Cuisine</h3>
-                                        <h3>Restaurants Around </h3>
-                                        <h3>You</h3>
-                                    </div>
-                                    <div className="cuisine-content">
-                                        <h3>Best Cuisine</h3>
-                                        <h3>Restaurants Around </h3>
-                                        <h3>You</h3>
-                                    </div> */}
                                 </div>
                             </section>
                         </div>
