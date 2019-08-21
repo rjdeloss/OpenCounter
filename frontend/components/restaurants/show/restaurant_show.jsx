@@ -100,7 +100,7 @@ class RestaurantShow extends React.Component {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ullam odio atque, a corporis amet, eum magni minus, soluta excepturi consectetur voluptas non. Id quas quam asperiores praesentium. Explicabo, dolores?</p>
                         </section> */}
                         <section ref={this.reviewsRef} id="reviews" className="section-container">
-                            <ReviewsStats restaurant={restaurant} newReview={newReview} loggedIn={loggedIn} />  
+                            <ReviewsStats restaurant={restaurant} newReview={newReview} loggedIn={loggedIn} currentUser={currentUser} />  
                             <ReviewsIndex reviews={restaurant.reviews} currentUser={currentUser} loggedIn={loggedIn} deleteReview={deleteReview} />
                         </section>
                         <div className="restaurant-reviews-section">
