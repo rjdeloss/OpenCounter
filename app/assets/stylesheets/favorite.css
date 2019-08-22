@@ -1,0 +1,17 @@
+.favorite-button {
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    position: absolute;
+    margin:50px 950px 0;
+    padding: 11px 15px;
+    width: 15rem; 
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #d8d9db; 
+    transition: .3s all;
+}
+
+.favorite-button:hover {
+    border: 1px solid #da3743;
+}

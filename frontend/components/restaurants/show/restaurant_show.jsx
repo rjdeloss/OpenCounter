@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import ReservationForm from '../../reservation_form/reservation_form_container';
+import FavoriteButton from '../../favorites/favorites_container';
 import ReviewsIndex from '../../reviews/reviews_index';
 import ReviewsStats from '../../reviews/reviews_stats';
 
@@ -60,6 +61,7 @@ class RestaurantShow extends React.Component {
             return(
             <>
             <main className="show-page-container">
+                <FavoriteButton restaurant={restaurant} />
                 <div className="show-page-image-container">
                 </div>
                 <div className="show-page-content-container">
