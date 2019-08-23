@@ -2,11 +2,13 @@ class Api::FavoritesController < ApplicationController
     before_action :require_logged_in
 
     def index 
+        # @favorites = Favorite.all
         @favorites = Favorite.where('user_id = ?', params[:userId])
     end
     
     def create
-        @favoreite = Favorite.new(favorite_params)
+        debugger
+        @favorite = Favorite.new(favorite_params)
         if @favorite.save
             render :show
         else
