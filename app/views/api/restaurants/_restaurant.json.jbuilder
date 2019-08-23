@@ -25,3 +25,4 @@ json.reviews do
         end
     end
 end
+json.reviews({}) if restaurant.reviews.empty?

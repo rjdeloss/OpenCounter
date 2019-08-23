@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
     debugger
     const loggedIn = Boolean(state.session.currentUser);
     const currentUser = state.session.currentUser;
-    const favorites = Object.values(state.entities.users[state.session.currentUser].favorites)
+    const favorites = state.entities.users[state.session.currentUser].favorites 
     return {
         loggedIn, 
         currentUser,
