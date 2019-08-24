@@ -8,12 +8,12 @@ export const usersReducer = (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
             return merge({}, state, { [action.currentUser.id]: action.currentUser,  });
         case RECEIVE_FAVORITE:
-            debugger
             let newState = merge({}, state);
-            let favorite = action.favorite; 
+            let favorite = action.favorite.favorite; 
             newState[favorite.user_id].favorites[favorite.id] = favorite;
             return newState
         case REMOVE_FAVORITE:
+            debugger
             newState = merge({}, state);
             favorite = action.id.favorite; 
             delete newState[favorite.user_id].favorites[favorite.id];

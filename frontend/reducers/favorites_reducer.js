@@ -7,10 +7,14 @@ const favoritesReducer = (state={}, action) => {
         case RECEIVE_FAVORITES:
             return action.favorites;
         case RECEIVE_FAVORITE:
-            const newFavorite = { [action.favorite.id]: action.favorite }
+            debugger
+            let newState = merge({}, state);
+            let favorite = action.favorite.favorite; 
+            const newFavorite = { [favorite.id]: favorite }
             return merge({}, state, newFavorite);
         case REMOVE_FAVORITE:
-            let newState = merge({}, state); 
+            debugger
+            newState = merge({}, state); 
             delete newState[action.id];
             return newState; 
         default:

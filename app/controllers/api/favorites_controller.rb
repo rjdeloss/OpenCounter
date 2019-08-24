@@ -7,7 +7,6 @@ class Api::FavoritesController < ApplicationController
     end
     
     def create
-        debugger
         @favorite = Favorite.new(favorite_params)
         if @favorite.save
             render :show
@@ -17,6 +16,7 @@ class Api::FavoritesController < ApplicationController
     end
 
     def destroy 
+        # debugger
         @favorite = Favorite.find(params[:id])
         @favorite.destroy
         render :show
