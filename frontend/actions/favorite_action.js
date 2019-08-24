@@ -32,6 +32,6 @@ export const createFavorite = favorite => dispatch => (
     FavoriteApiUtil.createFavorite(favorite).then(favorite => dispatch(receiveFavorite(favorite)))
 )
 
-export const deleteFavorite = id => dispatch (
+export const deleteFavorite = id => dispatch => (
     FavoriteApiUtil.deleteFavorite(id).then(favorite=> dispatch(removeFavorite(favorite)))
 )

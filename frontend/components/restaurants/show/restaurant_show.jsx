@@ -14,11 +14,11 @@ class RestaurantShow extends React.Component {
         this.pageJumpMenu = this.pageJumpMenu.bind(this);
         this.pageJumpSpecials = this.pageJumpSpecials.bind(this);
         this.pageJumpReviews = this.pageJumpReviews.bind(this);
-        this.titleRef = React.createRef()
-        this.photoRef = React.createRef()
-        this.menuRef = React.createRef()
-        this.specialsRef = React.createRef()
-        this.reviewsRef = React.createRef()
+        this.titleRef = React.createRef();
+        this.photoRef = React.createRef();
+        this.menuRef = React.createRef();
+        this.specialsRef = React.createRef();
+        this.reviewsRef = React.createRef();
     }
 
     componentDidMount() {
@@ -44,6 +44,7 @@ class RestaurantShow extends React.Component {
     pageJumpReviews(e) {
         window.scrollTo(0, this.reviewsRef.current.offsetTop - 40)
     }
+
     render() {
 
 
@@ -53,7 +54,7 @@ class RestaurantShow extends React.Component {
         const currentUser = this.props.currentUser;
         const deleteReview = this.props.deleteReview
 
-
+        let renderFavoriteButton = loggedIn ? <FavoriteButton restaurant={restaurant} /> : null
         
         if (typeof restaurant === "undefined") {
             return (<></>)
@@ -61,7 +62,7 @@ class RestaurantShow extends React.Component {
             return(
             <>
             <main className="show-page-container">
-                <FavoriteButton restaurant={restaurant} />
+                {renderFavoriteButton}
                 <div className="show-page-image-container">
                 </div>
                 <div className="show-page-content-container">

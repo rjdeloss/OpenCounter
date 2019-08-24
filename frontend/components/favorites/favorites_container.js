@@ -4,10 +4,12 @@ import { openModal } from '../../actions/modal_action';
 import FavoriteButton from './favorites';
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     const loggedIn = Boolean(state.session.currentUser);
     const currentUser = state.session.currentUser;
-    const favorites = state.entities.users[state.session.currentUser].favorites 
+    const favorites = Object.keys(state.entities.users[state.session.currentUser].favorites).length ?
+        state.entities.users[state.session.currentUser].favorites : { favorites: {} }
+
     return {
         loggedIn, 
         currentUser,
