@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import ReservationForm from '../../reservation_form/reservation_form_container';
+import FavoriteButton from '../../favorites/favorites_container';
 import ReviewsIndex from '../../reviews/reviews_index';
 import ReviewsStats from '../../reviews/reviews_stats';
 
@@ -13,11 +14,11 @@ class RestaurantShow extends React.Component {
         this.pageJumpMenu = this.pageJumpMenu.bind(this);
         this.pageJumpSpecials = this.pageJumpSpecials.bind(this);
         this.pageJumpReviews = this.pageJumpReviews.bind(this);
-        this.titleRef = React.createRef()
-        this.photoRef = React.createRef()
-        this.menuRef = React.createRef()
-        this.specialsRef = React.createRef()
-        this.reviewsRef = React.createRef()
+        this.titleRef = React.createRef();
+        this.photoRef = React.createRef();
+        this.menuRef = React.createRef();
+        this.specialsRef = React.createRef();
+        this.reviewsRef = React.createRef();
     }
 
     componentDidMount() {
@@ -47,7 +48,6 @@ class RestaurantShow extends React.Component {
     
     render() {
 
-        debugger
         const restaurant = this.props.restaurant;
         const newReview = this.props.newReview;
         const loggedIn = this.props.loggedIn;
@@ -62,6 +62,7 @@ class RestaurantShow extends React.Component {
             return (<i key={i} className="material-icons red">star</i>)
         });
 
+        let renderFavoriteButton = loggedIn ? <FavoriteButton restaurant={restaurant} /> : null
         
         if (typeof restaurant === "undefined") {
             return (<></>)
@@ -69,6 +70,7 @@ class RestaurantShow extends React.Component {
             return(
             <>
             <main className="show-page-container">
+                {renderFavoriteButton}
                 <div className="show-page-image-container">
                 </div>
                 <div className="show-page-content-container">
