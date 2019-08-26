@@ -11,8 +11,22 @@ const CityIndex = props => {
         "Las Vegas"
     ]
 
+    const backgrounds = [
+        "city-new-york",
+        "city-chicago",
+        "city-los-angeles",
+        "city-san-francisco",
+        "city-miami",
+        "city-las-vegas"
+    ]
+
+
+
     const cityItems = cities.map((city,i) => (
-        <CityIndexItem key={i} city={city} searchRestaurants={props.searchRestaurants} />
+        <CityIndexItem key={i} 
+            city={city} 
+            searchRestaurants={props.searchRestaurants}
+            backgrounds={backgrounds[i]} />
     ));
 
     // useEffect(() => { props.fetchCuisines(); }, []);

@@ -41,7 +41,7 @@ const Home = () => {
                         <div className="page-main-section-item">
                             <h2>Featured Areas</h2>
                                 <section className="page-main-restaurant-carousel">
-                                <div className="page-main-restaurant-cuisines">
+                                    <div className="page-main-city-container">
                                     <Route exact path="/" component={CityIndexContainer} />
                                 </div>
                             </section>
