@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 const CityIndexItem = props => {
-    debugger
     const city = props.city;
     const background = props.backgrounds;
 
@@ -12,7 +11,7 @@ const CityIndexItem = props => {
     }
 
     return (
-        <div className="main-page-cities" onClick={handleClick}>
+        <div className="page-main-cities" onClick={handleClick}>
             <div className={`${background} city-content`} >
                 <h3>{city}</h3>
             </div>
