@@ -36,7 +36,7 @@
     /* outline: 1px dotted blue; */
 }
 
-.page-main-section-item h2{
+.section-item-header {
     padding: 0 0 16px;
     margin: 0 0 20px;
     border-bottom: 1px solid #d8d9db;
@@ -162,8 +162,14 @@
     z-index: 3;
 }
 
-.city-content h3 {
+.city-text {
     font-weight: 700;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.city-content p {
+    font-weight: 500;
     color: #ffffff;
     z-index: 3;
 }

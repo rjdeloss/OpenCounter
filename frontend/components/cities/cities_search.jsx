@@ -13,7 +13,8 @@ const CityIndexItem = props => {
     return (
         <div className="page-main-cities" onClick={handleClick}>
             <div className={`${background} city-content`} >
-                <h3>{city}</h3>
+                <h2 className="city-text">{city}</h2>
+                <p>{props.count} restaurants</p>
             </div>
         </div>
     )
