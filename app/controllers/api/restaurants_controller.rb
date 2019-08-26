@@ -3,7 +3,7 @@ class Api::RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all.includes({reviews: [:user]}, :cuisines)
     if params[:search]
-      @restaurants = Restaurant.search(params[:search])
+      @restaurants = Restaurant.search(params[:search]).includes({reviews: [:user]}, :cuisines)
     end
 
     unless @restaurants.length > 0
