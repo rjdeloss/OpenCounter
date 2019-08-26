@@ -46,6 +46,8 @@ class Restaurant < ApplicationRecord
     has_many :favoritees, 
     through: :favorites, 
     source: :user
+
+    has_one_attached :photo
     
     include PgSearch
     pg_search_scope :search, against: [:name, :city, :zip], 
@@ -100,5 +102,14 @@ class Restaurant < ApplicationRecord
         recommended = recomendations.select { |i| i == 1}
         ((recommended.sum * 1.0 / recomendations.length) * 100).round(0)
     end
+
+    CITIES = [
+        "New York Area",
+        "Chicago",
+        "Los Angeles", 
+        "San Francisco", 
+        "Miami", 
+        "Las Vegas"
+    ]
 
 end

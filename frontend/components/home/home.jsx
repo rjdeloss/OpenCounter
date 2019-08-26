@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import RestaurantIndexContainer from '../restaurants/index/restaurant_index_container';
 import CuisineIndexContainer from '../cuisines/cuisine_index_container';
+import CityIndexContainer from '../cities/city_index_container';
 import Search from '../search/search_container';
 
 const Home = () => {
@@ -34,6 +35,14 @@ const Home = () => {
                                 <section className="page-main-restaurant-carousel">
                                 <div className="page-main-restaurant-cuisines">
                                     <Route exact path="/" component={CuisineIndexContainer} />
+                                </div>
+                            </section>
+                        </div>
+                        <div className="page-main-section-item">
+                            <h2>Featured Areas</h2>
+                                <section className="page-main-restaurant-carousel">
+                                <div className="page-main-restaurant-cuisines">
+                                    <Route exact path="/" component={CityIndexContainer} />
                                 </div>
                             </section>
                         </div>
