@@ -1,7 +1,7 @@
 class Api::RestaurantsController < ApplicationController
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.includes({reviews: [:user]}, :cuisines)
     if params[:search]
       @restaurants = Restaurant.search(params[:search])
     end
@@ -12,7 +12,7 @@ class Api::RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.includes(:reviews).find(params[:id])
+    @restaurant = Restaurant.includes({reviews: [:user]}).find(params[:id])
     render :show
   end
 end

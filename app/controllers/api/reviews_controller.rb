@@ -1,6 +1,8 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_logged_in
     def index 
+        # @res = Restaruant.find_by(id: params[:restaurant_id]).includes({reviews: [:user]})
+        # @reviews = res.reviews
         @reviews = Review.all
     end
 
