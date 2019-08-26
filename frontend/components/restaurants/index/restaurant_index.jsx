@@ -7,8 +7,9 @@ const RestaurantsIndex = (props) => {
     const restaurants = props.restaurants.map(restaurant => (
         <RestaurantIndexItem key={restaurant.id} restaurant={restaurant} />
     ));
+    debugger
     location.href.includes('restaurants/search') ? 
-        useEffect(()=> { props.searchRestaurants(location.href.split("=")[1]);}, []) :
+        useEffect(() => { props.searchRestaurants(location.href.split("=")[1].split("%20").join(" "));}, []) :
         useEffect(()=> { props.fetchRestaurants(); }, []);
 
     return (

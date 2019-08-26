@@ -25,10 +25,10 @@ User.create!(
 
 Cuisine::CUISINES.each { |category| Cuisine.create!(cuisine: category)}
 
-5.times do 
+80.times do 
     User.create!(
         email: Faker::Internet.unique.email, 
-        fname: Faker::Name.first_name, 
+        fname: Faker::Name.unique.first_name, 
         lname: Faker::Name.last_name, 
         password: Faker::Internet.password
     )
@@ -39,19 +39,20 @@ end
 PRICE_RANGE = ["$", "$$", "$$$", "$$$$"]
 OPEN_TIME = ["8:00", "9:00", "10:00", "11:00", "12:00"]
 CLOSE_TIME = ["20:00", "21:00", "22:00", "23:00"]
+CUISINE_IDS = Cuisine.all.pluck(:id)
 
-8.times do
+20.times do
     Restaurant.create(
         name: Faker::Restaurant.unique.name, 
         address: Faker::Address.street_address, 
-        city: Faker::Address.city, 
+        city: Restaurant::CITIES.sample,
         zip: Faker::Address.zip[0..4].to_s,
         lat: Faker::Address.latitude,
         lon: Faker::Address.longitude,
         phone_number: Faker::PhoneNumber.cell_phone, 
         price_range: PRICE_RANGE.sample, 
         description: Faker::Restaurant.description,
-        cuisine_id: (0..25).to_a.sample,
+        cuisine_id: CUISINE_IDS.sample,
         open_time: OPEN_TIME.sample,
         close_time: CLOSE_TIME.sample,
         capacity: rand(80..120)
@@ -69,8 +70,8 @@ Restaurant.all.each do |restaurant|
 end
 
 # REVIEWS
-User.all.each do |user|
-    60.times do 
+User.all.sort[1..-1].each do |user|
+    40.times do 
         Review.create(
         user_id: user.id,
         restaurant_id: RESTAURANT_IDS.sample,
@@ -87,7 +88,7 @@ User.all.each do |user|
 end
 
 # RESERVATIONS
-5.times do
+50.times do
     Reservation.create(
         user_id: User.first.id, 
         restaurant_id: RESTAURANT_IDS.sample,

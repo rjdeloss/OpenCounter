@@ -7,10 +7,10 @@ const RestaurantIndexItem = props => {
     const reviewsCount = Object.keys(props.restaurant.reviews).length;
     const overallRating = props.restaurant.overall_ratings.overall_rating;
 
-    let noStars = _.times(5 - Math.round(overallRating), (i) => {
+    let noStars = _.times(5 - Math.ceil(overallRating), (i) => {
         return (<i key={i + 1 + Math.round(overallRating)} className="material-icons star-grey">star</i>)
     });
-    let stars = _.times(Math.round(overallRating), (i) => {
+    let stars = _.times(Math.ceil(overallRating), (i) => {
         return (<i key={i} className="material-icons red">star</i>)
     });
 
