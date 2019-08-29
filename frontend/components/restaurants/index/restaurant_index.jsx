@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import RestaurantIndexItem from './restaurant_index_item';
 
 const RestaurantsIndex = (props) => {
-
+    debugger
     const restaurants = props.restaurants.map(restaurant => (
         <RestaurantIndexItem key={restaurant.id} restaurant={restaurant} />
     ));

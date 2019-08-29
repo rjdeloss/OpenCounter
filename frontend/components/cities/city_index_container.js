@@ -4,7 +4,6 @@ import CityIndex from './city_index';
 import { searchRestaurants } from '../../actions/restaurant_action';
 
 const msp = state => {
-    debugger
     const restaurants = Object.values(state.entities.restaurants).length ? Object.values(state.entities.restaurants) : [];
     return ({
         restaurants

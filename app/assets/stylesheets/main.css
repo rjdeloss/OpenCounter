@@ -8,9 +8,9 @@
 }
 
 .page-content-column {
-    padding: 0 16px;
+    /* padding: 0 16px; */
     margin: 0 auto;
-    max-width: 920px;
+    max-width: 952px;
     /* outline: 1px dotted green; */
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@
 .page-main-city-container {
     display: flex; 
     justify-content: flex-start;
-    max-width: 888px;
+    max-width: 952px;
     flex-flow: wrap row;
     margin-bottom: 6%;
 }
@@ -69,7 +69,7 @@
     display: flex;
     box-sizing: border-box;
     position: relative;
-    width: 296px; 
+    width: 317px; 
     height: 150px; 
     flex-direction: column;
     align-items: center; 
@@ -79,7 +79,7 @@
 
 .city-content::after {
     display: block;
-    width: 296px; 
+    width: 317px; 
     height: 150px;
     content: "";
     position: absolute;
@@ -93,8 +93,7 @@
 .cuisine-content {
     /* display: flex; */
     position: relative;
-    padding: 8px 0 0; 
-    margin: 0 10px 0;
+    margin: 0 20px 0 0;
     flex-direction: column;
     justify-content: center;
     align-items:center;
@@ -111,7 +110,7 @@
     border-radius: 4px;
     box-sizing: border-box;
     content: "";
-    height: 216px;
+    height: 208px;
     width: 208px;
     position: absolute;
     top: 0;
@@ -163,14 +162,15 @@
 }
 
 .city-text {
-    font-weight: 700;
+    font-weight: 500;
     color: #ffffff;
     z-index: 3;
+    font-size: 20px;
 }
 
 .city-content p {
     font-weight: 500;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.7);
     z-index: 3;
 }
 

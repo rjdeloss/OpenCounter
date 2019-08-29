@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import CityIndexItem from './cities_search';
 
 const CityIndex = props => {
-    debugger
 
     const cities = [
         "New York Area",
@@ -27,7 +26,7 @@ const CityIndex = props => {
 
     const cityItems = cities.map((city,i) => {
         let restaurantCount = props.restaurants.filter(restaurant => restaurant.city === city).length
-        
+
         return (
         <CityIndexItem key={i} 
             city={city} 

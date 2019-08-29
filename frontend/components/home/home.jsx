@@ -6,7 +6,9 @@ import CityIndexContainer from '../cities/city_index_container';
 import Search from '../search/search_container';
 
 const Home = () => {
-
+    const slider = (element) => {
+        
+    }
     return (
         <>
     <header>
@@ -26,15 +28,15 @@ const Home = () => {
                         <div className="page-main-section-item">
                             <h2 className="section-item-header ">Popular restaurants in Manhattan</h2>
                             <section className="page-main-restaurant-carousel">
-                                <section className="page-main-restaurant-cuisines">
+                                <div id="restaurant" className="page-main-restaurant-cuisines">
                                     <Route exact path="/" component={RestaurantIndexContainer} />
-                                </section>
+                                </div>
                             </section>
                         </div>
                         <div className="page-main-section-item">
                             <h2 className="section-item-header ">Top Cuisines Near You</h2>
                                 <section className="page-main-restaurant-carousel">
-                                <div className="page-main-restaurant-cuisines">
+                                <div id="cuisine" className="page-main-restaurant-cuisines">
                                     <Route exact path="/" component={CuisineIndexContainer} />
                                 </div>
                             </section>
