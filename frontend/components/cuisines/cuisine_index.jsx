@@ -13,7 +13,7 @@ const CuisineIndex = (props) => {
         "cuisine-korean",
         "cuisine-latin",
         "cuisine-mexican",
-        "cuisine-thai",
+        "cuisine-thai", 
         "cuisine-vietnamese"
     ]
     
