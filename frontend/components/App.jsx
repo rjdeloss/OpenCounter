@@ -14,13 +14,13 @@ import Footer from './footer/footer';
 
 const App = () => (
     <div className="container">
-        <Modal />
+        {/* <Modal />
         <NavBar />
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/restaurants/search" component={Search} />
             <Route path="/restaurants/:restaurantId" component={Show} />
-        </Switch>
+        </Switch> */}
         <Footer />
     </div>
 

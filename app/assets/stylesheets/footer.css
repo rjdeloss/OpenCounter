@@ -1,15 +1,20 @@
 .footer-container{
     position: relative;
+    padding: 20px;
     bottom: 0;
     right: 0;
     left: 0;
     display:flex;
     justify-content: flex-end;
     margin: 0 auto;
-    height: 200px;
+    /* height: 400px; */
     width:100%;
     background-color: #333333;
-    
+    color:#acacac;
+}
+
+.footer-container p {
+    color: #acacac;
 }
 .footer-container-items {
     padding: 20px;
@@ -18,7 +23,12 @@
     justify-content: center;
     align-items:center;
 }
-.footer-container-items a {
+/* .footer-container-items a {
     color:#acacac;
     padding: 10px;
+} */
+
+i.fas, i.fab {
+    color: #acacac;
+    padding: 10px; 
 }
