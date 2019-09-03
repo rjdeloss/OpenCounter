@@ -5,8 +5,8 @@ const Footer = () => {
         <footer >
             <div className="footer-container">
                 <div className="footer-container-items">
-                    <a href="https://www.linkedin.com/in/rafiluisdelossantos/">LinkedIn</a>
-                    <a href="http://github.com/Droool">GitHub</a>
+                    <a href="https://www.linkedin.com/in/rafiluisdelossantos/"><i class="fab fa-linkedin"></i></a>
+                    <a href="http://github.com/Droool"><i class="fab fa-github"></i></a>
                     {/* <a href="">Personal Site</a> */}
                 </div>
             </div>
