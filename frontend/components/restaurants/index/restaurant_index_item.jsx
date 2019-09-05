@@ -43,7 +43,7 @@ const RestaurantIndexItem = props => {
         return (
             <div className="search-restaurant-item" >
                 <div className="search-restaurant-img-container" onClick={handleClick}>
-                    <img src="" alt=""/>
+                    <img src={restaurant.photo} style={{height: "100%" }} alt="" />
                 </div>
                 <div className="search-restaurant-info" >
                     <div className="search-restaurant-name" onClick={handleClick}>
