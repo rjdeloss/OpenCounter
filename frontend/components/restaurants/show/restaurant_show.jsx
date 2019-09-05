@@ -71,8 +71,8 @@ class RestaurantShow extends React.Component {
             <>
             <main className="show-page-container">
                 {renderFavoriteButton}
-                <div className="show-page-image-container" style={{background: `url(${restaurant.photo})`, backgroundPosition: `center`}}>
-                    <img src={restaurant.photo} style={{width: "100%"}} align="middle" alt=""/>
+                        <div className="show-page-image-container" style={{ width: "100%", background: `url(${restaurant.photo}) center`}}>
+                    {/* <img className="show-page-image" src={restaurant.photo}  align="middle" alt=""/> */}
                 </div>
                 <div className="show-page-content-container">
                     <div className="show-page-restaurant-content">
