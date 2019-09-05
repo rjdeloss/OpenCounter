@@ -6,10 +6,13 @@
 }
 
 .show-page-image-container {
+    box-sizing: border-box;
     width: inherit;
     height: 288px;
+    overflow: hidden;
     /* outline: 1px dotted rebeccapurple;  */
     background: url('https://www.telegraph.co.uk/content/dam/Travel/Destinations/South%20America/Brazil/Rio%20de%20Janeiro/rio-aprazivel-restaurant-guide.jpg?imwidth=1400');
+    background-position: center;
 }
 
 .show-page-content-container {

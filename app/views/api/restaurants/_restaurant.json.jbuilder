@@ -12,7 +12,8 @@ json.extract! restaurant,
  :open_time,
  :close_time,
  :capacity
-
+ 
+ json.photo url_for(restaurant.photo)
  json.cuisine restaurant.cuisines.pluck(:cuisine)
  json.overall_ratings restaurant.get_all_ratings
  json.recommended restaurant.recommended_percentage

@@ -8,6 +8,7 @@
 
 # USER
 require 'faker'
+require 'open-uri'
 
 User.destroy_all
 RestaurantCuisine.destroy_all
@@ -41,8 +42,9 @@ OPEN_TIME = ["8:00", "9:00", "10:00", "11:00", "12:00"]
 CLOSE_TIME = ["20:00", "21:00", "22:00", "23:00"]
 CUISINE_IDS = Cuisine.all.pluck(:id)
 
+c = 1
 20.times do
-    Restaurant.create(
+    restaurant = Restaurant.create(
         name: Faker::Restaurant.unique.name, 
         address: Faker::Address.street_address, 
         city: Restaurant::CITIES.sample,
@@ -57,6 +59,9 @@ CUISINE_IDS = Cuisine.all.pluck(:id)
         close_time: CLOSE_TIME.sample,
         capacity: rand(80..120)
     )
+    restaurant_image = open("https://s3.amazonaws.com/open-counter-seeds/#{c}.jpg")
+    restaurant.photo.attach(io: restaurant_image, filename: "#{c}.jpg")
+    c += 1
 end
 
 RESTAURANT_IDS = Restaurant.all.map { |restaurant| restaurant.id }
@@ -92,7 +97,7 @@ end
     Reservation.create(
         user_id: User.first.id, 
         restaurant_id: RESTAURANT_IDS.sample,
-        start_datetime: Faker::Time.between(DateTime.now + 5, Date.today, :evening),
+        start_datetime: Faker::Time.between_dates(from: Date.today + 5, to: Date.today, period: :evening),
         party_size: (1..20).to_a.sample
     )
 end
