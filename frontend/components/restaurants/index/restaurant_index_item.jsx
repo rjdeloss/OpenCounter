@@ -27,7 +27,7 @@ const RestaurantIndexItem = props => {
         return (
             <div className="page-main-restaurant-item" onClick={handleClick} >
                 <div className="page-main-restaurant-item-img-container">
-                    <img src="" alt="" />
+                    <img src={restaurant.photo} style={{width: "100%", height: "100%"}} alt="" />
                 </div>
                 <div className="page-main-restaurant-content-info">
                     <h3 className="bold-text">{restaurant.name}</h3>

@@ -47,7 +47,7 @@ class RestaurantShow extends React.Component {
 
     
     render() {
-
+        
         const restaurant = this.props.restaurant;
         const newReview = this.props.newReview;
         const loggedIn = this.props.loggedIn;
@@ -71,7 +71,8 @@ class RestaurantShow extends React.Component {
             <>
             <main className="show-page-container">
                 {renderFavoriteButton}
-                <div className="show-page-image-container">
+                <div className="show-page-image-container" style={{background: `url(${restaurant.photo})`, backgroundPosition: `center`}}>
+                    <img src={restaurant.photo} style={{width: "100%"}} align="middle" alt=""/>
                 </div>
                 <div className="show-page-content-container">
                     <div className="show-page-restaurant-content">
