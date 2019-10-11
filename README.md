@@ -52,7 +52,6 @@ export const searchRestaurants = search => (
 
 
 ## Future Implementations
-* Users being able to search 
-* Users making reservations at restaurants
-* Users being able to see Their reservation history and reviews
-* Game-ify reservation process for perks and discounts
+* Better error handling
+* Intergration of Zomato Api
+* Intergration of Google Maps
