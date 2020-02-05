@@ -144,7 +144,8 @@
 .page-main-restaurant-item-img-container {
     height: 236px; 
     width: auto; 
-    background: url('http://www.domkucafe.com/wp-content/uploads/2018/01/restaurants-in-Miami-1024x683-1024x585.jpg');
+    background: #c3c3c3;
+    overflow: hidden;
 }
 
 .page-main-restaurant-content-info {
