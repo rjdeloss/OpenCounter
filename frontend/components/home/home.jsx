@@ -29,6 +29,8 @@ const Home = () => {
                             <h2 className="section-item-header ">Popular restaurants in Manhattan</h2>
                             <section className="page-main-restaurant-carousel">
                                 <div id="restaurant" className="page-main-restaurant-cuisines">
+                                    <button className="scroller scrollLeft"></button>
+                                    <button className="scroller scrollRight"></button>
                                     <Route exact path="/" component={RestaurantIndexContainer} />
                                 </div>
                             </section>
