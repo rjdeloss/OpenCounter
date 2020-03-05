@@ -138,3 +138,19 @@ div.reservation-home-container::after {
   background-color: #b8222d;
    color: #ffffff;
 }
+
+.scroller {
+  width: 4rem; 
+  height: 4rem;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.scrollLeft {
+  left: -5px;
+}
+
+.scrollRight {
+  left: 100%;
+}
