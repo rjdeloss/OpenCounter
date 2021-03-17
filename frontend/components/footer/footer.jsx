@@ -8,26 +8,27 @@ const Footer = () => {
                     <div className="footer-notes">
                         <h3>OPENCOUNTER</h3>
                         <p>openCounter is a single page web application inspired by OpenTable 
-                            using Ruby on Rails, PostgreSQL, React, Redux, and Javascript. Features implemented in this project: 
+                        using Ruby on Rails, PostgreSQL, React, Redux, and Javascript. Features implemented in this project: 
                         </p>
+                    </div>
+                    <div className="footer-notes">
                         <h3>FEATURES</h3>
-                        <ul>
+                        <ol>
                             <li>User authentication </li>
                             <li>Search restaurants by name, city, and cuisine</li>
                             <li>Create/ Delete Reservations to a restaurant</li>
                             <li>Create/Delete Reviews from restaurant</li>
                             <li>Add restaurants as favorites</li>
-                        </ul>
+                        </ol>
                         <div className="signature">
                             <p>Created by Rafiluis De Los Santos</p>
                         </div>
                     </div>
-                    <div className="footer-container-items">
-                        <a href="https://www.linkedin.com/in/rafiluisdelossantos/"><i className="fab fa-linkedin fa-3x"></i></a>
-                        <a href="http://github.com/Droool"><i className="fab fa-github fa-3x"></i></a>
-                        <a href="https://droool.github.io"><i className="fas fa-swimmer fa-3x"></i></a>
-                    </div>
-
+                </div>
+                <div className="footer-container-items">
+                    <a href="https://www.linkedin.com/in/rafiluisdelossantos/"><i className="fab fa-linkedin fa-3x"></i></a>
+                    <a href="http://github.com/Droool"><i className="fab fa-github fa-3x"></i></a>
+                    <a href="https://droool.github.io"><i className="fas fa-swimmer fa-3x"></i></a>
                 </div>
             </div>
         </footer>
