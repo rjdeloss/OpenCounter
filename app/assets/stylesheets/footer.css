@@ -9,12 +9,12 @@
     margin: 0 auto;
     /* height: 400px; */
     width:inherit;
-    background-color: #333333;
-    color:#acacac;
+    background-color: #2d333f;
+    color:#d8d9db;
 }
 
 .footer-container p,  li {
-    color: #acacac;
+    color: #d8d9db;
     margin: 5px 0;
     padding: 0 30px 15px 0;
 }
@@ -44,6 +44,6 @@
     font-weight: 600;
 }
 i.fas, i.fab {
-    color: #acacac;
+    color: #fff;
     padding: 10px; 
 }

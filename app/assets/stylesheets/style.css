@@ -33,6 +33,11 @@ p {
     line-height: 1.5rem;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .container {
     max-width: 1600px;
     margin: 0 auto;
