@@ -10,12 +10,14 @@ import Home from '../components/home/home_container';
 import Show from '../components/restaurants/show/restaurant_show_container';
 import Search from '../components/search/search_container';
 import Footer from './footer/footer';
+import Header from './header/header';
 
 
 const App = () => (
     <div className="container">
         <Modal />
-        <NavBar />
+        <Header />
+        {/* <NavBar /> */}
         <div style={{width: '100%', background: 'pink', height: '400px'}}></div>
         {/* <Switch>
             <Route exact path="/" component={Home} />
