@@ -7,6 +7,7 @@ export default () => {
     return (
         <header className="header-container">
             <Logo />
+            <Session />
         </header>
     )
 }
