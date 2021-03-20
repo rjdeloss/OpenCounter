@@ -7,6 +7,7 @@
     display:flex;
     justify-content: center;
     margin: 0 auto;
+    padding-bottom: 3rem;
     max-width: inherit;
     background-color: #2d333f;
     color:#d8d9db;
