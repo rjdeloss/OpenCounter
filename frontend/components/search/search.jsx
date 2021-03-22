@@ -20,28 +20,30 @@ const Search = (props) => {
     if (props.location.pathname === "/") {
         return (
             <form className="reservation-form" >
-                <section className="reservation-inputs">
-                    <div className="reservation-input-container">
-                        <div className="reservation-form-icon-decoration">
-                            <i className="material-icons">calendar_today</i>
+                <section className="reservation-inputs-container">
+                    <div className="reservation-multi-search">
+                        <div className="reservation-input reservation-input-right">
+                            <div className="reservation-form-icon-decoration">
+                                <i className="material-icons">calendar_today</i>
+                            </div>
+                            <input className="reservation-form-input-field" type="date" />
                         </div>
-                        <input className="reservation-form-input-field" type="date" />
-                    </div>
-                    <div className="reservation-input-container">
-                        <div className="reservation-form-icon-decoration">
-                            <i className="material-icons">access_time</i>
+                        <div className="reservation-input reservation-input-left">
+                            <div className="reservation-form-icon-decoration">
+                                <i className="material-icons">access_time</i>
+                            </div>
+                            <select className="reservation-form-input-field" >
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                                <option value="9:00 PM">9:00 PM</option>
+                                <option value="10:00 PM">10:00 PM</option>
+                                <option value="11:00 PM">11:00 PM</option>
+                            </select>
                         </div>
-                        <select className="reservation-form-input-field" >
-                            <option value="7:00 PM">7:00 PM</option>
-                            <option value="8:00 PM">8:00 PM</option>
-                            <option value="9:00 PM">9:00 PM</option>
-                            <option value="10:00 PM">10:00 PM</option>
-                            <option value="11:00 PM">11:00 PM</option>
-                        </select>
                     </div>
-                    <div className="reservation-input-container">
+                    <div className="reservation-input reservation-input-party">
                         <div className="reservation-form-icon-decoration">
-                            <i className="material-icons">person_outlined</i>
+                            <i className="material-icons">perm_identity</i>
                         </div>
                         <select className="reservation-form-input-field">
                             <option value="1">1 person</option>
@@ -57,13 +59,13 @@ const Search = (props) => {
                         </select>
                     </div>         
                 </section>
-                <div className="reservation-search-input">
+                <div className="reservation-input reservation-input-search">
                     <div className="reservation-form-icon-decoration">
                         <i className="material-icons">search</i>
                     </div>
-                    <input type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
+                    <input className="reservation-form-input-field" type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
                 </div>
-                <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Let's go" />
+                <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Find a Table" />
             </form>
         )
     } else {

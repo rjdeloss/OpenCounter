@@ -17,7 +17,6 @@ const App = () => (
     <div className="container">
         <Modal />
         <Header />
-        {/* <div style={{width: '100%', background: 'pink', height: '400px'}}></div> */}
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/restaurants/search" component={Search} />

@@ -46,7 +46,7 @@
     padding: 14px 28px 15px;
     height: 55px;
     background-color: #da3743;
-    border-color: #b8222d;
+    border-color: transparent;
     color: #ffffff;
     text-align: center;
     transition: background-color 300ms ease-out;

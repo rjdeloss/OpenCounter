@@ -15,9 +15,7 @@ const Home = () => {
         <div className="reservation-home-container">
             <div className="reservation-form-container">
                 <h1 className="reservation-form-header">Find your table for any occasion</h1>
-                <div className="reservation-form-holder">
-                    <Search />
-                </div>
+                <Search />
             </div>
         </div>
     </header>
