@@ -1,42 +1,39 @@
 .reservation-home-container {
-    position: relative;
-    box-sizing: border-box;
-    height: 416px;
-    max-width: 1600px;
-    margin: 0 auto;
-    background-image: url('https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 416px;
+  max-width: 100%;
+  background-image: url('https://cdn-image.foodandwine.com/sites/default/files/1501607996/opentable-scenic-restaurants-marine-room-FT-BLOG0818.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 div.reservation-home-container::after {
-    content: "";
-    max-width: 1600px;
-    margin: 0 auto;
-    height: 416px;
-    position: absolute;
-    opacity: 0.7;
-    background: rgba(47, 45, 65, 0.7);
-    z-index: 1;
+  content: "";
+  max-width: 100%;
+  margin: 0 auto;
+  height: 416px;
+  position: absolute;
+  opacity: 0.7;
+  background: rgba(47, 45, 65, 0.7);
+  z-index: 1;
 }
 
 
 
 .reservation-form-container {
-    position: relative;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    top: 3%;
-    height: 120px;
-    max-width: 962px;
-    z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  top: 3%;
+  height: 120px;
+  max-width: 962px;
+  z-index: 2;
 }
 
 
@@ -47,9 +44,8 @@ div.reservation-home-container::after {
     color: white;
     line-height: 1.5;
     margin: 0 0 12px;
-    text-align: center;
-    display: inline-block;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 /* .reservation-form-holder {
@@ -60,6 +56,7 @@ div.reservation-home-container::after {
 .reservation-form {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   box-sizing: border-box;
   width: 100%;
 }

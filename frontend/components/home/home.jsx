@@ -11,14 +11,14 @@ const Home = () => {
     }
     return (
         <>
-    <header>
+    <div>
         <div className="reservation-home-container">
             <div className="reservation-form-container">
                 <h1 className="reservation-form-header">Find your table for any occasion</h1>
                 <Search />
             </div>
         </div>
-    </header>
+    </div>
         <main>
             <div className="page-main-content">
                 <div className="page-content-column">
