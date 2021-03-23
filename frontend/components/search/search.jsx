@@ -63,7 +63,7 @@ const Search = (props) => {
                     <div className="reservation-form-icon-decoration">
                         <i className="material-icons">search</i>
                     </div>
-                    <input className="reservation-form-input-field" type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
+                    <input className="reservation-form-search-field" type="text" value={searchValue} onChange={handleInput} placeholder="Manhattan" />
                 </div>
                 <input className="reservation-submit-input" onClick={handleSubmit} type="submit" value="Find a Table" />
             </form>
