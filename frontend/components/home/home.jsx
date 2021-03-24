@@ -20,8 +20,8 @@ const Home = () => {
         </div>
     </div>
         <main>
-            <div className="page-main-content">
-                <div className="page-content-column">
+            {/* <div className="page-main-content"> */}
+                {/* <div className="page-content-column"> */}
                     <div className="page-main-section">
                         <div className="page-main-section-item">
                             <h2 className="section-item-header ">Popular restaurants in Manhattan</h2>
@@ -50,8 +50,8 @@ const Home = () => {
                             </section>
                         </div>
                     </div>
-                </div>
-            </div>
+                {/* </div> */}
+            {/* </div> */}
         </main>
         </>
 )}
