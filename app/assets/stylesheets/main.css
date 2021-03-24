@@ -62,7 +62,7 @@
 .page-main-city-container {
     display: flex; 
     justify-content: flex-start;
-    max-width: 952px;
+    max-width: 100%;
     flex-flow: wrap row;
     margin-bottom: 6%;
 }
