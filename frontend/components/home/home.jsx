@@ -4,6 +4,8 @@ import RestaurantIndexContainer from '../restaurants/index/restaurant_index_cont
 import CuisineIndexContainer from '../cuisines/cuisine_index_container';
 import CityIndexContainer from '../cities/city_index_container';
 import Search from '../search/search_container';
+import Carousel from '../carousel/carousel';
+import Featured from '../featured/featured';
 
 const Home = () => {
     const slider = (element) => {
@@ -19,36 +21,13 @@ const Home = () => {
             </div>
         </div>
     </div>
-        <main>
+            <main>
             {/* <div className="page-main-content"> */}
                 {/* <div className="page-content-column"> */}
-                    <div className="page-main-section">
-                        <div className="page-main-section-item">
-                            <h2 className="section-item-header ">Popular restaurants in Manhattan</h2>
-                            <section className="page-main-restaurant-carousel">
-                                <div id="restaurant" className="page-main-restaurant-cuisines">
-                                    {/* <button className="scroller scrollLeft"></button>
-                                    <button className="scroller scrollRight"></button> */}
-                                    <Route exact path="/" component={RestaurantIndexContainer} />
-                                </div>
-                            </section>
-                        </div>
-                        <div className="page-main-section-item">
-                            <h2 className="section-item-header ">Top Cuisines Near You</h2>
-                                <section className="page-main-restaurant-carousel">
-                                <div id="cuisine" className="page-main-restaurant-cuisines">
-                                    <Route exact path="/" component={CuisineIndexContainer} />
-                                </div>
-                            </section>
-                        </div>
-                        <div className="page-main-section-item">
-                            <h2 className="section-item-header ">Featured Areas</h2>
-                                <section className="page-main-restaurant-carousel">
-                                    <div className="page-main-city-container">
-                                    <Route exact path="/" component={CityIndexContainer} />
-                                </div>
-                            </section>
-                        </div>
+                <div className="page-main-section">
+                    <Carousel id={{id:"restaurant"}} title="Popular restaurants in Manhattan" component={RestaurantIndexContainer}></Carousel>
+                    <Carousel id={{id:"cuisine"}} title="Top Cuisines Near You" component={CuisineIndexContainer}></Carousel>
+                    <Featured title="Featured Areas" component={CityIndexContainer}></Featured>
                     </div>
                 {/* </div> */}
             {/* </div> */}
