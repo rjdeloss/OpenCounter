@@ -251,3 +251,60 @@
     border: 1px solid #b8222d;
     border-radius: 3px;
 }
+
+@media only screen and (max-width: 768px) {
+    .reviw-stats-container {
+        flex-direction: column;
+    }
+
+    .reviews-stats-content {
+        width: 100%;
+    }
+
+    .reviews-rating-header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-container h2 {
+        text-align: center;
+    }
+
+    .reviews-stats-overall-container{
+        justify-content: center;
+    }
+
+    .reviews-recommended {
+        justify-content: center;
+    }
+
+    .review-stats-graph-container {
+        margin: 1rem auto;
+    }
+
+    .reviews-item {
+        flex-direction: column;
+    }
+
+    .reviews-user {
+        margin: 0;
+        width: auto;
+        height: auto;
+    }
+
+    .reviews-content {
+        width: 100%;
+    }
+
+    .reviews-header{
+        flex-direction: column;
+    }
+
+    .reviews-stats-header{
+        margin: 0 auto;
+    }
+
+    .reviews-delete-button{
+        margin: 3% 2%;
+    }
+}

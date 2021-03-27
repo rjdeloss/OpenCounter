@@ -1,0 +1,11 @@
+.header-container {
+    position: relative;
+    padding: 0 5%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display:flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: inherit;
+}

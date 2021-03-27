@@ -2,7 +2,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    max-width: 768px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -10,25 +10,37 @@
     box-sizing: border-box;
     display: flex; 
     flex-direction: row; 
-    width: 768px;
+    width: 100%;
+    max-width: 768px;;
     padding: 14px 0;
     border-bottom: 1px solid #d8d9db;
 }
 
 .search-restaurant-img-container {
-    height: 206px; 
-    width: 206px; 
+    height: 206px;
+    width: 206px;
+    /* min-height: 5.625rem;
+    min-width: 5.625rem;  */
     background: url('http://www.domkucafe.com/wp-content/uploads/2018/01/restaurants-in-Miami-1024x683-1024x585.jpg'); 
     border-radius: 4px; 
     box-sizing: border-box;
     overflow: hidden;
 }
 
+.search-img {
+    width: 100%;
+    max-width: 206px;
+    max-height: 206px;
+    min-height: 72px;
+    border-radius: 4px;
+    transform: scale(3.5);
+}
+
 .search-restaurant-info {
     display: flex; 
     flex-direction: column; 
     width: 560px; 
-    padding: 16px 0 0 16px;
+    padding-left: 16px;
 }
 
 .search-restaurant-name span{
@@ -40,34 +52,62 @@
 .search-restaurant-cuisine-location {
     box-sizing: border-box;
     display: flex; 
-    justify-content: space-between;
 }
 
 
 .search-restaurant-ratings {
     display: flex; 
     flex-direction: row; 
-    justify-content: space-between;
 }
 
 .search-restaurant-times {
     display: flex; 
     flex-direction: row; 
-    justify-content: space-between;
-    padding: 32px 0 0 0; 
+    padding: 16px 0 0 0; 
 }
 
-.search-restaurant-times button{
-    background-color: #da3743;
-    border-color: #bb232e;
-    border-radius: 4px; 
-    color: #ffffff; 
-    font-weight: 400;
-    width: 100px; 
-    height: 30px;
+.search-restaurant-times a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    background: #da3743;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 4px;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 14px;
+    margin-right: 8px;
+    white-space: nowrap;
 }
 
-.search-restaurant-times button:hover{
+.search-restaurant-times a:hover{
     background-color: #bb232e;
     color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    .search-result-container{
+        max-width: 85%;
+    }
+    .search-restaurant-img-container{
+        max-width: 72px;
+        max-height: 72px;
+        min-width: 72px;
+        min-height: 72px;
+    }
+
+    .search-img{
+        max-height: 72px;
+        transform: none;
+    }
+
+    .search-restaurant-times{
+        padding-top: 32px;
+        margin-left: -88px;
+    }
+
+    .search-restaurant-times a{
+        margin-right: 16px;
+    }
 }

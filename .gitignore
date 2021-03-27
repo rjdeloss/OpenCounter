@@ -32,6 +32,7 @@
 
 bundle.js
 bundle.js*
+assets/javascripts/bundle.js
 
 .DS_Store
 

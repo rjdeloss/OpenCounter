@@ -70,8 +70,8 @@ class RestaurantShow extends React.Component {
             return(
             <>
             <main className="show-page-container">
-                {renderFavoriteButton}
-                        <div className="show-page-image-container" style={{ width: "100%", background: `url(${restaurant.photo}) center`}}>
+                <div className="show-page-image-container" style={{ width: "100%", background: `url(${restaurant.photo}) center`}}>
+                    {renderFavoriteButton}
                     {/* <img className="show-page-image" src={restaurant.photo}  align="middle" alt=""/> */}
                 </div>
                 <div className="show-page-content-container">
@@ -84,16 +84,16 @@ class RestaurantShow extends React.Component {
                                 <p className="restaurant-section-hover" onClick={this.pageJumpReviews}>Reviews</p>
                         </nav>
                         <div className="restaurant-snippet">
-                            <div className="restaurant-title">
-                                    <h1 ref={this.titleRef} className="restaurant-name-location">{restaurant.name}</h1>
-                            </div>
+                            <h1 ref={this.titleRef} className="restaurant-title">{restaurant.name}</h1>
                             <article className="nav-bar-words">
                                 <div>
-                                {stars}{noStars} {/* <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i> */}
+                                    <span>{stars}{noStars}</span>{/* <i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star</i><i className="material-icons red">star_half</i> */}
                                 </div>
-                                    <i className="material-icons">chat_bubble_outline</i><p>{Object.values(restaurant.reviews).length} reviews  </p>
-                                    <i className="material-icons">local_atm</i><p>{restaurant.price_range}  </p>
-                                <i className="material-icons">restaurant</i><p>{restaurant.cuisine}</p>
+                                <div className="restaurant-stats">
+                                    <i className="material-icons">chat_bubble_outline</i><span>{Object.values(restaurant.reviews).length} reviews  </span>
+                                    <i className="material-icons">local_atm</i><span>{restaurant.price_range}  </span>
+                                    <i className="material-icons">restaurant</i><span>{restaurant.cuisine}</span>
+                                </div>
                                 <br/>
                             </article>
                             <p>{restaurant.description}</p>

@@ -11,7 +11,7 @@ const RestaurantIndexItem = props => {
         return (<i key={i + 1 + Math.round(overallRating)} className="material-icons star-grey">star</i>)
     });
     let stars = _.times(Math.ceil(overallRating), (i) => {
-        return (<i key={i} className="material-icons red">star</i>)
+        return (<i key={i} className="material-icons gold">star</i>)
     });
 
     const handleClick = () => {
@@ -43,7 +43,7 @@ const RestaurantIndexItem = props => {
         return (
             <div className="search-restaurant-item" >
                 <div className="search-restaurant-img-container" onClick={handleClick}>
-                    <img src={restaurant.photo} style={{height: "100%" }} alt="" />
+                    <img className="search-img" src={restaurant.photo} />
                 </div>
                 <div className="search-restaurant-info" >
                     <div className="search-restaurant-name" onClick={handleClick}>
@@ -51,20 +51,18 @@ const RestaurantIndexItem = props => {
                     </div>
                     <div className="search-restaurant-ratings">
                         <div>
-                            {stars}{noStars}{/* <i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star</i><i className="material-icons gold">star_half</i> */}
+                            {stars}{noStars}
                         </div>
-                        <span>{restaurant.price_range}{greyPriceRange}</span>
                     </div>
                     <div className="search-restaurant-cuisine-location">
-                        <span>{restaurant.cuisine}</span>
+                        <span>{restaurant.price_range}{greyPriceRange}</span><span style={{margin: `0 5px`}}>&#183;</span>
+                        <span>{restaurant.cuisine}</span><span style={{margin: `0 5px`}}>&#183;</span>
                         <span>{restaurant.city}</span>
                     </div>
                     <div className="search-restaurant-times">
-                        <button>6:00 PM</button>
-                        <button>6:30 PM</button>
-                        <button>7:00 PM</button>
-                        <button>7:45 PM</button>
-                        <button>8:00 PM</button>
+                        <a>6:00 PM</a>
+                        <a>6:30 PM</a>
+                        <a>7:00 PM</a>
                     </div>
                 </div>
             </div>

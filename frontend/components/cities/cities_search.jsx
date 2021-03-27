@@ -11,7 +11,7 @@ const CityIndexItem = props => {
     }
 
     return (
-        <div className="page-main-cities" onClick={handleClick}>
+        <div onClick={handleClick}>
             <div className={`${background} city-content`} >
                 <h2 className="city-text">{city}</h2>
                 <p>{props.count} restaurants</p>
