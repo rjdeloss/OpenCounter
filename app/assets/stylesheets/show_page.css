@@ -77,11 +77,7 @@
     box-sizing: inherit;
     position: relative;
     width: 100%; 
-<<<<<<< HEAD
     padding: 32px 5%;
-=======
-    padding: 32px 16px 32px;
->>>>>>> 6e6ac904217eede36c9e0d8da109272481c9359f
     /* outline: 1px dotted skyblue; */
 }
 
@@ -93,20 +89,10 @@
     margin: 0 0 16px; 
     padding: 0 0 32px;
     border-bottom: 1px solid #d8d9db;
-<<<<<<< HEAD
-=======
-}
-
-.restaurant-title h1{
->>>>>>> 6e6ac904217eede36c9e0d8da109272481c9359f
     color: #2d333f;
     font-weight: 600;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6e6ac904217eede36c9e0d8da109272481c9359f
 .restaurant-profile-nav > p {
     padding: 14px 0;
     margin: 0 32px 0 0;
@@ -320,7 +306,6 @@
 
 #today {
     font-size: 14px;
-<<<<<<< HEAD
 }
 
 @media only screen and (max-width: 768px) {
@@ -354,6 +339,4 @@
         visibility: hidden;
     }
 
-=======
->>>>>>> 6e6ac904217eede36c9e0d8da109272481c9359f
 }
