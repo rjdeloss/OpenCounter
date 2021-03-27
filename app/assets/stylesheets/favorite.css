@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     background: #ffffff;
-    position: absolute;
-    margin:50px 1000px 0;
+    margin-top: 50px;
+    margin-right: calc(100% - 40px);
     padding: 11px 15px;
     width: 15rem; 
     text-align: center;
@@ -14,4 +14,11 @@
 
 .favorite-button:hover {
     border: 1px solid #da3743;
+}
+
+@media only screen and (max-width: 768px) {
+    .favorite-button {
+        margin: 0 auto;
+        margin-top: 50px;
+    }
 }
