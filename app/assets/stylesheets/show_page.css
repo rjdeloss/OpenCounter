@@ -313,6 +313,7 @@
         flex-direction: column;
         margin: 0 auto;
         max-width: 100%;
+        align-items: center;
     }
 
     .show-page-restaurant-content{
@@ -337,4 +338,5 @@
     .restaurant-stats i {
         visibility: hidden;
     }
+
 }
