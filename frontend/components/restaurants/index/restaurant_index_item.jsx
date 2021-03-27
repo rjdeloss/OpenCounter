@@ -31,7 +31,7 @@ const RestaurantIndexItem = props => {
                 </div>
                 <div className="page-main-restaurant-content-info">
                     <h3 className="bold-text">{restaurant.name}</h3>
-                    <div className="reviews-rating-header"> 
+                    <div className="reviews-stars"> 
                         {stars}{noStars} 
                         <p>&nbsp;&nbsp;&nbsp;{reviewsCount} reviews</p></div>
                     <div>{restaurant.cuisine} &nbsp;·&nbsp; {restaurant.price_range} &nbsp;·&nbsp; {restaurant.city}</div>
